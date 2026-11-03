@@ -13,7 +13,7 @@ const Presentation = (() => {
     isAutoplay: false,
     autoplayTimer: null,
     autoplayDuration: 9000,
-    soundEnabled: true,
+    soundEnabled: false,
     isOverviewOpen: false,
     isNotesOpen: false,
     audioCtx: null,
@@ -549,9 +549,11 @@ const Presentation = (() => {
     if (dom.btnSound) {
       if (state.soundEnabled) {
         dom.btnSound.style.opacity = '1';
+        dom.btnSound.title = 'Sound FX: Enabled (Press M to Mute)';
         playTone(659.25, 'sine', 0, 0.2, 0.1);
       } else {
-        dom.btnSound.style.opacity = '0.4';
+        dom.btnSound.style.opacity = '0.5';
+        dom.btnSound.title = 'Sound FX: Muted (Press M to Enable)';
       }
     }
   }
