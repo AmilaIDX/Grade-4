@@ -2,7 +2,7 @@
  * SIX VOICES, ONE MESSAGE - Sussex College Grade 4 Assembly Presentation
  * Master Presentation Engine & Editable PPTX Export
  * 20 Master Slides Following the Exact Assembly Order
- * Class Teacher: Darshani Gunathilaka
+ * Class Teacher: Mrs. Darshani Gunathilaka
  */
 
 const Presentation = (() => {
@@ -91,63 +91,63 @@ const Presentation = (() => {
       title: "Poem: Stanza 1 – A Little Smile & Care",
       speaker: "Sanuthi, Dihas, Nethan, Omin",
       item: 2,
-      line: "“1. Sanuthi: A little smile, a little care, Can bring such joy for all to share.\n2. Dihas: A helping hand, a word that's kind, Leaves sorrow and sadness far behind.\n3. Nethan: Be fair to all, both big and small, And answer when a friend does call.\n4. Omin: Tell the truth and do what's right, Let honesty be your shining light.”",
+      line: "“1. Sanuthi:\nA little smile, a little care,\nCan show someone that we are there.\n\n2. Dihas:\nA helping hand, a word that's kind,\nCan bring some sunshine to someone's mind.\n\n3. Nethan:\nBe fair to all, both big and small,\nGive everyone a chance to stand tall.\n\n4. Omin:\nTell the truth and do what's right,\nLet honesty be your guiding light.”",
       tip: "Recite with poetic rhythm and clear pronunciation."
     },
     10: {
       title: "Poem: Stanza 2 – Respect & Animals",
       speaker: "Inuli, Shenuki, Jeson, Praneeth",
       item: 2,
-      line: "“5. Inuli: Respect your friends in all you do, In words and actions, honest and true.\n6. Shenuki: If someone is sad or left alone, Make them feel this world's their own.\n7. Jeson: Don't laugh at others or cause them pain, Be gentle as the morning rain.\n8. Praneeth: Be gentle to animals everywhere, They need our love and thoughtful care.”",
+      line: "“5. Inuli:\nRespect your friends in all you do,\nLet love and kindness shine through.\n\n6. Shenuki:\nIf someone is sad or left alone,\nBe a kind friend; help them feel known.\n\n7. Jeson:\nDon't laugh at others or cause them pain,\nKind words bring sunshine after the rain.\n\n8. Praneeth:\nBe gentle to animals everywhere,\nShow them kindness and loving care.”",
       tip: "Step forward slightly as each pair speaks."
     },
     11: {
       title: "Poem: Stanza 3 – Courage, Justice & Forests",
       speaker: "Dasindu, Noveena, Kenula, Sara",
       item: 2,
-      line: "“9. Dasindu: They have feelings, they feel pain, Protect them in the sun and rain.\n10. Noveena: Their homes are forests, their skies are wide, With care and love, walk by their side.\n11. Kenula: Stand up for justice, be brave and true, Stand for what is right in all you do.\n12. Sara: Together we can make kindness grow, Like gentle seeds we proudly sow.”",
+      line: "“9. Dasindu:\nThey have feelings, they feel pain,\nTheir precious lives are not ours to claim.\n\n10. Noveena:\nTheir homes are forests, their skies are wide,\nLet's stand for them and be on their side.\n\n11. Kenula:\nStand up for justice, be brave and true,\nMake the world better in all you do.\n\n12. Sara:\nTogether we can make kindness grow,\nAnd let fairness shine wherever we go!”",
       tip: "Strong, confident projection across the auditorium."
     },
     12: {
       title: "Poem: Finale – Minugi Solo & Full 13-Child Chorus",
       speaker: "Lead: Minugi & All 13 Children",
       item: 2,
-      line: "“13. Minugi: A little kindness can light the way, Let's spread love and justice every day!\n\nALL 13 CHILDREN TOGETHER:\nA little kindness goes a long way!\nLet love and justice lead the way!\nBe kind to people, protect animals too,\nThe world will be better because of what we do! ❤️”",
+      line: "“13. Minugi:\nA little kindness can light the way,\nLet's spread love and justice every day!\n\nALL 13 CHILDREN TOGETHER:\nA little kindness goes a long way!\nLet love and justice lead the way!\nBe kind to people, protect animals too,\nThe world will be better because of what we do! ❤️”",
       tip: "Minugi opens solo at center; full chorus joins on the united refrain with open arms!"
     },
     13: {
       title: "Role Play: Part 1 – The Playground",
       speaker: "The Playground Cast",
       item: 3,
-      line: "“Evodi (Narrator): One morning during the school interval, a group of children were playing together. Their classmate, Nethuli, wanted to join them. But the others refused to let her play.\n\nNethuli: Can I play with you?\nLiyansa: No, our team is already full.\nLiyara: Yes, go find someone else to play with.\nOsheera: Why are you being so mean?\nSehansa: Yes, why can't she play?\nGevin: Because we made the rules, and we say she can't!\nLisari: But that’s not fair! Everyone deserves a chance to play!\nEvodi: That day, no one stood up for Nethuli. If only someone had spoken, things might have been different.”",
+      line: "“Evodi: One morning during the school interval, a group of children were playing together. Their classmate, Nethuli, wanted to join them. But the others refused to let her play.\n\nNethuli: Hi friends. May I join you?\n\nLiyansa: No, no. We don't like to play with you.\n\nLiyara: You can go somewhere else!\n\nLiyansa: Yes, you cannot join our game.\n\nNethuli: Why are you treating me like this? I also want to play with you. I feel very sad.\n\nOsheera: Look at Nethuli... She is really hurt. If everyone treated us this way, how would we feel? I know this is wrong. But I'm afraid to say anything.\n\nSehansa: Someone needs to help her. Let's stop watching and do something. Nethuli is our friend too. Come and play with us, Nethuli!\n\nNethuli: Thank you, my dear. I thought nobody wanted me.\n\nLiyansa: Liyara, what we did wasn't right. We shouldn't treat anyone like that.\n\nLiyara & Liyansa (Together): We are sorry for treating you that way.\n\nNethuli: It's okay, dear. I just wanted to be your friend.\n\nGevin: Our words can hurt others. Staying silent can hurt them too. So, speak up when something is wrong. And never leave someone feeling alone.\n\nLisari: We should never make someone feel unwanted. If we see bullying, we should help safely and tell a teacher when necessary.”",
       tip: "Expressive acting: show the hurt of exclusion, then the bravery of speaking up."
     },
     14: {
       title: "Role Play: Part 2 – Speaking for the Voiceless",
-      speaker: "Speaking for the Voiceless Cast",
+      speaker: "Dehami, Shaini, Nethuki, Yeshitha, Minindee, Sinadhi",
       item: 3,
-      line: "“Evodi (Narrator): In another part of the school garden, a little kitten had wandered onto the grass, and some birds were resting near the water fountain.\n\nSenhas: Look at that kitten! Let’s throw some stones to scare it!\nSethmika: Yes! Let’s chase the birds away too!\nSasen: Wait, don’t do that! You might hurt them!\nSenhas: Why do you care? They are just animals!\nMinindee: No! Animals feel pain just like we do. They cannot speak for themselves, so we must speak for them.\nSethmika: But they don’t go to school. Why should we care?\nMinindee: Because kindness is not just for our friends. It is for every living thing!\nEvodi: Justice is not just for humans. It belongs to all living creatures.”",
-      tip: "Minindee speaks with heartfelt moral conviction for animals and nature."
+      line: "“Dehami: Dear friends, just like Nethuli felt excluded, have you ever thought about the pain animals go through because of humans? Some animals spend their lives behind bars, dreaming of running freely.\n\nShaini: Some are killed for their beautiful skins and tusks. Don't they deserve to live, just like us?\n\nNethuki: People cut down forests and destroy their homes. Where will these innocent animals go? Where will they find food and shelter?\n\nYeshitha: They cannot tell us, 'Please don't hurt us! Please don't destroy our homes! Please don't cage us!' But their silence does not mean they feel no pain.\n\nMinindee: We have voices, but they don't. So, shouldn't we use our voices to protect them? Every animal deserves kindness, safety, and a chance to live. Who gave us the right to take away their precious lives?\n\nSinadhi: They too deserve to live under the same sky, breathe the same air, and enjoy the freedom of this beautiful world. Their lives are not ours to take. Every life is precious, and no innocent creature deserves to die because of human cruelty.”",
+      tip: "Minindee and cast speak with heartfelt moral conviction for animals and nature."
     },
     15: {
-      title: "Role Play: Part 3 – The Train of Justice Chorus",
-      speaker: "Role Play Company",
+      title: "Role Play: Ending Chorus – Stand for What Is Right",
+      speaker: "All (Together)",
       item: 3,
-      line: "“All: Choo, choo, chugga, chugga, whoosh! All aboard the train of justice!\n\nAll (Together):\n• Choose kindness!\n• Speak up!\n• Stand for what is right!\n• Be gentle with animals!\n• Never stay silent when someone needs help!\n• Justice starts with us!”",
-      tip: "Dynamic rhythmic train chant. Energy and enthusiasm!"
+      line: "“All (Together):\n• Choose kindness!\n• Speak up!\n• Stand for what is right!\n• Be gentle with animals!\n• Never stay silent when someone needs help!\n• Justice starts with us!”",
+      tip: "Delivered in powerful unison with confident, welcoming gestures."
     },
     16: {
-      title: "Justice Detectives: Case Studies (Cases 1–5)",
+      title: "Justice Detectives: Case Studies (Cases 01–05)",
       speaker: "Justice Detectives",
       item: 4,
       line: "“JUSTICE DETECTIVES CASE STUDIES (Part 1):\n• Case 01: Blamed Without Proof — Never blame others without the facts.\n• Case 02: Rules Are for Everyone — Follow classroom rules fairly.\n• Case 03: Left Out of the Game — Include every classmate.\n• Case 04: Taking Without Asking — Always ask for permission.\n• Case 05: Unfair Sharing — Share materials and turns equally.”",
       tip: "Present each case clearly, inviting students to reflect on fairness."
     },
     17: {
-      title: "Justice Detectives: Case Studies (Cases 6–10)",
+      title: "Justice Detectives: Case Studies (Cases 06–10)",
       speaker: "Justice Detectives",
       item: 4,
-      line: "“JUSTICE DETECTIVES CASE STUDIES (Part 2):\n• Case 06: Cutting in Line — Wait patiently for your turn.\n• Case 07: Making a Mess — Clean up and respect school grounds.\n• Case 08: Whispering Rumors — Speak only what is truthful and kind.\n• Case 09: Picking Sides — Stand for what is right, not just popular.\n• Case 10: Damaging Belongings — Treat school property with care.”",
+      line: "“JUSTICE DETECTIVES CASE STUDIES (Part 2):\n• Case 06: Cutting in Line — Wait patiently for your turn.\n• Case 07: Making a Mess — Clean up and respect school grounds.\n• Case 08: Whispering Rumors — Speak only what is truthful and kind.\n• Case 09: Picking Sides — Stand for what is right, not just popular.\n• Case 10: Judging by Looks — Respect everyone for who they are, not how they look.”",
       tip: "Highlight responsibility, truth, and honesty in everyday school life."
     },
     18: {
@@ -161,7 +161,7 @@ const Presentation = (() => {
       title: "Our Kindness & Justice Pledge: Nine Sacred Promises",
       speaker: "All Students Hand on Heart",
       item: 6,
-      line: "“OUR KINDNESS AND JUSTICE PLEDGE:\n1. I promise to be kind to everyone, every day.\n2. I promise to share and take turns fairly.\n3. I promise to tell the truth and be honest.\n4. I promise to respect my teachers, elders, and friends.\n5. I promise to listen when others speak.\n6. I promise to treat animals with love and care.\n7. I promise to stand up for those who are treated unfairly.\n8. I promise to keep my classroom and school clean.\n9. I promise to make my school a happier, fairer, and kinder place.”",
+      line: "“OUR KINDNESS & JUSTICE PLEDGE:\n✦ I promise to be kind to everyone.\n✦ I will speak the truth and treat others fairly.\n✦ I will respect my friends and help those in need.\n✦ I will never bully, hurt, or make fun of others.\n✦ I will be kind and gentle to animals.\n✦ I will protect nature and respect all living things.\n✦ I will speak up when I see someone being treated unfairly.\n✦ I will use my words and actions to spread love, kindness, and peace.\n✦ I understand that even a small act of kindness can make a big difference.”",
       tip: "Hand on heart. Solemn, clear, dignified recital by all Grade 4 students."
     },
     20: {
@@ -188,9 +188,9 @@ const Presentation = (() => {
     12: "A little kindness goes a long way!",
     13: "If only someone had spoken.",
     14: "Guardians of nature and animals.",
-    15: "Choo Choo! Stand up for justice!",
+    15: "Justice starts with us!",
     16: "Everyday Fairness (Cases 01–05)",
-    17: "Honesty & Responsibility (Cases 06–10)",
+    17: "Honesty & Equality (Cases 06–10)",
     18: "Kindness & Justice in Action",
     19: "Hand on Heart, Standing for Justice",
     20: "Kindness is contagious, and justice starts with us!"
@@ -441,7 +441,7 @@ const Presentation = (() => {
     }
 
     if (playAudio) {
-      if (state.currentSlide === 20 || state.currentSlide === 8 || state.currentSlide === 12) {
+      if (state.currentSlide === 20 || state.currentSlide === 8 || state.currentSlide === 12 || state.currentSlide === 15) {
         playSuccessSound();
       } else {
         playSlideSound();
@@ -582,7 +582,7 @@ const Presentation = (() => {
           cue.speaker + ':\n\n' +
           cue.line.replace(/\n/g, '\n') +
           (cue.tip ? '\n\nStage Direction / Cue: ' + cue.tip : '') +
-          '\n\nClass Teacher: Darshani Gunathilaka • Sussex College'
+          '\n\nClass Teacher: Mrs. Darshani Gunathilaka • Sussex College'
         );
       }
 
@@ -602,7 +602,7 @@ const Presentation = (() => {
 
       slide.addText([
         { text: 'SUSSEX COLLEGE  •  GRADE 4 ASSEMBLY  •  ', options: { bold: true, color: '0D2C54', fontSize: 13 } },
-        { text: 'Class Teacher: Darshani Gunathilaka', options: { bold: true, color: 'B45309', fontSize: 13 } }
+        { text: 'Class Teacher: Mrs. Darshani Gunathilaka', options: { bold: true, color: 'B45309', fontSize: 13 } }
       ], { x: 0.8, y: 0.4, w: 9.0, h: 0.6 });
 
       if (i === 1) {
@@ -619,6 +619,165 @@ const Presentation = (() => {
           x: 1.0, y: 4.8, w: 11.3, h: 0.6,
           fontSize: 14, color: '64748B', align: 'center'
         });
+      } else if (i === 15) {
+        // Ending Chorus Slide
+        slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+          x: 1.2, y: 1.4, w: 10.9, h: 5.2,
+          fill: { color: 'FFFFFF' },
+          line: { color: 'E2E8F0', width: 2 }
+        });
+
+        slide.addText('ITEM 03 • ROLE PLAY • ENDING CHORUS', {
+          x: 1.5, y: 1.8, w: 10.3, h: 0.5,
+          fontSize: 13, bold: true, color: 'EA580C', align: 'center'
+        });
+
+        slide.addText('Ending Chorus: Stand for What Is Right', {
+          x: 1.5, y: 2.3, w: 10.3, h: 0.8,
+          fontSize: 28, bold: true, color: '0D2C54', align: 'center'
+        });
+
+        const chorusLines = [
+          'Choose kindness!',
+          'Speak up!',
+          'Stand for what is right!',
+          'Be gentle with animals!',
+          'Never stay silent when someone needs help!',
+          'Justice starts with us!'
+        ];
+
+        chorusLines.forEach((line, idx) => {
+          const col = idx % 2;
+          const row = Math.floor(idx / 2);
+          const xPos = 2.0 + col * 4.8;
+          const yPos = 3.3 + row * 0.9;
+
+          slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+            x: xPos, y: yPos, w: 4.5, h: 0.7,
+            fill: { color: 'FFF7ED' },
+            line: { color: 'F97316', width: 1.5 }
+          });
+          slide.addText(line, {
+            x: xPos, y: yPos + 0.1, w: 4.5, h: 0.5,
+            fontSize: 14, bold: true, color: '9A3412', align: 'center'
+          });
+        });
+      } else if (i === 16) {
+        // Detective Cases 1 to 5
+        slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+          x: 1.2, y: 1.4, w: 10.9, h: 5.2,
+          fill: { color: 'FFFFFF' },
+          line: { color: 'E2E8F0', width: 2 }
+        });
+
+        slide.addText('ITEM 04 • JUSTICE DETECTIVES', {
+          x: 1.5, y: 1.7, w: 10.3, h: 0.4,
+          fontSize: 13, bold: true, color: '4F46E5', align: 'center'
+        });
+        slide.addText('Everyday Fairness (Cases 01–05)', {
+          x: 1.5, y: 2.2, w: 10.3, h: 0.7,
+          fontSize: 26, bold: true, color: '0D2C54', align: 'center'
+        });
+
+        const cases1 = [
+          '01. Blamed Without Proof',
+          '02. Rules Are for Everyone',
+          '03. Left Out of the Game',
+          '04. Taking Without Asking',
+          '05. Unfair Sharing'
+        ];
+        cases1.forEach((c, idx) => {
+          slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+            x: 2.5, y: 3.1 + idx * 0.65, w: 8.3, h: 0.52,
+            fill: { color: 'EEF2FF' },
+            line: { color: '6366F1', width: 1 }
+          });
+          slide.addText(c, {
+            x: 2.7, y: 3.1 + idx * 0.65 + 0.06, w: 7.9, h: 0.4,
+            fontSize: 13, bold: true, color: '3730A3', align: 'center'
+          });
+        });
+      } else if (i === 17) {
+        // Detective Cases 6 to 10
+        slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+          x: 1.2, y: 1.4, w: 10.9, h: 5.2,
+          fill: { color: 'FFFFFF' },
+          line: { color: 'E2E8F0', width: 2 }
+        });
+
+        slide.addText('ITEM 04 • JUSTICE DETECTIVES', {
+          x: 1.5, y: 1.7, w: 10.3, h: 0.4,
+          fontSize: 13, bold: true, color: '4F46E5', align: 'center'
+        });
+        slide.addText('Truth, Respect & Equality (Cases 06–10)', {
+          x: 1.5, y: 2.2, w: 10.3, h: 0.7,
+          fontSize: 26, bold: true, color: '0D2C54', align: 'center'
+        });
+
+        const cases2 = [
+          '06. Cutting in Line',
+          '07. Making a Mess',
+          '08. Whispering Rumors',
+          '09. Picking Sides',
+          '10. Judging by Looks'
+        ];
+        cases2.forEach((c, idx) => {
+          slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+            x: 2.5, y: 3.1 + idx * 0.65, w: 8.3, h: 0.52,
+            fill: { color: 'EEF2FF' },
+            line: { color: '6366F1', width: 1 }
+          });
+          slide.addText(c, {
+            x: 2.7, y: 3.1 + idx * 0.65 + 0.06, w: 7.9, h: 0.4,
+            fontSize: 13, bold: true, color: '3730A3', align: 'center'
+          });
+        });
+      } else if (i === 19) {
+        // Nine Sacred Promises
+        slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+          x: 1.2, y: 1.3, w: 10.9, h: 5.4,
+          fill: { color: 'FFFFFF' },
+          line: { color: 'E2E8F0', width: 2 }
+        });
+
+        slide.addText('ITEM 06 • OUR KINDNESS & JUSTICE PLEDGE', {
+          x: 1.5, y: 1.5, w: 10.3, h: 0.4,
+          fontSize: 13, bold: true, color: 'B45309', align: 'center'
+        });
+        slide.addText('Nine Sacred Promises of Sussex Students', {
+          x: 1.5, y: 1.95, w: 10.3, h: 0.6,
+          fontSize: 24, bold: true, color: '0D2C54', align: 'center'
+        });
+
+        const promises = [
+          '1. I promise to be kind to everyone.',
+          '2. I will speak the truth and treat others fairly.',
+          '3. I will respect my friends and help those in need.',
+          '4. I will never bully, hurt, or make fun of others.',
+          '5. I will be kind and gentle to animals.',
+          '6. I will protect nature and respect all living things.',
+          '7. I will speak up when I see someone being treated unfairly.',
+          '8. I will use my words and actions to spread love, kindness, and peace.',
+          '9. I understand that even a small act of kindness can make a big difference.'
+        ];
+
+        promises.forEach((p, idx) => {
+          const col = idx % 2;
+          const row = Math.floor(idx / 2);
+          const xPos = idx === 8 ? 3.5 : (1.6 + col * 5.2);
+          const yPos = 2.65 + row * 0.72;
+          const wBox = idx === 8 ? 6.2 : 4.9;
+
+          slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+            x: xPos, y: yPos, w: wBox, h: 0.58,
+            fill: { color: 'FEF3C7' },
+            line: { color: 'F59E0B', width: 1 }
+          });
+          slide.addText(p, {
+            x: xPos + 0.1, y: yPos + 0.05, w: wBox - 0.2, h: 0.48,
+            fontSize: 11, bold: true, color: '92400E', align: 'center'
+          });
+        });
       } else if (i === 20) {
         // Slide 20 Grand Finale
         slide.addText('OUR SACRED ASSEMBLY PROMISE', {
@@ -633,7 +792,7 @@ const Presentation = (() => {
           x: 1.0, y: 3.4, w: 11.3, h: 2.0,
           fontSize: 34, bold: true, color: '0D2C54', align: 'center'
         });
-        slide.addText('Guided with Love by Class Teacher: Darshani Gunathilaka', {
+        slide.addText('Guided with Love by Class Teacher: Mrs. Darshani Gunathilaka', {
           x: 1.0, y: 5.8, w: 11.3, h: 0.5,
           fontSize: 13, color: '64748B', align: 'center'
         });
