@@ -763,7 +763,48 @@ const Presentation = (() => {
   // EDITABLE POWERPOINT (.PPTX) EXPORT (PptxGenJS)
   // Generates true Microsoft PowerPoint native text boxes, shapes, and images
   // =========================================================================
-  function exportPPTX() {
+  
+  const slideMottos = {
+    1: "Kindness Is Contagious, Justice Starts with Us.",
+    2: "Six Voices, One Message",
+    3: "Kindness is contagious!",
+    4: "Justice begins with fairness.",
+    5: "Always do the right thing.",
+    6: "Respect makes us better.",
+    7: "Animals deserve kindness too.",
+    8: "Stand up for justice!",
+    9: "Kindness is contagious, and justice starts with us!",
+    10: "A gentle smile, a helping hand.",
+    11: "Tell the truth and do what’s right.",
+    12: "Speak with love, protect animals.",
+    13: "Stand up proud, do what is right.",
+    14: "A little kindness goes a long way!",
+    15: "Laughter and games begin.",
+    16: "No one should stand alone.",
+    17: "Courage speaks up!",
+    18: "Included and united!",
+    19: "Listen to the ancient trees.",
+    20: "Guardians of the forest.",
+    21: "Speak for those without a voice.",
+    22: "Living in harmony together.",
+    23: "Choo Choo! Stand up for justice!",
+    24: "Justice Detectives Case Studies",
+    25: "1. Blamed Without Proof",
+    26: "2. Rules Are for Everyone",
+    27: "3. Left Out of the Game",
+    28: "4. Taking Without Asking",
+    29: "5. Unfair Sharing",
+    30: "6. Cutting in Line",
+    31: "7. Making a Mess",
+    32: "8. Whispering Rumors",
+    33: "9. Picking Sides",
+    34: "10. Damaging Belongings",
+    35: "Kindness & Justice in Action",
+    36: "United in promise and action.",
+    37: "Six Pillars of Sussex College",
+    38: "Kindness is contagious, and justice starts with us!"
+  };
+function exportPPTX() {
     if (typeof PptxGenJS === 'undefined') {
       alert('PowerPoint generator library is loading. Please try again in a moment.');
       return;
@@ -777,60 +818,145 @@ const Presentation = (() => {
     // Loop through all 38 slides
     for (let i = 1; i <= state.totalSlides; i++) {
       const cue = slideCues[i];
+      const motto = slideMottos[i] || '';
       const slide = pptx.addSlide();
 
-      // Background Gradient Shape
+      // Full original verbatim script preserved in PowerPoint Speaker Notes
+      if (cue && cue.line) {
+        slide.addNotes(cue.speaker + ':\n\n' + cue.line + (cue.tip ? '\n\nStage Direction / Cue: ' + cue.tip : ''));
+      }
+
+      // Background Gradient Card
       slide.addShape(pptx.shapes.RECTANGLE, {
         x: 0, y: 0, w: '100%', h: '100%',
-        fill: { color: 'F0FDF4' },
+        fill: { color: i === 38 ? 'FEF3C7' : (i >= 24 && i <= 34 ? 'F8FAFC' : 'F0FDF4') },
         line: { color: 'E2E8F0', width: 0 }
       });
 
-      // Top Header Bar
+      // Top Header Bar (School & Teacher Credit)
       slide.addShape(pptx.shapes.RECTANGLE, {
-        x: 0.5, y: 0.3, w: 12.3, h: 0.8,
+        x: 0.6, y: 0.35, w: 12.1, h: 0.7,
         fill: { color: 'FFFFFF' },
         line: { color: 'CBD5E1', width: 1 }
       });
 
-      // School & Title Text Box (Editable)
       slide.addText([
         { text: 'SUSSEX COLLEGE  •  GRADE 4 ASSEMBLY  •  ', options: { bold: true, color: '0D2C54', fontSize: 13 } },
         { text: 'Class Teacher: Darshani Gunathilaka', options: { bold: true, color: 'B45309', fontSize: 13 } }
-      ], { x: 0.7, y: 0.35, w: 8.5, h: 0.7 });
+      ], { x: 0.8, y: 0.4, w: 9.0, h: 0.6 });
 
-      // Slide Topic / Speaker Badge
-      slide.addText(cue ? cue.title : 'Slide ' + i, {
-        x: 0.7, y: 1.4, w: 12.0, h: 0.8,
-        fontSize: 26, bold: true, color: '0D2C54'
-      });
-
-      // Main Content Box (Editable Native Text)
       if (i >= 24 && i <= 34) {
-        // Detective Slides: Photo + Heading
+        // Detective Slides: Case Heading + Large Photo (No text clutter)
+        slide.addText(cue ? cue.title : 'Detective Case', {
+          x: 0.8, y: 1.25, w: 11.5, h: 0.65,
+          fontSize: 22, bold: true, color: '0D2C54'
+        });
+
         const photoNum = String(i - 23).padStart(2, '0');
         slide.addImage({
           path: `detective_${photoNum}.jpg`,
-          x: 2.5, y: 2.2, w: 8.3, h: 4.6
+          x: 2.2, y: 2.05, w: 8.9, h: 4.8
+        });
+      } else if (i === 37) {
+        // Pledge Values Constellation (6 Pillars)
+        slide.addText('Our Six Guiding Values', {
+          x: 0.8, y: 1.25, w: 11.5, h: 0.65,
+          fontSize: 24, bold: true, color: '0D2C54', align: 'center'
+        });
+
+        const pillars = [
+          { name: 'KINDNESS', sub: 'Care & Friendship', color: '0284C7' },
+          { name: 'HONESTY', sub: 'Truth & Integrity', color: '16A34A' },
+          { name: 'FAIRNESS', sub: 'Equal for Everyone', color: 'EA580C' },
+          { name: 'RESPECT', sub: 'Listening with Care', color: '7C3AED' },
+          { name: 'COURAGE', sub: 'Stand Up for Right', color: 'E11D48' },
+          { name: 'PROTECT NATURE', sub: 'Love Living Creatures', color: '0D9488' }
+        ];
+
+        pillars.forEach((p, idx) => {
+          const col = idx % 3;
+          const row = Math.floor(idx / 3);
+          const xPos = 1.0 + col * 3.8;
+          const yPos = 2.2 + row * 2.2;
+
+          slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+            x: xPos, y: yPos, w: 3.5, h: 1.9,
+            fill: { color: 'FFFFFF' },
+            line: { color: p.color, width: 2 }
+          });
+
+          slide.addText(p.name, {
+            x: xPos, y: yPos + 0.35, w: 3.5, h: 0.6,
+            fontSize: 18, bold: true, color: p.color, align: 'center'
+          });
+
+          slide.addText(p.sub, {
+            x: xPos, y: yPos + 0.95, w: 3.5, h: 0.5,
+            fontSize: 12, color: '64748B', align: 'center'
+          });
+        });
+      } else if (i === 38) {
+        // Climax Slide: Logo + Callout + Grand Final Message
+        slide.addText('SUSSEX COLLEGE • GRADE 4 FINALE', {
+          x: 0.8, y: 1.4, w: 11.7, h: 0.5,
+          fontSize: 14, bold: true, color: '0D2C54', align: 'center'
+        });
+
+        slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+          x: 1.5, y: 2.2, w: 10.3, h: 1.1,
+          fill: { color: 'FFFFFF' },
+          line: { color: 'F59E0B', width: 2 }
+        });
+
+        slide.addText('“I will choose kindness. I will stand for justice. I will make a difference!”', {
+          x: 1.7, y: 2.35, w: 9.9, h: 0.8,
+          fontSize: 16, bold: true, color: 'B45309', align: 'center'
+        });
+
+        slide.addText('KINDNESS IS CONTAGIOUS,\nAND JUSTICE STARTS WITH US!', {
+          x: 1.0, y: 3.8, w: 11.3, h: 2.2,
+          fontSize: 34, bold: true, color: '0D2C54', align: 'center'
         });
       } else {
-        // Text Card Shape
+        // Visual Presentation Slides: Speaker Pill, Hero Scene Title, and Motto Ribbon
         slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-          x: 0.7, y: 2.2, w: 12.0, h: 4.5,
+          x: 1.2, y: 1.4, w: 10.9, h: 5.2,
           fill: { color: 'FFFFFF' },
           line: { color: 'E2E8F0', width: 2 }
         });
 
-        // Verbatim Speech / Dialogue / Poem text
-        slide.addText(cue ? cue.line.replace(/[“”]/g, '') : '', {
-          x: 1.1, y: 2.5, w: 11.2, h: 3.9,
-          fontSize: 20, color: '1E293B', lineSpacing: 30
+        // Speaker Pill
+        slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+          x: 4.6, y: 1.8, w: 4.1, h: 0.65,
+          fill: { color: '0284C7' },
+          line: { color: '0284C7', width: 0 }
+        });
+        slide.addText(cue ? cue.speaker.toUpperCase() : 'GRADE 4', {
+          x: 4.6, y: 1.85, w: 4.1, h: 0.55,
+          fontSize: 14, bold: true, color: 'FFFFFF', align: 'center'
+        });
+
+        // Scene Title
+        slide.addText(cue ? cue.title : 'Scene ' + i, {
+          x: 1.5, y: 2.8, w: 10.3, h: 1.1,
+          fontSize: 28, bold: true, color: '0D2C54', align: 'center'
+        });
+
+        // Motto Ribbon (3-7 words)
+        slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+          x: 3.2, y: 4.2, w: 6.9, h: 0.9,
+          fill: { color: 'FEF3C7' },
+          line: { color: 'F59E0B', width: 2 }
+        });
+        slide.addText(motto ? `“${motto}”` : '', {
+          x: 3.3, y: 4.35, w: 6.7, h: 0.65,
+          fontSize: 18, bold: true, color: '92400E', align: 'center'
         });
       }
 
       // Slide Footer
       slide.addText(`Slide ${i} of ${state.totalSlides}  |  Sussex College Grade 4 Assembly`, {
-        x: 0.7, y: 7.0, w: 12.0, h: 0.4,
+        x: 0.8, y: 7.05, w: 11.7, h: 0.35,
         fontSize: 11, color: '94A3B8'
       });
     }
@@ -845,9 +971,6 @@ const Presentation = (() => {
       });
   }
 
-  // =========================================================================
-  // PDF EXPORT (High-Quality Vector Print via Window.print)
-  // =========================================================================
   function exportPDF() {
     window.print();
   }

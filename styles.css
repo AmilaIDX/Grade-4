@@ -1,6 +1,7 @@
 /* ==========================================================================
    SIX VOICES, ONE MESSAGE - GRADE 4 ASSEMBLY PRESENTATION
-   Sussex College Master 38-Slide Assembly Production Stylesheet
+   Visual Storybook Cinema Stylesheet (Projector & Auditorium Optimized)
+   Sussex College • Class Teacher: Darshani Gunathilaka
    ========================================================================== */
 
 :root {
@@ -21,14 +22,11 @@
   --courage-coral: #e11d48;
   
   /* Backgrounds & Glassmorphism */
-  --card-bg: rgba(255, 255, 255, 0.94);
+  --card-bg: rgba(255, 255, 255, 0.92);
   --card-border: rgba(255, 255, 255, 0.85);
-  --glass-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12), 0 0 1px 1px rgba(255, 255, 255, 0.9);
+  --glass-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.14), 0 0 1px 1px rgba(255, 255, 255, 0.9);
   
   /* Typography */
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --text-light: #64748b;
   --font-display: 'Baloo 2', 'Nunito', 'Segoe UI', system-ui, sans-serif;
   --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -51,9 +49,9 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #081225;
+  background-color: #060b14;
   font-family: var(--font-body);
-  color: var(--text-main);
+  color: var(--sussex-navy);
   user-select: none;
 }
 
@@ -64,8 +62,8 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at center, #172554 0%, #060b14 100%);
-  padding: 10px;
+  background: radial-gradient(circle at center, #0f172a 0%, #030712 100%);
+  padding: 8px;
 }
 
 .canvas-16-9 {
@@ -77,12 +75,11 @@ html, body {
   position: relative;
   background: linear-gradient(175deg, #e0f2fe 0%, #f0fdf4 55%, #fffbeb 100%);
   border-radius: 20px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transform-origin: center center;
-  transition: transform 0.2s ease-out;
 }
 
 /* Ambient Sky Elements */
@@ -97,20 +94,20 @@ html, body {
 .sunbeam {
   position: absolute;
   top: -20%;
-  width: 300px;
+  width: 320px;
   height: 140%;
-  background: linear-gradient(180deg, rgba(255, 249, 196, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
+  background: linear-gradient(180deg, rgba(255, 249, 196, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
   transform: rotate(-35deg);
   filter: blur(28px);
   animation: sunbeamPulse 8s ease-in-out infinite alternate;
 }
 .sunbeam-1 { left: 15%; animation-delay: 0s; }
-.sunbeam-2 { left: 45%; animation-delay: 2.5s; width: 360px; }
-.sunbeam-3 { left: 75%; animation-delay: 5s; width: 240px; }
+.sunbeam-2 { left: 45%; animation-delay: 2.5s; width: 380px; }
+.sunbeam-3 { left: 75%; animation-delay: 5s; width: 260px; }
 
 @keyframes sunbeamPulse {
-  0% { opacity: 0.35; transform: rotate(-35deg) scaleX(0.9); }
-  100% { opacity: 0.7; transform: rotate(-33deg) scaleX(1.1); }
+  0% { opacity: 0.3; transform: rotate(-35deg) scaleX(0.9); }
+  100% { opacity: 0.65; transform: rotate(-33deg) scaleX(1.1); }
 }
 
 .floating-cloud {
@@ -156,15 +153,16 @@ html, body {
 .presentation-header {
   position: relative;
   z-index: 20;
-  height: 80px;
-  padding: 0 36px;
+  height: 74px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(14px);
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .header-left {
@@ -180,15 +178,11 @@ html, body {
 }
 
 .school-logo-img {
-  height: 48px;
+  height: 44px;
   width: auto;
-  max-width: 52px;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.14));
-  border-radius: 6px;
-  transition: transform 0.25s var(--ease-spring);
 }
-.school-logo-img:hover { transform: scale(1.08); }
 
 .school-text {
   display: flex;
@@ -197,14 +191,14 @@ html, body {
 
 .school-name {
   font-family: var(--font-heading);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: var(--sussex-navy);
 }
 
 .assembly-tag {
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--sussex-blue);
@@ -221,18 +215,17 @@ html, body {
 }
 
 .pill-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: var(--sussex-gold);
-  box-shadow: 0 0 6px var(--sussex-gold);
+  background: var(--sussex-gold);
+  box-shadow: 0 0 8px var(--sussex-gold);
 }
 
 .pill-text {
   font-family: var(--font-heading);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 0.04em;
   color: var(--sussex-navy);
 }
 
@@ -240,80 +233,93 @@ html, body {
   display: flex;
   align-items: center;
   gap: 7px;
-  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-  border: 1.5px solid #fde68a;
-  padding: 5px 12px;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  padding: 4px 12px;
   border-radius: 30px;
-  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.12);
 }
 
 .teacher-badge-icon { font-size: 15px; }
-.teacher-badge-text { display: flex; align-items: baseline; gap: 5px; }
-.teacher-badge-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: #b45309; }
-.teacher-badge-name { font-family: var(--font-heading); font-size: 13px; font-weight: 800; color: #92400e; }
 
-/* Item Quick-Jump Bar */
-.item-quick-nav {
+.teacher-badge-text {
   display: flex;
   align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.teacher-badge-label { color: #92400e; font-weight: 600; }
+.teacher-badge-name { color: #78350f; font-weight: 800; }
+
+.header-center {
+  display: flex;
+  align-items: center;
+}
+
+.item-quick-nav {
+  display: flex;
   gap: 6px;
   background: rgba(241, 245, 249, 0.85);
-  padding: 4px 8px;
-  border-radius: 30px;
-  border: 1px solid rgba(226, 232, 240, 0.85);
+  padding: 4px;
+  border-radius: 40px;
+  border: 1px solid rgba(203, 213, 225, 0.8);
 }
 
 .item-nav-btn {
   background: transparent;
   border: none;
+  padding: 6px 14px;
+  border-radius: 30px;
   font-family: var(--font-heading);
   font-size: 12px;
   font-weight: 700;
-  color: #64748b;
-  padding: 6px 12px;
-  border-radius: 20px;
+  color: #475569;
   cursor: pointer;
-  transition: all 0.2s var(--ease-spring);
+  transition: all 0.2s ease;
 }
 
 .item-nav-btn:hover {
-  color: var(--sussex-blue);
-  background: #ffffff;
+  color: var(--sussex-navy);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .item-nav-btn.active {
-  background: var(--sussex-blue);
+  background: linear-gradient(135deg, var(--sussex-navy), var(--sussex-blue));
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(21, 101, 192, 0.35);
+  box-shadow: 0 3px 10px rgba(13, 44, 84, 0.25);
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .action-pill-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 6px;
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  padding: 6px 12px;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 30px;
   font-family: var(--font-heading);
   font-size: 12px;
   font-weight: 700;
-  color: var(--sussex-navy);
   cursor: pointer;
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: transform 0.2s var(--ease-spring), box-shadow 0.2s ease;
 }
 
 .action-pill-btn:hover {
-  border-color: var(--sussex-blue);
-  color: var(--sussex-blue);
-  background: #f8fafc;
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+#btn-export-pdf {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .btn-svg-icon {
@@ -322,1232 +328,621 @@ html, body {
 }
 
 .icon-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  border: 1.5px solid rgba(226, 232, 240, 0.9);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(203, 213, 225, 0.9);
   background: rgba(255, 255, 255, 0.85);
+  color: #334155;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #475569;
   cursor: pointer;
-  transition: all 0.2s var(--ease-smooth);
+  transition: all 0.2s ease;
+}
+
+.icon-btn .icon {
+  width: 18px;
+  height: 18px;
 }
 
 .icon-btn:hover {
   background: #ffffff;
   color: var(--sussex-blue);
-  border-color: var(--sussex-blue-light);
-  transform: translateY(-2px);
+  transform: scale(1.06);
 }
 
 .icon-btn.active-btn {
-  background: var(--sussex-blue);
+  background: var(--sussex-navy);
   color: #ffffff;
-  border-color: var(--sussex-blue);
 }
 
-.icon-btn svg { width: 18px; height: 18px; }
-
 /* ==========================================================================
-   Slides Viewport & Slide Items
+   Main Slides Viewport
    ========================================================================== */
 .slides-viewport {
-  position: relative;
   flex: 1;
+  position: relative;
   z-index: 5;
-  overflow: hidden;
   width: 100%;
+  height: calc(1080px - 74px - 70px);
+  overflow: hidden;
 }
 
 .slide-item {
   position: absolute;
   inset: 0;
-  padding: 30px 60px 24px 60px;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.5s var(--ease-smooth), transform 0.5s var(--ease-smooth);
+  transform: scale(0.985);
   pointer-events: none;
-  transform: scale(0.97) translateY(16px);
-  transition: opacity 0.5s ease, transform 0.5s var(--ease-smooth), visibility 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .slide-item.active {
   opacity: 1;
   visibility: visible;
+  transform: scale(1);
   pointer-events: auto;
-  transform: scale(1) translateY(0);
-  z-index: 10;
-}
-
-.slide-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: relative;
 }
 
 /* ==========================================================================
-   Common Slide Badges & Meta
+   Visual Story Layout (Cinematic Scene Mode)
    ========================================================================== */
+.visual-story-layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px 60px;
+  overflow: hidden;
+}
+
+.cinematic-header-overlay {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 26px;
+  padding: 12px 40px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  margin-top: 10px;
+  max-width: 1100px;
+  animation: floatHeader 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatHeader {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+.speaker-identity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #ffffff;
+  padding: 4px 16px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.3);
+  margin-bottom: 6px;
+}
+
+.orange-badge { background: linear-gradient(135deg, #ea580c, #c2410c); box-shadow: 0 3px 10px rgba(234, 88, 12, 0.3); }
+.green-badge { background: linear-gradient(135deg, #16a34a, #15803d); box-shadow: 0 3px 10px rgba(22, 163, 74, 0.3); }
+.purple-badge { background: linear-gradient(135deg, #7c3aed, #6d28d9); box-shadow: 0 3px 10px rgba(124, 58, 237, 0.3); }
+.teal-badge { background: linear-gradient(135deg, #0d9488, #0f766e); box-shadow: 0 3px 10px rgba(13, 148, 136, 0.3); }
+.coral-badge { background: linear-gradient(135deg, #e11d48, #be123c); box-shadow: 0 3px 10px rgba(225, 29, 72, 0.3); }
+.gold-badge { background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3); }
+
+.badge-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+.badge-student {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.cinematic-scene-title {
+  font-family: var(--font-display);
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: var(--sussex-navy);
+  line-height: 1.15;
+  margin: 2px 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.grand-climax-text {
+  font-size: 2.8rem;
+  color: #1e3a8a;
+  text-shadow: 0 2px 10px rgba(254, 240, 138, 0.8);
+}
+
+.cinematic-motto-ribbon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1.5px solid #f59e0b;
+  padding: 6px 24px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+}
+
+.ribbon-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: 0.02em;
+}
+
+/* Master Illustrated Canvas */
+.cinematic-art-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cinema-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Title Welcome Slide */
+.title-hero-overlay {
+  padding: 24px 50px;
+  max-width: 950px;
+  margin-top: 30px;
+}
+
 .eyebrow-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1.5px solid rgba(21, 101, 192, 0.25);
-  padding: 6px 16px;
-  border-radius: 40px;
-  font-family: var(--font-heading);
-  font-size: 13px;
+  background: #f1f5f9;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sussex-blue);
+  margin-bottom: 8px;
+}
+
+.hero-cinematic-title {
+  font-family: var(--font-display);
+  font-size: 4.2rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  line-height: 1;
   color: var(--sussex-navy);
-  box-shadow: 0 4px 12px rgba(21, 101, 192, 0.08);
-  margin-bottom: 16px;
-  align-self: flex-start;
+  margin: 6px 0 14px 0;
 }
 
-.pink-badge {
-  background: #fdf2f8;
-  border-color: #fbcfe8;
-  color: #be185d;
+.hero-cinematic-title .title-line-1 {
+  display: block;
+  color: var(--sussex-navy);
 }
 
-.gold-badge {
-  background: #fffbeb;
-  border-color: #fde68a;
-  color: #b45309;
+.hero-cinematic-title .title-line-2 {
+  display: block;
+  background: linear-gradient(135deg, #0284c7, #1565c0, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .teacher-honor-card {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1.5px solid #fde68a;
-  padding: 8px 18px;
-  border-radius: 14px;
-  font-size: 14.5px;
+  margin-top: 10px;
+  font-size: 13px;
   color: #78350f;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.1);
-  align-self: flex-start;
-}
-
-.teacher-honor-card strong { color: #92400e; font-weight: 800; }
-
-.speech-footer-meta {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 10px;
-}
-
-.slide-teacher-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: #64748b;
-  padding: 4px 12px;
-  background: rgba(255, 255, 255, 0.85);
+  background: #fffbeb;
+  padding: 5px 16px;
   border-radius: 20px;
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  border: 1px solid #fde68a;
 }
 
-.slide-teacher-tag strong { color: var(--sussex-navy); font-weight: 700; }
-
-.speaker-cue-pill {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #94a3b8;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-/* ==========================================================================
-   Slide 01: Welcome Title Slide
-   ========================================================================== */
-.title-slide-layout {
-  display: grid;
-  grid-template-columns: 1.05fr 1.15fr;
-  gap: 50px;
-  align-items: center;
-}
-
-.title-text-zone {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero-title {
-  font-family: var(--font-display);
-  font-size: 76px;
-  line-height: 1.05;
-  font-weight: 800;
-  color: var(--sussex-navy);
-  margin-bottom: 18px;
-}
-
-.title-line-1 {
-  display: block;
-  background: linear-gradient(135deg, #0d2c54 0%, #1565c0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.title-line-2 {
-  display: block;
-  background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.title-subtitle-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border-left: 6px solid var(--sussex-gold);
-  border-radius: 12px;
-  padding: 16px 22px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  margin-bottom: 14px;
-}
-
-.subtitle-text {
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: #0369a1;
-  font-style: italic;
-  line-height: 1.35;
-}
-
-.hero-desc {
-  font-size: 16.5px;
-  line-height: 1.6;
-  color: var(--text-muted);
-  margin-bottom: 24px;
-}
-
-.title-actions {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: linear-gradient(135deg, #1565c0 0%, #0284c7 100%);
-  color: #ffffff;
-  border: none;
-  padding: 14px 28px;
-  border-radius: 16px;
-  font-family: var(--font-heading);
-  font-size: 16.5px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
-  transition: all 0.25s var(--ease-spring);
-}
-
-.cta-button:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: linear-gradient(135deg, #0d47a1 0%, #0369a1 100%);
-}
-
-.btn-arrow { width: 18px; height: 18px; }
-
-.key-hint {
-  font-size: 13px;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.kbd-chip {
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-family: monospace;
-  font-size: 12px;
-  font-weight: 700;
-  color: #334155;
-}
-
-.title-artwork-zone {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.illustration-frame {
-  width: 100%;
-  height: 100%;
-  max-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ==========================================================================
-   ITEM 01: Speeches Layout (Slides 02 - 08)
-   ========================================================================== */
-.speech-layout {
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-bottom: 40px;
-}
-
-.speech-header-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 22px;
-}
-
-.speaker-profile-tag {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.speaker-num-chip {
-  background: #e0f2fe;
-  color: #0369a1;
-  padding: 5px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-}
-
-.speaker-name-badge {
-  font-family: var(--font-display);
-  font-size: 38px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-  letter-spacing: -0.01em;
-}
-
-.speech-topic-tag {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  padding: 6px 18px;
-  border-radius: 30px;
-  font-family: var(--font-heading);
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--sussex-blue);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.speech-card-main {
-  background: var(--card-bg);
-  backdrop-filter: blur(14px);
-  border: 2px solid #ffffff;
-  border-left: 8px solid var(--kindness-blue);
-  border-radius: 24px;
-  padding: 40px 48px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.speech-quote-mark {
-  position: absolute;
-  top: 10px;
-  right: 28px;
-  font-family: var(--font-display);
-  font-size: 110px;
-  line-height: 1;
-  color: rgba(2, 132, 199, 0.12);
-  pointer-events: none;
-}
-
-.speech-paragraphs {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.lead-greeting {
-  font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-  line-height: 1.35;
-}
-
-.lead-body {
-  font-size: 26px;
-  line-height: 1.55;
-  color: #334155;
-}
-
-.speech-intro-line {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--sussex-blue);
-}
-
-.speech-paragraphs p {
-  font-size: 25px;
-  line-height: 1.55;
-  color: #1e293b;
-}
-
-.highlight-callout {
-  background: #f0f9ff;
-  border: 1.5px solid #bae6fd;
-  border-radius: 14px;
-  padding: 14px 22px;
-  font-family: var(--font-heading);
-  font-size: 23px !important;
-  font-weight: 700;
-  color: #0369a1 !important;
-}
-
-.speech-thank-you {
-  font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-  margin-top: 8px;
-}
-
-/* Theme color variations for Item 01 */
-.orange-chip { background: #fff7ed; color: #c2410c; }
-.orange-tag { color: var(--fairness-orange); border-color: #fed7aa; }
-.orange-border { border-left-color: var(--fairness-orange); }
-.orange-callout { background: #fff7ed; border-color: #fed7aa; color: #c2410c !important; }
-
-.green-chip { background: #f0fdf4; color: #15803d; }
-.green-tag { color: var(--honesty-green); border-color: #bbf7d0; }
-.green-border { border-left-color: var(--honesty-green); }
-.green-callout { background: #f0fdf4; border-color: #bbf7d0; color: #15803d !important; }
-
-.purple-chip { background: #faf5ff; color: #7e22ce; }
-.purple-tag { color: var(--respect-purple); border-color: #e9d5ff; }
-.purple-border { border-left-color: var(--respect-purple); }
-.purple-callout { background: #faf5ff; border-color: #e9d5ff; color: #7e22ce !important; }
-
-.teal-chip { background: #f0fdfa; color: #0f766e; }
-.teal-tag { color: var(--animals-teal); border-color: #99f6e4; }
-.teal-border { border-left-color: var(--animals-teal); }
-.teal-callout { background: #f0fdfa; border-color: #99f6e4; color: #0f766e !important; }
-
-.coral-chip { background: #fff1f2; color: #be123c; }
-.coral-tag { color: var(--courage-coral); border-color: #fecdd3; }
-.coral-border { border-left-color: var(--courage-coral); }
-.coral-callout { background: #fff1f2; border-color: #fecdd3; color: #be123c !important; }
-
-/* Slide 09: Item 01 United Chorus */
-.chorus-stage-layout {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 40px;
-}
-
-.chorus-header-pill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 24px;
-}
-
-.chorus-badge {
-  background: #fef3c7;
-  color: #b45309;
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 6px 18px;
-  border-radius: 30px;
-  border: 1.5px solid #fde68a;
-}
-
-.chorus-sub {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-.chorus-banner-box {
-  background: #ffffff;
-  border: 3px solid var(--sussex-gold);
-  border-radius: 28px;
-  padding: 44px 60px;
-  box-shadow: 0 20px 50px rgba(245, 158, 11, 0.2);
-  margin-bottom: 30px;
-  max-width: 1400px;
-}
-
-.chorus-grand-text {
-  font-family: var(--font-display);
-  font-size: 58px;
-  font-weight: 800;
-  line-height: 1.15;
-  background: linear-gradient(135deg, #0d2c54 0%, #1565c0 50%, #ea580c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 12px;
-}
-
-.chorus-thank-you {
-  font-family: var(--font-display);
-  font-size: 38px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-}
-
-.speakers-strip {
-  display: flex;
-  gap: 12px;
-}
-
-.speaker-chip {
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-family: var(--font-heading);
-  font-size: 15px;
-  font-weight: 800;
-  background: #ffffff;
-  color: var(--sussex-navy);
-  border: 1.5px solid #e2e8f0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-}
-
-/* ==========================================================================
-   ITEM 02: Group Poem Layout (Slides 10 - 14)
-   ========================================================================== */
-.poem-layout {
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-bottom: 40px;
-}
-
-.poem-header-zone {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 18px;
-}
-
-.poem-main-title {
-  font-family: var(--font-display);
-  font-size: 44px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-}
-
-.poem-stanzas-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  flex: 1;
-}
-
-.poem-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  border: 2px solid #ffffff;
-  border-left: 6px solid #f43f5e;
-  border-radius: 20px;
-  padding: 24px 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
-}
-
-.poem-speaker-badge {
-  font-family: var(--font-heading);
-  font-size: 15px;
-  font-weight: 800;
-  color: #be185d;
-  background: #fdf2f8;
-  padding: 4px 14px;
-  border-radius: 12px;
-  align-self: flex-start;
-  margin-bottom: 10px;
-}
-
-.poem-lines {
-  font-family: var(--font-heading);
-  font-size: 26px;
-  line-height: 1.45;
-  font-weight: 600;
-  color: #1e293b;
-  font-style: italic;
-}
-
-/* Slide 13: Minugi Solo */
-.poem-solo-layout {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 40px;
-}
-
-.poem-solo-card {
-  background: #ffffff;
-  border: 3px solid #f43f5e;
-  border-radius: 28px;
-  padding: 50px 70px;
-  box-shadow: 0 20px 50px rgba(244, 63, 94, 0.18);
-  margin-top: 20px;
-  max-width: 1200px;
-}
-
-.solo-speaker-tag {
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 800;
-  color: #be185d;
-  background: #fdf2f8;
-  padding: 6px 20px;
-  border-radius: 20px;
-  display: inline-block;
-  margin-bottom: 22px;
-}
-
-.solo-poem-lines {
-  font-family: var(--font-heading);
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--sussex-navy);
-  font-style: italic;
-}
-
-/* Slide 14: Poem Chorus */
-.poem-chorus-layout {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 40px;
-}
-
-.poem-chorus-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #fef08a;
-  border: 1.5px solid #fde047;
-  padding: 6px 22px;
-  border-radius: 30px;
-  margin-bottom: 18px;
-}
-
-.chorus-sun-icon { font-size: 20px; }
-.chorus-header-title { font-family: var(--font-heading); font-size: 14px; font-weight: 800; letter-spacing: 0.08em; color: #854d0e; }
-
-.poem-chorus-banner {
-  background: #ffffff;
-  border: 3px solid #f59e0b;
-  border-radius: 28px;
-  padding: 34px 50px;
-  box-shadow: 0 16px 45px rgba(245, 158, 11, 0.16);
-  margin-bottom: 22px;
-  max-width: 1350px;
-}
-
-.chorus-stanza-line {
-  font-family: var(--font-display);
-  font-size: 38px;
-  font-weight: 700;
-  line-height: 1.35;
-  color: var(--sussex-navy);
-}
-
-.chorus-stanza-lead {
-  font-family: var(--font-display);
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1.35;
-  color: #c2410c;
-  margin-top: 6px;
-}
-
-.poem-13-speakers-row {
+/* Cast Group Pills (Poem & Role Play) */
+.cast-group-pills {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
-  max-width: 1200px;
-}
-
-.mini-chip {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid #cbd5e1;
-  padding: 4px 12px;
-  border-radius: 14px;
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 700;
-  color: #334155;
-}
-
-/* ==========================================================================
-   ITEM 03: Role Play Layout (Slides 15 - 23)
-   ========================================================================== */
-.roleplay-title-layout {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 40px;
-}
-
-.roleplay-badge-bar { margin-bottom: 12px; }
-.roleplay-chip {
-  background: #e0f2fe;
-  color: #0369a1;
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 6px 18px;
-  border-radius: 30px;
-}
-
-.roleplay-main-headline {
-  font-family: var(--font-display);
-  font-size: 64px;
-  font-weight: 800;
-  color: var(--sussex-navy);
   margin-bottom: 6px;
 }
 
-.roleplay-sub {
-  font-size: 20px;
-  color: var(--text-muted);
-  font-weight: 600;
-  margin-bottom: 28px;
-}
-
-.roleplay-dialogue-layout {
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-bottom: 40px;
-}
-
-.roleplay-section-tag {
-  display: inline-block;
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  padding: 6px 18px;
+.cast-pill {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #ffffff;
+  padding: 4px 14px;
   border-radius: 20px;
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--sussex-blue);
-  margin-bottom: 16px;
-  align-self: flex-start;
-}
-
-.forest-tag { color: #047857; border-color: #a7f3d0; background: #ecfdf5; }
-
-.dialogue-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  flex: 1;
-  justify-content: center;
-}
-
-.dialogue-stack.stack-2 {
-  gap: 22px;
-}
-
-.dialogue-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  border: 2px solid #ffffff;
-  border-radius: 18px;
-  padding: 16px 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.dialogue-speaker {
-  padding: 6px 16px;
-  border-radius: 12px;
-  font-family: var(--font-heading);
-  font-size: 15px;
-  font-weight: 800;
-  white-space: nowrap;
-  flex-shrink: 0;
-  min-width: 140px;
-  text-align: center;
-}
-
-.dialogue-text {
-  font-size: 22px;
-  line-height: 1.45;
-  color: #1e293b;
-  font-weight: 600;
-}
-
-.narrator-card { max-width: 1100px; padding: 28px 36px; border-left: 8px solid var(--sussex-blue); }
-.narrator-card .dialogue-text { font-size: 26px; }
-.narrator-tag { background: #e0f2fe; color: #0369a1; }
-
-.blue-card { border-left: 6px solid #0284c7; }
-.blue-tag { background: #e0f2fe; color: #0369a1; }
-
-.coral-card { border-left: 6px solid #f43f5e; }
-.coral-tag { background: #ffe4e6; color: #be123c; }
-
-.amber-card { border-left: 6px solid #f59e0b; }
-.amber-tag { background: #fef3c7; color: #b45309; }
-
-.green-card { border-left: 6px solid #16a34a; }
-.green-tag { background: #dcfce7; color: #15803d; }
-.highlight-card { background: #ffffff; box-shadow: 0 10px 30px rgba(22, 163, 74, 0.15); }
-
-.purple-card { border-left: 6px solid #7c3aed; }
-.purple-tag { background: #f3e8ff; color: #6b21a8; }
-
-.teal-card { border-left: 6px solid #0d9488; }
-.teal-card .dialogue-text { font-size: 25px; }
-.teal-tag { background: #ccfbf1; color: #0f766e; }
-
-.forest-card { border-left: 6px solid #059669; }
-.forest-card .dialogue-text { font-size: 25px; }
-.forest-speaker { background: #d1fae5; color: #065f46; }
-
-/* Slide 23: Role Play Ending Chorus */
-.roleplay-chorus-layout {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 40px;
-}
-
-.roleplay-chorus-badge {
-  background: #ecfdf5;
-  border: 1.5px solid #a7f3d0;
-  color: #047857;
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 6px 20px;
-  border-radius: 30px;
-  margin-bottom: 22px;
-}
-
-.chorus-declarations-box {
-  background: #ffffff;
-  border: 3px solid #10b981;
-  border-radius: 28px;
-  padding: 34px 60px;
-  box-shadow: 0 18px 45px rgba(16, 185, 129, 0.15);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 1200px;
-  width: 100%;
-}
-
-.declaration-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  font-family: var(--font-display);
-  font-size: 34px;
+  font-size: 12px;
   font-weight: 700;
-  color: var(--sussex-navy);
+  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.25);
 }
 
-.dec-dot { color: #10b981; }
-
-.highlight-dec {
-  font-size: 42px;
-  font-weight: 800;
-  color: #c2410c;
-  margin-top: 6px;
-  padding-top: 10px;
-  border-top: 2px dashed #e2e8f0;
-}
-.highlight-dec .dec-dot { color: #ea580c; }
-
-/* ==========================================================================
-   ITEM 04: Justice Detectives Layout (Slides 24 - 34)
-   ========================================================================== */
-.detective-layout {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 40px;
-}
-
-.detective-heading {
-  font-family: var(--font-display);
-  font-size: 52px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-  letter-spacing: -0.01em;
-  margin-bottom: 18px;
-}
-
-.detective-photo-frame {
-  width: 100%;
-  max-width: 1060px;
-  height: 520px;
-  background: #ffffff;
-  border: 3px solid #e2e8f0;
-  border-radius: 24px;
-  padding: 10px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.detective-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-/* ==========================================================================
-   ITEM 05: Video Presentation Layout (Slide 35)
-   ========================================================================== */
-.video-slide-layout {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 40px;
-  width: 100%;
-}
-
-.video-header-bar {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
-}
-
-.video-chip {
-  background: #fee2e2;
-  color: #dc2626;
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 5px 16px;
-  border-radius: 20px;
-}
-
-.video-title {
-  font-family: var(--font-display);
-  font-size: 38px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-}
-
-.video-player-container {
-  width: 100%;
-  max-width: 1100px;
-  height: 520px;
-  background: #000000;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-  margin-bottom: 16px;
-}
-
-#assembly-video-iframe {
-  width: 100%;
-  height: 100%;
-}
-
-.video-controls-bar {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.video-external-btn {
+/* Slide 14: All 13 Roster */
+.lead-reciter-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #ef4444;
+  background: #e11d48;
   color: #ffffff;
-  padding: 10px 22px;
-  border-radius: 14px;
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.35);
-  transition: all 0.2s ease;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 6px;
 }
 
-.video-external-btn:hover {
-  background: #dc2626;
-  transform: translateY(-2px);
-}
-
-.video-note-text {
-  font-size: 13.5px;
-  color: var(--text-muted);
-}
-
-/* ==========================================================================
-   ITEM 06: Our Kindness & Justice Pledge (Slides 36 - 38)
-   ========================================================================== */
-.pledge-intro-layout {
-  flex-direction: column;
-  align-items: center;
+.all-thirteen-roster {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
-  padding-bottom: 40px;
+  gap: 8px;
+  max-width: 900px;
+  margin-top: 8px;
 }
 
-.pledge-emblem-zone { margin-bottom: 12px; }
-.pledge-crest-img {
-  height: 90px;
-  width: auto;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
-}
-
-.pledge-hero-title {
-  font-family: var(--font-display);
-  font-size: 64px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-  margin-bottom: 8px;
-}
-
-.pledge-divider-line {
-  width: 140px;
-  height: 4px;
-  background: #ef4444;
-  border-radius: 4px;
-  margin: 0 auto 16px auto;
-}
-
-.pledge-hero-sub {
-  font-size: 22px;
-  color: var(--text-muted);
-  font-weight: 600;
-  margin-bottom: 30px;
-  max-width: 800px;
-}
-
-.pledge-start-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: #ffffff;
-  border: none;
-  padding: 16px 36px;
-  border-radius: 18px;
-  font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: 800;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4);
-  transition: all 0.25s var(--ease-spring);
-}
-.pledge-start-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-}
-
-.pledge-list-layout {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 40px;
-}
-
-.pledge-board-header {
-  text-align: center;
-  margin-bottom: 22px;
-}
-
-.pledge-board-title {
-  font-family: var(--font-display);
-  font-size: 44px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-  letter-spacing: -0.01em;
-}
-
-.pledge-board-divider {
-  width: 120px;
-  height: 4px;
-  background: #ef4444;
-  border-radius: 4px;
-  margin: 6px auto 0 auto;
-}
-
-.pledge-items-list {
+.roster-chip {
   background: #ffffff;
-  border: 2px solid #e2e8f0;
-  border-radius: 24px;
-  padding: 34px 50px;
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  max-width: 1250px;
-  width: 100%;
-}
-
-.compact-list {
-  padding: 22px 45px;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.pledge-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.pledge-star {
-  color: #ef4444;
-  font-size: 20px;
-  flex-shrink: 0;
-}
-
-.pledge-text {
-  font-family: var(--font-heading);
-  font-size: 27px;
-  font-weight: 600;
-  color: #1e293b;
-  line-height: 1.35;
-}
-
-.pledge-finale-layout {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 40px;
-}
-
-.official-callout-box {
-  background: #f8fafc;
-  border-left: 6px solid #0284c7;
-  border-radius: 12px;
-  padding: 16px 28px;
-  margin-bottom: 16px;
-  max-width: 1100px;
-  display: flex;
-  align-items: center;
-}
-
-.official-callout-text {
-  font-family: var(--font-heading);
-  font-size: 26px;
+  border: 1.5px solid #cbd5e1;
+  color: var(--sussex-navy);
+  font-size: 12px;
   font-weight: 700;
-  color: #0369a1;
-  font-style: italic;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.final-assembly-banner {
-  background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
-  border: 3px solid var(--sussex-gold);
-  border-radius: 24px;
-  padding: 20px 36px;
-  margin-bottom: 20px;
-  box-shadow: 0 16px 45px rgba(245, 158, 11, 0.2);
-}
-
-.final-assembly-motto {
-  font-family: var(--font-display);
-  font-size: 46px;
-  font-weight: 800;
-  line-height: 1.15;
+.roster-chip.gold-chip {
+  background: #fef3c7;
+  border-color: #f59e0b;
   color: #b45309;
 }
 
-.finale-actions {
+/* Slide 23: Role Play Chorus Tokens */
+.chorus-values-banner {
   display: flex;
-  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
 }
 
-.celebrate-btn {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+.chorus-token {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
   color: #ffffff;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 16px;
   font-family: var(--font-heading);
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 800;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
-  transition: all 0.25s var(--ease-spring);
-}
-.celebrate-btn:hover { transform: translateY(-2px) scale(1.04); }
-
-.secondary-btn {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1.5px solid #cbd5e1;
-  color: var(--sussex-navy);
-  padding: 12px 24px;
-  border-radius: 16px;
-  font-family: var(--font-heading);
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.secondary-btn:hover {
-  background: #ffffff;
-  border-color: var(--sussex-blue);
-  color: var(--sussex-blue);
+  padding: 5px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
 /* ==========================================================================
-   Bottom Presentation Control Dock
+   ITEM 04: Justice Detectives Layout
    ========================================================================== */
-.presentation-dock {
+.photo-detective-layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 40px;
+}
+
+.detective-photo-cinema-frame {
+  margin-top: 14px;
+  width: 78%;
+  height: 76%;
+  background: #000000;
+  border-radius: 18px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detective-large-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   ITEM 05: Video Presentation Layout
+   ========================================================================== */
+.video-cinema-layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 40px;
+}
+
+.video-header-mini {
+  padding: 8px 30px;
+  margin-top: 4px;
+}
+
+.video-theater-screen {
+  margin-top: 12px;
+  width: 86%;
+  height: 74%;
+  background: #000000;
+  border-radius: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.video-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-action-bar {
+  margin-top: 10px;
+}
+
+.video-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #dc2626;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.video-launch-btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-icon { width: 14px; height: 14px; }
+
+/* ==========================================================================
+   ITEM 06: Pledge Values Constellation (Slide 37)
+   ========================================================================== */
+.values-galaxy-layout {
+  padding-top: 20px;
+}
+
+.values-constellation-grid {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin-top: 24px;
+}
+
+.value-emblem-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+}
+
+.value-emblem-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+}
+
+.emblem-symbol {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.emblem-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.val-kindness .emblem-title { color: #0284c7; }
+.val-honesty .emblem-title { color: #16a34a; }
+.val-fairness .emblem-title { color: #ea580c; }
+.val-respect .emblem-title { color: #7c3aed; }
+.val-courage .emblem-title { color: #e11d48; }
+.val-nature .emblem-title { color: #0d9488; }
+
+.emblem-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   Slide 38: Grand Finale Climax
+   ========================================================================== */
+.finale-climax-layout {
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.finale-crest-zone {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.finale-school-logo {
+  height: 84px;
+  width: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.2));
+  animation: pulseLogo 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulseLogo {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+.finale-school-banner {
+  margin-top: 8px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--sussex-navy);
+}
+
+.finale-callout-card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid #fde68a;
+  padding: 12px 36px;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+  margin-bottom: 16px;
+}
+
+.callout-statement {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #b45309;
+}
+
+.finale-hero-message {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.grand-assembly-motto {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--sussex-navy);
+  text-shadow: 0 4px 18px rgba(255, 255, 255, 0.9);
+}
+
+.grand-assembly-motto .motto-row-1 {
+  display: block;
+  color: #1e3a8a;
+}
+
+.grand-assembly-motto .motto-row-2 {
+  display: block;
+  background: linear-gradient(135deg, #0284c7, #f59e0b, #e11d48);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.teacher-honor-banner {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #475569;
+}
+
+/* ==========================================================================
+   Natural Environmental Animations
+   ========================================================================== */
+.wag-tail {
+  animation: puppyTailWag 0.8s ease-in-out infinite alternate;
+  transform-origin: 0% 50%;
+}
+
+@keyframes puppyTailWag {
+  0% { transform: rotate(-8deg); }
+  100% { transform: rotate(14deg); }
+}
+
+.flutter-butterfly {
+  animation: butterflyFloat 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes butterflyFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(8deg); }
+  100% { transform: translateY(-6px) rotate(-6deg); }
+}
+
+.natural-bird {
+  animation: birdBob 4s ease-in-out infinite alternate;
+}
+
+@keyframes birdBob {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+
+.sway-trees {
+  animation: treeBreeze 8s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes treeBreeze {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(1.2deg); }
+}
+
+/* ==========================================================================
+   Footer Controls Bar
+   ========================================================================== */
+.presentation-footer {
   position: relative;
   z-index: 20;
-  height: 80px;
-  padding: 0 36px;
+  height: 70px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1557,403 +952,381 @@ html, body {
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
 }
 
-.dock-left, .dock-right {
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.slide-indicator {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-heading);
+}
+
+.current-slide {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--sussex-navy);
+}
+
+.divider {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.total-slides {
+  font-size: 14px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.slide-label-badge {
+  background: rgba(13, 44, 84, 0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sussex-navy);
+}
+
+.footer-center {
+  flex: 1;
+  max-width: 600px;
+  padding: 0 24px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(203, 213, 225, 0.6);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 2.6%;
+  background: linear-gradient(90deg, #0284c7, #f59e0b);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.footer-right {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.dock-teacher-pill {
+.nav-control-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  color: var(--sussex-navy);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  padding: 8px 14px;
-  border-radius: 12px;
-  font-size: 12px;
-  color: #475569;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease-spring), box-shadow 0.2s ease;
 }
 
-.dock-teacher-label { font-weight: 600; color: #94a3b8; text-transform: uppercase; font-size: 10.5px; }
-.dock-teacher-name { color: var(--sussex-navy); font-weight: 800; font-family: var(--font-heading); }
-
-.nav-control-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  padding: 9px 18px;
-  border-radius: 14px;
-  font-family: var(--font-heading);
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--sussex-navy);
-  cursor: pointer;
-  transition: all 0.2s var(--ease-smooth);
+.nav-control-btn .icon {
+  width: 20px;
+  height: 20px;
 }
 
 .nav-control-btn:hover {
-  border-color: var(--sussex-blue);
-  color: var(--sussex-blue);
-  transform: translateY(-2px);
+  transform: scale(1.08);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
 }
 
-.primary-nav-btn {
-  background: linear-gradient(135deg, var(--sussex-blue) 0%, #0284c7 100%);
+.pulse-accent {
+  background: linear-gradient(135deg, var(--sussex-navy), var(--sussex-blue));
   color: #ffffff;
-  border: none;
-  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.35);
-}
-.primary-nav-btn:hover {
-  background: linear-gradient(135deg, #0d47a1 0%, #0369a1 100%);
-  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(13, 44, 84, 0.3);
 }
 
-.dock-icon { width: 17px; height: 17px; }
-
-.dock-pill-btn {
-  display: inline-flex;
+.autoplay-pill-btn {
+  display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(241, 245, 249, 0.9);
-  border: 1.5px solid #e2e8f0;
-  padding: 9px 15px;
-  border-radius: 14px;
-  font-family: var(--font-heading);
-  font-size: 13px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 700;
-  color: var(--text-muted);
+  color: #334155;
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.dock-pill-btn:hover, .dock-pill-btn.playing {
-  background: #e0f2fe;
-  color: var(--sussex-blue);
-  border-color: var(--sussex-blue-light);
-}
 
-.dock-center {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex: 1;
-  max-width: 580px;
-  margin: 0 24px;
-}
-
-.slide-counter-box {
-  font-family: var(--font-heading);
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--sussex-navy);
-  white-space: nowrap;
-}
-.current-num { color: var(--sussex-blue); }
-.counter-sep { color: #cbd5e1; margin: 0 2px; }
-.total-num { color: #94a3b8; }
-
-.dock-progress-track {
-  flex: 1;
-  height: 9px;
-  background: rgba(226, 232, 240, 0.9);
-  border-radius: 10px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.dock-progress-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 2.6%;
-  background: linear-gradient(90deg, #1565c0 0%, #0284c7 50%, #f59e0b 100%);
-  border-radius: 10px;
-  transition: width 0.35s var(--ease-smooth);
-}
-
-.current-slide-label {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text-muted);
-  white-space: nowrap;
-  max-width: 220px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.autoplay-pill-btn.playing {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #b45309;
 }
 
 /* ==========================================================================
-   Speaker Notes Drawer
+   Speaker & Rehearsal Notes Drawer
+   Preserves 100% of the verbatim teacher scripts and student lines
    ========================================================================== */
-.speaker-drawer {
+.speaker-notes-drawer {
   position: absolute;
-  top: 80px;
-  right: 24px;
-  width: 440px;
-  max-height: calc(100% - 170px);
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(18px);
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
-  z-index: 50;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  color: #ffffff;
+  border-top: 2px solid #38bdf8;
+  padding: 20px 40px;
+  max-height: 380px;
   overflow-y: auto;
-  transition: transform 0.35s var(--ease-spring), opacity 0.3s ease;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s var(--ease-smooth), opacity 0.3s ease;
 }
 
-.speaker-drawer.hidden {
-  transform: translateX(470px);
+.speaker-notes-drawer.hidden {
+  transform: translateY(100%);
   opacity: 0;
   pointer-events: none;
 }
 
-.drawer-header {
-  padding: 16px 20px;
-  border-bottom: 1.5px solid #f1f5f9;
+.notes-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 12px;
 }
 
-.drawer-badge {
-  font-size: 10.5px;
+.notes-badge {
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--sussex-blue);
-  background: #e0f2fe;
-  padding: 3px 8px;
-  border-radius: 8px;
-  display: inline-block;
-  margin-bottom: 4px;
+  letter-spacing: 0.1em;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 3px 10px;
+  border-radius: 12px;
 }
 
-.drawer-title-box h3 { font-family: var(--font-heading); font-size: 16px; font-weight: 800; color: var(--sussex-navy); }
-.drawer-teacher-tag { font-size: 11.5px; color: #b45309; font-weight: 600; margin-top: 2px; }
-
-.drawer-close-btn {
-  background: #f1f5f9;
-  border: none;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+.notes-heading {
+  font-family: var(--font-heading);
   font-size: 20px;
-  color: #64748b;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-top: 4px;
+}
+
+.notes-close-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 20px;
   cursor: pointer;
 }
 
-.drawer-body { padding: 18px 20px; }
-.cue-slide-topic { font-size: 13px; font-weight: 700; color: var(--text-muted); margin-bottom: 12px; }
+.notes-close-btn:hover { color: #ffffff; }
 
-.cue-speech-card {
-  background: #f8fafc;
-  border-left: 4px solid var(--sussex-blue);
-  border-radius: 12px;
-  padding: 14px;
-  margin-bottom: 14px;
+.notes-tip-box {
+  background: rgba(245, 158, 11, 0.15);
+  border-left: 3px solid #f59e0b;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #fde68a;
+  margin-bottom: 12px;
 }
 
-.cue-label { font-size: 11px; font-weight: 800; text-transform: uppercase; color: #0369a1; margin-bottom: 6px; }
-.cue-text { font-size: 14.5px; line-height: 1.55; color: #334155; font-style: italic; }
-
-.cue-tips-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: #fffbeb;
-  border: 1px solid #fef3c7;
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: #92400e;
+.notes-script-box {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e2e8f0;
 }
-.tip-icon { font-size: 15px; flex-shrink: 0; }
+
+.notes-script-box strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
 
 /* ==========================================================================
-   Slide Overview Modal Grid (G / O)
+   38-Slide Overview Grid Modal
    ========================================================================== */
 .overview-modal {
   position: absolute;
   inset: 0;
-  z-index: 100;
+  z-index: 40;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(20px);
+  padding: 40px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: opacity 0.3s ease;
 }
 
 .overview-modal.hidden {
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
-}
-
-.overview-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.72);
-  backdrop-filter: blur(8px);
-}
-
-.overview-dialog {
-  position: relative;
-  z-index: 10;
-  width: 92%;
-  max-width: 1400px;
-  max-height: 88%;
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 26px 30px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
 }
 
 .overview-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
+  color: #ffffff;
 }
 
-.overview-header h3 { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--sussex-navy); }
-.overview-sub { font-size: 13.5px; font-weight: 700; color: var(--sussex-blue); }
+.overview-header h2 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+}
 
 .overview-close-btn {
-  background: #f1f5f9;
+  background: transparent;
   border: none;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  font-size: 20px;
-  color: #64748b;
+  color: #ffffff;
+  font-size: 26px;
   cursor: pointer;
 }
 
 .overview-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-  overflow-y: auto;
-  padding: 6px;
+  gap: 14px;
 }
 
-.overview-card {
-  background: #f8fafc;
-  border: 2px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 10px 12px;
+.overview-tile {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  transition: all 0.2s var(--ease-spring);
-  text-align: left;
 }
 
-.overview-card:hover {
-  border-color: var(--sussex-blue);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+.overview-tile:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.overview-card.active-card {
-  border-color: var(--sussex-blue);
-  background: #f0f9ff;
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+.overview-tile.active-tile {
+  outline: 3px solid var(--sussex-gold);
 }
 
-.card-num-badge {
-  font-size: 10px;
+.tile-num {
+  font-size: 11px;
   font-weight: 800;
-  color: #ffffff;
-  background: var(--sussex-navy);
-  padding: 2px 6px;
-  border-radius: 6px;
-  align-self: flex-start;
+  color: #64748b;
+  margin-bottom: 4px;
 }
 
-.card-label {
+.tile-title {
   font-family: var(--font-heading);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--sussex-navy);
-  line-height: 1.3;
 }
 
-.card-subtext {
+.tile-speaker {
   font-size: 11px;
-  color: var(--text-muted);
-}
-
-/* Confetti Canvas */
-.confetti-canvas {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 99;
+  color: #0284c7;
+  margin-top: 4px;
 }
 
 /* ==========================================================================
-   PRINT STYLESHEET (High-Quality PDF Export via Window.print)
+   Full-Screen Presentation Projector Mode
+   Auto-hides header and footer when idle or in fullscreen
+   ========================================================================== */
+:fullscreen .presentation-header,
+:-webkit-full-screen .presentation-header {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+:fullscreen .presentation-header:hover,
+:-webkit-full-screen .presentation-header:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:fullscreen .presentation-footer,
+:-webkit-full-screen .presentation-footer {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+:fullscreen .presentation-footer:hover,
+:-webkit-full-screen .presentation-footer:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Print / PDF Export Rules (Strict 1920x1080 16:9 Vector Pages)
    ========================================================================== */
 @media print {
   @page {
     size: 1920px 1080px landscape;
     margin: 0;
   }
-
+  
   html, body {
     width: 1920px !important;
-    height: auto !important;
+    height: 1080px !important;
     overflow: visible !important;
     background: #ffffff !important;
   }
 
   #presentation-viewport {
     padding: 0 !important;
-    background: none !important;
+    background: transparent !important;
+    width: 1920px !important;
+    height: auto !important;
+    display: block !important;
   }
 
   .canvas-16-9 {
     width: 1920px !important;
     height: 1080px !important;
-    transform: none !important;
-    box-shadow: none !important;
     border-radius: 0 !important;
-    border: none !important;
+    box-shadow: none !important;
   }
 
-  .presentation-header, 
-  .presentation-dock, 
-  .speaker-drawer, 
-  .overview-modal,
-  .ambient-sky,
-  .confetti-canvas {
+  .presentation-header,
+  .presentation-footer,
+  .speaker-notes-drawer,
+  .overview-modal {
     display: none !important;
   }
 
   .slides-viewport {
-    position: static !important;
-    overflow: visible !important;
-    height: auto !important;
+    height: 1080px !important;
   }
 
   .slide-item {
-    position: relative !important;
-    inset: auto !important;
-    width: 1920px !important;
-    height: 1080px !important;
-    page-break-after: always !important;
-    break-after: page !important;
+    page-break-after: always;
+    page-break-inside: avoid;
     opacity: 1 !important;
     visibility: visible !important;
-    transform: none !important;
-    display: flex !important;
-    padding: 50px 80px !important;
-    box-sizing: border-box !important;
+    position: relative !important;
+    width: 1920px !important;
+    height: 1080px !important;
+    display: block !important;
   }
 }
