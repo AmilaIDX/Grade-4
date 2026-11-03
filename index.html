@@ -4,17 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIX VOICES, ONE MESSAGE | Sussex College Grade 4 Assembly</title>
-  <meta name="description" content="Official Grade 4 Assembly Presentation for Sussex College: Kindness Is Contagious, Justice Starts with Us.">
+  <meta name="description" content="Official Grade 4 Assembly Presentation for Sussex College: Kindness Is Contagious, Justice Starts with Us. Guided with love by Class Teacher Darshani Gunathilaka.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css">
   
-  <!-- GSAP Animation Engine -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <!-- PptxGenJS for Editable PowerPoint Export -->
   <script src="pptxgen.bundle.js"></script>
 </head>
@@ -22,17 +20,6 @@
   <!-- Presentation Viewport & Scaler -->
   <div id="presentation-viewport">
     <div id="presentation-canvas" class="canvas-16-9">
-      
-      <!-- Ambient Sky & Subtle Atmospheric Lighting -->
-      <div class="ambient-sky" aria-hidden="true">
-        <div class="sunbeam sunbeam-1"></div>
-        <div class="sunbeam sunbeam-2"></div>
-        <div class="sunbeam sunbeam-3"></div>
-        <div class="floating-cloud cloud-1"></div>
-        <div class="floating-cloud cloud-2"></div>
-        <div class="floating-cloud cloud-3"></div>
-        <div class="ambient-particles" id="ambient-particles"></div>
-      </div>
 
       <!-- Header Navigation Bar -->
       <header class="presentation-header" id="presentation-header" role="banner">
@@ -70,7 +57,7 @@
         </div>
 
         <div class="header-right">
-          <button id="btn-export-pptx" class="action-pill-btn" onclick="Presentation.exportPPTX()" title="Export Visual PowerPoint (.pptx)">
+          <button id="btn-export-pptx" class="action-pill-btn" onclick="Presentation.exportPPTX()" title="Export PowerPoint with Embedded Scripts (.pptx)">
             <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
               <polyline points="14 2 14 8 20 8"></polyline>
@@ -79,21 +66,13 @@
             </svg>
             <span>Export PPTX</span>
           </button>
-          <button id="btn-export-pdf" class="action-pill-btn" onclick="Presentation.exportPDF()" title="Export High-Quality PDF">
-            <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 6 2 18 2 18 9"></polyline>
-              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-              <rect x="6" y="14" width="12" height="8"></rect>
-            </svg>
-            <span>PDF</span>
-          </button>
-          <button id="btn-sound" class="icon-btn" title="Toggle Sound FX (M)" aria-label="Toggle Sound">
+          <button id="btn-sound" class="icon-btn" onclick="Presentation.toggleSound()" title="Toggle Sound FX (M)" aria-label="Toggle Sound">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
               <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
             </svg>
           </button>
-          <button id="btn-notes" class="icon-btn" title="Speaker & Rehearsal Notes (N)" aria-label="Toggle Speaker Notes">
+          <button id="btn-notes" class="icon-btn" onclick="Presentation.toggleNotes()" title="Speaker & Rehearsal Notes (N)" aria-label="Toggle Speaker Notes">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
               <polyline points="14 2 14 8 20 8"></polyline>
@@ -101,7 +80,7 @@
               <line x1="16" y1="17" x2="8" y2="17"></line>
             </svg>
           </button>
-          <button id="btn-overview" class="icon-btn" title="Slide Overview Grid (O)" aria-label="Overview Grid">
+          <button id="btn-overview" class="icon-btn" onclick="Presentation.toggleOverview()" title="Slide Overview Grid (O)" aria-label="Overview Grid">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="3" width="7" height="7"></rect>
               <rect x="14" y="3" width="7" height="7"></rect>
@@ -109,7 +88,7 @@
               <rect x="3" y="14" width="7" height="7"></rect>
             </svg>
           </button>
-          <button id="btn-fullscreen" class="icon-btn" title="Toggle Projector Fullscreen (F)" aria-label="Toggle Fullscreen">
+          <button id="btn-fullscreen" class="icon-btn" onclick="Presentation.toggleFullscreen()" title="Toggle Projector Fullscreen (F)" aria-label="Toggle Fullscreen">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
             </svg>
@@ -124,35 +103,40 @@
              SLIDE 01: Assembly Welcome & Title
              =================================================================== -->
         <section class="slide-item active" id="slide-1" data-slide="1" data-item="1" data-title="Assembly Welcome" data-speaker="Assembly Welcome">
-          <div class="slide-content storybook-hero-layout">
-            <div class="hero-left-art">
-              <div class="cinematic-art-frame" id="art-slide-1"></div>
-            </div>
-            <div class="hero-right-card">
-              <div class="eyebrow-pill">
-                <span class="sparkle-icon">✨</span>
-                <span>SUSSEX COLLEGE • GRADE 4 SCHOOL ASSEMBLY</span>
+          <div class="cinematic-backdrop">
+            <img src="scene_welcome.jpg" alt="Sussex College Grand Entrance" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="hero-center-glass-card">
+              <div class="hero-crest-halo">
+                <img src="original-logo-1.webp" alt="Sussex College Crest" class="hero-school-logo">
               </div>
-              <h1 class="master-title">
-                <span class="title-top">SIX VOICES</span>
-                <span class="title-bottom">ONE MESSAGE</span>
+              <div class="hero-eyebrow-pill">
+                <span>SUSSEX COLLEGE • GRADE 4 ASSEMBLY</span>
+              </div>
+              <h1 class="hero-grand-title">
+                SIX VOICES, <span class="gold-accent">ONE MESSAGE</span>
               </h1>
-              <div class="theme-banner">
-                <p class="theme-text">“Kindness Is Contagious, Justice Starts with Us.”</p>
+              <div class="hero-theme-quote">
+                “Kindness Is Contagious, Justice Starts with Us.”
               </div>
-              <div class="teacher-credit-tag">
-                <span class="teacher-icon">👩‍🏫</span>
-                <span>Guided with Love by Class Teacher: <strong>Darshani Gunathilaka</strong></span>
-              </div>
-              <p class="welcome-blurb">
-                Welcome respected Principal Sir, Vice Principal Madam, teachers, students, and guests to our Grade 4 assembly celebration of kindness, fairness, and justice.
+              <p class="hero-teacher-credit">
+                Guided with Love by Class Teacher: <strong>Darshani Gunathilaka</strong>
               </p>
-              <div class="hero-action-row">
-                <button class="begin-btn" onclick="Presentation.nextSlide()">
-                  <span>Begin Assembly</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="arrow-svg"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
-                <span class="key-hint">Press <kbd>Space</kbd> or <kbd>→</kbd></span>
+              <button class="hero-start-btn" onclick="Presentation.nextSlide()">
+                <span>Begin Assembly</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
             </div>
           </div>
@@ -162,201 +146,220 @@
              ITEM 01: SIX VOICES, ONE MESSAGE (SLIDES 02 to 08)
              =================================================================== -->
 
-        <!-- SLIDE 02: Voice 1 – Abhippra (Kindness Makes a Difference) -->
+        <!-- SLIDE 02: Voice 1 – Abhippra -->
         <section class="slide-item" id="slide-2" data-slide="2" data-item="1" data-title="Abhippra: Kindness Makes a Difference" data-speaker="Abhippra">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-2"></div>
+          <div class="cinematic-backdrop">
+            <img src="prototype_kindness.jpg" alt="Helping a fallen friend on the playground" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill blue-theme">
+                <span class="pill-item-tag">ITEM 01 • SPEAKER 01</span>
+                <span class="pill-speaker-name">ABHIPPRA</span>
+              </div>
+              <h2 class="cinematic-headline">Kindness Makes a Difference</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Kindness is contagious!”</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill blue-pill">
-                <span class="speaker-num">ITEM 01 • SPEAKER 01</span>
-                <span class="speaker-name">ABHIPPRA</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Kindness Makes a Difference</h2>
-              <div class="quote-callout blue-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">Kindness is contagious! When we are kind to others, they may be kind to others too.</p>
-              </div>
-              <div class="values-bullets">
-                <div class="val-bullet"><span class="bullet-icon">✨</span><span>A simple smile or helping hand can make someone happy.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🤝</span><span>Never laugh at others or hurt someone's feelings.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🌱</span><span>Even a small act of kindness makes a big difference.</span></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Spoken Script & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 03: Voice 2 – Peshala (Fairness for Everyone) -->
+        <!-- SLIDE 03: Voice 2 – Peshala -->
         <section class="slide-item" id="slide-3" data-slide="3" data-item="1" data-title="Peshala: Fairness for Everyone" data-speaker="Peshala">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-3"></div>
+          <div class="cinematic-backdrop">
+            <img src="scene_fairness.jpg" alt="Fairness on the sports court" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill orange-theme">
+                <span class="pill-item-tag">ITEM 01 • SPEAKER 02</span>
+                <span class="pill-speaker-name">PESHALA</span>
+              </div>
+              <h2 class="cinematic-headline">Fairness for Everyone</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Justice begins when we treat others fairly.”</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill orange-pill">
-                <span class="speaker-num">ITEM 01 • SPEAKER 02</span>
-                <span class="speaker-name">PESHALA</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Fairness for Everyone</h2>
-              <div class="quote-callout orange-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">Justice begins when we treat others fairly. Every child deserves respect, friendship, and love.</p>
-              </div>
-              <div class="values-bullets">
-                <div class="val-bullet"><span class="bullet-icon">⚖️</span><span>Treat everyone equally and give everyone a fair chance.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🏀</span><span>Never leave anyone out of a game because they are different.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🌟</span><span>Share, take turns, and welcome all classmates into the circle.</span></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Spoken Script & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 04: Voice 3 – Thiseni (Honesty Is the Best Policy) -->
+        <!-- SLIDE 04: Voice 3 – Thiseni -->
         <section class="slide-item" id="slide-4" data-slide="4" data-item="1" data-title="Thiseni: Honesty Is the Best Policy" data-speaker="Thiseni">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-4"></div>
+          <div class="cinematic-backdrop">
+            <img src="scene_honesty.jpg" alt="Honesty and truth in the classroom" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill green-theme">
+                <span class="pill-item-tag">ITEM 01 • SPEAKER 03</span>
+                <span class="pill-speaker-name">THISENI</span>
+              </div>
+              <h2 class="cinematic-headline">Honesty Is the Best Policy</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Always do the right thing.”</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill green-pill">
-                <span class="speaker-num">ITEM 01 • SPEAKER 03</span>
-                <span class="speaker-name">THISENI</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Honesty Is the Best Policy</h2>
-              <div class="quote-callout green-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">Honesty means telling the truth and doing the right thing, even when nobody is watching.</p>
-              </div>
-              <div class="values-bullets">
-                <div class="val-bullet"><span class="bullet-icon">💎</span><span>Telling the truth builds lifelong trust with friends and teachers.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🛡️</span><span>When we make a mistake, admit it and try to correct it.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">✨</span><span>Be truthful in our words and actions every single day.</span></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Spoken Script & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 05: Voice 4 – Bhanuja (Respect Makes Us Better) -->
+        <!-- SLIDE 05: Voice 4 – Bhanuja -->
         <section class="slide-item" id="slide-5" data-slide="5" data-item="1" data-title="Bhanuja: Respect Makes Us Better" data-speaker="Bhanuja">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-5"></div>
+          <div class="cinematic-backdrop">
+            <img src="scene_respect.jpg" alt="Respect and attentive listening in library" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill purple-theme">
+                <span class="pill-item-tag">ITEM 01 • SPEAKER 04</span>
+                <span class="pill-speaker-name">BHANUJA</span>
+              </div>
+              <h2 class="cinematic-headline">Respect Makes Us Better</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Respect makes us better.”</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill purple-pill">
-                <span class="speaker-num">ITEM 01 • SPEAKER 04</span>
-                <span class="speaker-name">BHANUJA</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Respect Makes Us Better</h2>
-              <div class="quote-callout purple-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">When we show respect, we help make our school and our world a happier place.</p>
-              </div>
-              <div class="values-bullets">
-                <div class="val-bullet"><span class="bullet-icon">👂</span><span>Listen attentively when others speak and use polite words.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🤝</span><span>Accept that people may have different, beautiful ideas.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🏫</span><span>Respect parents, teachers, friends, and living creatures.</span></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Spoken Script & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 06: Voice 5 – Yenuth (Be Kind to Animals — Master Sanctuary Scene) -->
+        <!-- SLIDE 06: Voice 5 – Yenuth -->
         <section class="slide-item" id="slide-6" data-slide="6" data-item="1" data-title="Yenuth: Be Kind to Animals" data-speaker="Yenuth">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-6"></div>
+          <div class="cinematic-backdrop">
+            <img src="prototype_animals.jpg" alt="Living animal sanctuary with gentle child" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill teal-theme">
+                <span class="pill-item-tag">ITEM 01 • SPEAKER 05</span>
+                <span class="pill-speaker-name">YENUTH</span>
+              </div>
+              <h2 class="cinematic-headline">Be Kind to Animals</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Animals deserve kindness too.”</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill teal-pill">
-                <span class="speaker-num">ITEM 01 • SPEAKER 05</span>
-                <span class="speaker-name">YENUTH</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Be Kind to Animals</h2>
-              <div class="quote-callout teal-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">Animals are living beings, and they need our love and care. Animals deserve kindness too!</p>
-              </div>
-              <div class="values-bullets">
-                <div class="val-bullet"><span class="bullet-icon">🐾</span><span>Animals cannot tell us when they are hungry or frightened.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">💧</span><span>Offer food and clean water, and never tease or hurt them.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🕊️</span><span>Always ask an adult to help an animal in danger.</span></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Spoken Script & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 07: Voice 6 – Dewli (Stand Up for What Is Right) -->
+        <!-- SLIDE 07: Voice 6 – Dewli -->
         <section class="slide-item" id="slide-7" data-slide="7" data-item="1" data-title="Dewli: Stand Up for What Is Right" data-speaker="Dewli">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-7"></div>
+          <div class="cinematic-backdrop">
+            <img src="scene_courage.jpg" alt="Quiet courage and standing for justice" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill coral-theme">
+                <span class="pill-item-tag">ITEM 01 • SPEAKER 06</span>
+                <span class="pill-speaker-name">DEWLI</span>
+              </div>
+              <h2 class="cinematic-headline">Stand Up for What Is Right</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Stand up for justice!”</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill coral-pill">
-                <span class="speaker-num">ITEM 01 • SPEAKER 06</span>
-                <span class="speaker-name">DEWLI</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Stand Up for What Is Right</h2>
-              <div class="quote-callout coral-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">Being brave does not mean fighting. It means choosing to do the right thing, even when it is difficult.</p>
-              </div>
-              <div class="values-bullets">
-                <div class="val-bullet"><span class="bullet-icon">🛡️</span><span>When we see someone left out or bullied, never laugh or walk away.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🤝</span><span>Support them with kind words and ask a trusted adult for help.</span></div>
-                <div class="val-bullet"><span class="bullet-icon">🌟</span><span>Let us be brave, be fair, and stand up for justice!</span></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Spoken Script & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 08: Item 01 Climax – All Six Children United -->
-        <section class="slide-item" id="slide-8" data-slide="8" data-item="1" data-title="All Six Children: Final Message" data-speaker="All Six Children Together">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-8"></div>
+        <!-- SLIDE 08: All Six Children Climax -->
+        <section class="slide-item" id="slide-8" data-slide="8" data-item="1" data-title="All Six Children: Final Collective Message" data-speaker="All Six Children Together">
+          <div class="cinematic-backdrop">
+            <img src="scene_six_voices.jpg" alt="All six children united in chorus" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill gold-theme">
+                <span class="pill-item-tag">ITEM 01 • UNITED FINALE</span>
+                <span class="pill-speaker-name">ALL SIX VOICES</span>
+              </div>
+              <h2 class="cinematic-headline">Six Voices, One Message</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Kindness is contagious, and justice starts with us!”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">Abhippra</span>
+                <span class="cast-chip">Peshala</span>
+                <span class="cast-chip">Thiseni</span>
+                <span class="cast-chip">Bhanuja</span>
+                <span class="cast-chip">Yenuth</span>
+                <span class="cast-chip">Dewli</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill gold-pill">
-                <span class="speaker-num">ITEM 01 • FINALE</span>
-                <span class="speaker-name">ALL SIX VOICES UNITED</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Six Voices, One Message</h2>
-              <div class="quote-callout gold-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase-large">Kindness is contagious, and justice starts with us!</p>
-              </div>
-              <div class="speakers-six-tags">
-                <span class="mini-tag">Abhippra</span>
-                <span class="mini-tag">Peshala</span>
-                <span class="mini-tag">Thiseni</span>
-                <span class="mini-tag">Bhanuja</span>
-                <span class="mini-tag">Yenuth</span>
-                <span class="mini-tag">Dewli</span>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Spoken Script & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
@@ -365,289 +368,335 @@
              ITEM 02: A LITTLE KINDNESS GOES A LONG WAY (SLIDES 09 to 12)
              =================================================================== -->
 
-        <!-- SLIDE 09: Poem Stanza 1 – Kindness & Care (Sanuthi, Dihas, Nethan, Omin) -->
-        <section class="slide-item" id="slide-9" data-slide="9" data-item="2" data-title="Poem: A Little Smile & Care" data-speaker="Sanuthi, Dihas, Nethan, Omin">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-9"></div>
+        <!-- SLIDE 09: Poem Stanza 1 -->
+        <section class="slide-item" id="slide-9" data-slide="9" data-item="2" data-title="Poem: Stanza 1 – Smile & Care" data-speaker="Sanuthi, Dihas, Nethan, Omin">
+          <div class="cinematic-backdrop">
+            <img src="scene_poem_1.jpg" alt="Sunny garden with flowers and helping hand" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill blue-theme">
+                <span class="pill-item-tag">ITEM 02 • GROUP POEM • STANZA 1</span>
+                <span class="pill-speaker-name">4 SPEAKERS</span>
+              </div>
+              <h2 class="cinematic-headline">A Little Kindness Goes a Long Way</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“A gentle smile, a helping hand.”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">1. Sanuthi</span>
+                <span class="cast-chip">2. Dihas</span>
+                <span class="cast-chip">3. Nethan</span>
+                <span class="cast-chip">4. Omin</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill blue-pill">
-                <span class="speaker-num">ITEM 02 • STANZA 1</span>
-                <span class="speaker-name">SANUTHI • DIHAS • NETHAN • OMIN</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">A Little Smile, A Helping Hand</h2>
-              <div class="quote-callout blue-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">A little smile, a little care, can bring such joy for all to share. A helping hand, a word that's kind, leaves sadness far behind!</p>
-              </div>
-              <div class="cast-roster-row">
-                <div class="cast-badge"><span class="badge-num">1</span><span>Sanuthi</span></div>
-                <div class="cast-badge"><span class="badge-num">2</span><span>Dihas</span></div>
-                <div class="cast-badge"><span class="badge-num">3</span><span>Nethan</span></div>
-                <div class="cast-badge"><span class="badge-num">4</span><span>Omin</span></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Verse Lines & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 10: Poem Stanza 2 – Respect & Caring for Animals (Inuli, Shenuki, Jeson, Praneeth) -->
-        <section class="slide-item" id="slide-10" data-slide="10" data-item="2" data-title="Poem: Respect & Animals" data-speaker="Inuli, Shenuki, Jeson, Praneeth">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-10"></div>
+        <!-- SLIDE 10: Poem Stanza 2 -->
+        <section class="slide-item" id="slide-10" data-slide="10" data-item="2" data-title="Poem: Stanza 2 – Respect & Animals" data-speaker="Inuli, Shenuki, Jeson, Praneeth">
+          <div class="cinematic-backdrop">
+            <img src="scene_poem_2.jpg" alt="Flowering tree, comforting friend, gentle deer" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill teal-theme">
+                <span class="pill-item-tag">ITEM 02 • GROUP POEM • STANZA 2</span>
+                <span class="pill-speaker-name">4 SPEAKERS</span>
+              </div>
+              <h2 class="cinematic-headline">Respect & Gentle Care</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Speak with care, protect animals.”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">5. Inuli</span>
+                <span class="cast-chip">6. Shenuki</span>
+                <span class="cast-chip">7. Jeson</span>
+                <span class="cast-chip">8. Praneeth</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill teal-pill">
-                <span class="speaker-num">ITEM 02 • STANZA 2</span>
-                <span class="speaker-name">INULI • SHENUKI • JESON • PRANEETH</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Speak with Care, Protect Animals</h2>
-              <div class="quote-callout teal-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">Respect your friends in all you do. Be gentle to animals everywhere; they need our love and thoughtful care!</p>
-              </div>
-              <div class="cast-roster-row">
-                <div class="cast-badge"><span class="badge-num">5</span><span>Inuli</span></div>
-                <div class="cast-badge"><span class="badge-num">6</span><span>Shenuki</span></div>
-                <div class="cast-badge"><span class="badge-num">7</span><span>Jeson</span></div>
-                <div class="cast-badge"><span class="badge-num">8</span><span>Praneeth</span></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Verse Lines & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 11: Poem Stanza 3 – Courage, Justice & Forests (Dasindu, Noveena, Kenula, Sara) -->
-        <section class="slide-item" id="slide-11" data-slide="11" data-item="2" data-title="Poem: Courage & Right" data-speaker="Dasindu, Noveena, Kenula, Sara">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-11"></div>
+        <!-- SLIDE 11: Poem Stanza 3 -->
+        <section class="slide-item" id="slide-11" data-slide="11" data-item="2" data-title="Poem: Stanza 3 – Courage, Justice & Forests" data-speaker="Dasindu, Noveena, Kenula, Sara">
+          <div class="cinematic-backdrop">
+            <img src="scene_poem_3.jpg" alt="Emerald forest ridge with wildlife and soaring birds" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill green-theme">
+                <span class="pill-item-tag">ITEM 02 • GROUP POEM • STANZA 3</span>
+                <span class="pill-speaker-name">4 SPEAKERS</span>
+              </div>
+              <h2 class="cinematic-headline">Courage, Justice & Living Forests</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Stand for justice, brave and true.”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">9. Dasindu</span>
+                <span class="cast-chip">10. Noveena</span>
+                <span class="cast-chip">11. Kenula</span>
+                <span class="cast-chip">12. Sara</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill green-pill">
-                <span class="speaker-num">ITEM 02 • STANZA 3</span>
-                <span class="speaker-name">DASINDU • NOVEENA • KENULA • SARA</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Stand for Justice, Brave and True</h2>
-              <div class="quote-callout green-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">Their homes are forests, their skies are wide. Stand up for justice, be brave and true, the world will shine because of you!</p>
-              </div>
-              <div class="cast-roster-row">
-                <div class="cast-badge"><span class="badge-num">9</span><span>Dasindu</span></div>
-                <div class="cast-badge"><span class="badge-num">10</span><span>Noveena</span></div>
-                <div class="cast-badge"><span class="badge-num">11</span><span>Kenula</span></div>
-                <div class="cast-badge"><span class="badge-num">12</span><span>Sara</span></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Verse Lines & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 12: Poem Finale – Minugi Solo & All 13 Children Chorus -->
-        <section class="slide-item" id="slide-12" data-slide="12" data-item="2" data-title="Poem: Final Chorus" data-speaker="Minugi & All 13 Children">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-12"></div>
+        <!-- SLIDE 12: Poem Finale -->
+        <section class="slide-item" id="slide-12" data-slide="12" data-item="2" data-title="Poem: Finale – Minugi Solo & Full Chorus" data-speaker="Lead: Minugi & All 13 Children">
+          <div class="cinematic-backdrop">
+            <img src="scene_poem_finale.jpg" alt="All 13 children singing together with golden lanterns" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill gold-theme">
+                <span class="pill-item-tag">ITEM 02 • POEM GRAND CHORUS</span>
+                <span class="pill-speaker-name">MINUGI & ALL 13 VOICES</span>
+              </div>
+              <h2 class="cinematic-headline">Let Love & Justice Lead the Way!</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“A little kindness goes a long way!”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">Solo: 13. Minugi</span>
+                <span class="cast-chip">All 13 Performers Together</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill coral-pill">
-                <span class="speaker-num">ITEM 02 • GRAND FINALE</span>
-                <span class="speaker-name">LEAD: MINUGI & ALL 13 CHILDREN</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">A Little Kindness Goes a Long Way!</h2>
-              <div class="quote-callout gold-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">A little kindness goes a long way! Let love and justice lead the way! Be kind to people, protect animals too, the world is brighter because of you!</p>
-              </div>
-              <div class="thirteen-chips-grid">
-                <span>Sanuthi</span><span>Dihas</span><span>Nethan</span><span>Omin</span>
-                <span>Inuli</span><span>Shenuki</span><span>Jeson</span><span>Praneeth</span>
-                <span>Dasindu</span><span>Noveena</span><span>Kenula</span><span>Sara</span>
-                <span class="lead-chip">Minugi</span>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Verse Lines & Stage Cues</span>
-              </button>
             </div>
           </div>
         </section>
 
         <!-- ===================================================================
-             ITEM 03: ROLE PLAY - IF ONLY SOMEONE HAD SPOKEN (SLIDES 13 to 15)
+             ITEM 03: IF ONLY SOMEONE HAD SPOKEN (SLIDES 13 to 15)
              =================================================================== -->
 
         <!-- SLIDE 13: Role Play Part 1 – The Playground -->
-        <section class="slide-item" id="slide-13" data-slide="13" data-item="3" data-title="Role Play: The Playground" data-speaker="Playground Cast">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-13"></div>
+        <section class="slide-item" id="slide-13" data-slide="13" data-item="3" data-title="Role Play: Part 1 – The Playground" data-speaker="Playground Cast">
+          <div class="cinematic-backdrop">
+            <img src="scene_roleplay_playground.jpg" alt="Playground recess inclusion scene" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill orange-theme">
+                <span class="pill-item-tag">ITEM 03 • ROLE PLAY • PART 1</span>
+                <span class="pill-speaker-name">THE PLAYGROUND</span>
+              </div>
+              <h2 class="cinematic-headline">If Only Someone Had Spoken</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Everyone deserves a chance to play.”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">Evodi (Narrator)</span>
+                <span class="cast-chip">Nethuli</span>
+                <span class="cast-chip">Liyansa</span>
+                <span class="cast-chip">Liyara</span>
+                <span class="cast-chip">Osheera</span>
+                <span class="cast-chip">Sehansa</span>
+                <span class="cast-chip">Gevin</span>
+                <span class="cast-chip">Lisari</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill blue-pill">
-                <span class="speaker-num">ITEM 03 • PART 1</span>
-                <span class="speaker-name">THE PLAYGROUND CAST</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">If Only Someone Had Spoken</h2>
-              <div class="quote-callout blue-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">When someone is left out, speak up! It takes courage to stand for a friend, but friendship unites us all.</p>
-              </div>
-              <div class="roleplay-actors-row">
-                <span class="actor-tag">Evodi (Narrator)</span>
-                <span class="actor-tag">Nethuli</span>
-                <span class="actor-tag">Liyansa</span>
-                <span class="actor-tag">Liyara</span>
-                <span class="actor-tag">Osheera</span>
-                <span class="actor-tag">Sehansa</span>
-                <span class="actor-tag">Gevin</span>
-                <span class="actor-tag">Lisari</span>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Dialogue & Stage Directions</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 14: Role Play Part 2 – Speaking for the Voiceless (Minindee strictly preserved) -->
-        <section class="slide-item" id="slide-14" data-slide="14" data-item="3" data-title="Role Play: Speaking for the Voiceless" data-speaker="Nature Cast (Minindee)">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-14"></div>
+        <!-- SLIDE 14: Role Play Part 2 – Speaking for the Voiceless -->
+        <section class="slide-item" id="slide-14" data-slide="14" data-item="3" data-title="Role Play: Part 2 – Speaking for the Voiceless" data-speaker="Minindee & Company">
+          <div class="cinematic-backdrop">
+            <img src="scene_roleplay_voiceless.jpg" alt="Courtyard garden sheltering living beings" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill teal-theme">
+                <span class="pill-item-tag">ITEM 03 • ROLE PLAY • PART 2</span>
+                <span class="pill-speaker-name">SPEAKING FOR THE VOICELESS</span>
+              </div>
+              <h2 class="cinematic-headline">Guardians of Nature & Animals</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Justice belongs to all living creatures.”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">Minindee</span>
+                <span class="cast-chip">Senhas</span>
+                <span class="cast-chip">Sethmika</span>
+                <span class="cast-chip">Sasen</span>
+                <span class="cast-chip">Evodi (Narrator)</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill teal-pill">
-                <span class="speaker-num">ITEM 03 • PART 2</span>
-                <span class="speaker-name">SPEAKING FOR THE VOICELESS</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Guardians of Nature & Animals</h2>
-              <div class="quote-callout teal-quote">
-                <span class="quote-symbol">“</span>
-                <p class="quote-phrase">We have voices, but animals do not. Shouldn’t we use our voices to protect them? They deserve freedom under this beautiful sky.</p>
-              </div>
-              <div class="roleplay-actors-row">
-                <span class="actor-tag">Dehami</span>
-                <span class="actor-tag">Shaini</span>
-                <span class="actor-tag">Nethuki</span>
-                <span class="actor-tag">Yeshitha</span>
-                <span class="actor-tag star-tag">Minindee</span>
-                <span class="actor-tag">Sinadhi</span>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Dialogue & Stage Directions</span>
-              </button>
             </div>
           </div>
         </section>
 
         <!-- SLIDE 15: Role Play Part 3 – The Train of Justice Chorus -->
-        <section class="slide-item" id="slide-15" data-slide="15" data-item="3" data-title="Role Play: Train of Justice" data-speaker="Role Play Company">
-          <div class="slide-content split-storybook-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-15"></div>
+        <section class="slide-item" id="slide-15" data-slide="15" data-item="3" data-title="Role Play: Part 3 – The Train of Justice Chorus" data-speaker="Role Play Company">
+          <div class="cinematic-backdrop">
+            <img src="scene_roleplay_train.jpg" alt="Procession banner march across school green" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill coral-theme">
+                <span class="pill-item-tag">ITEM 03 • ROLE PLAY • FINALE</span>
+                <span class="pill-speaker-name">THE TRAIN OF JUSTICE</span>
+              </div>
+              <h2 class="cinematic-headline">All Aboard the Train of Justice!</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Choo Choo! Justice starts with us!”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">All Role Play Company Together</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill gold-pill">
-                <span class="speaker-num">ITEM 03 • GRAND FINALE</span>
-                <span class="speaker-name">THE TRAIN OF JUSTICE</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">“Choo Choo! Stand up for justice!”</h2>
-              <div class="chorus-badges-stack">
-                <div class="chorus-badge"><span>❤️</span><strong>Choose Kindness!</strong></div>
-                <div class="chorus-badge"><span>📢</span><strong>Speak Up for Others!</strong></div>
-                <div class="chorus-badge"><span>🛡️</span><strong>Stand for What Is Right!</strong></div>
-                <div class="chorus-badge"><span>🐾</span><strong>Be Gentle with Animals!</strong></div>
-                <div class="chorus-badge"><span>🤝</span><strong>Never Stay Silent!</strong></div>
-                <div class="chorus-badge"><span>⚖️</span><strong>Justice Starts with Us!</strong></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full Chorus Script & Stage Directions</span>
-              </button>
             </div>
           </div>
         </section>
 
         <!-- ===================================================================
-             ITEM 04: JUSTICE DETECTIVES (SLIDES 16 & 17)
-             Authentic PDF Photographs in Museum-Grade Frames
+             ITEM 04: JUSTICE DETECTIVES (SLIDES 16 to 17)
              =================================================================== -->
 
-        <!-- SLIDE 16: Justice Detectives – Cases 1 to 5 -->
-        <section class="slide-item" id="slide-16" data-slide="16" data-item="4" data-title="Justice Detectives: Cases 1–5" data-speaker="Justice Detectives">
-          <div class="slide-content detectives-gallery-layout">
-            <div class="gallery-header-bar">
-              <div class="speaker-pill purple-pill">
-                <span class="speaker-num">ITEM 04 • PART 1</span>
-                <span class="speaker-name">JUSTICE DETECTIVES</span>
+        <!-- SLIDE 16: Justice Detectives Cases 1–5 -->
+        <section class="slide-item" id="slide-16" data-slide="16" data-item="4" data-title="Justice Detectives: Everyday Fairness (Cases 1–5)" data-speaker="Justice Detectives">
+          <div class="cinematic-backdrop">
+            <img src="scene_detective_1.jpg" alt="Detective desk with magnifying glass and notebook" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill indigo-theme">
+                <span class="pill-item-tag">ITEM 04 • JUSTICE DETECTIVES</span>
+                <span class="pill-speaker-name">PART 01</span>
               </div>
-              <h2 class="gallery-title">School Life Case Studies (Cases 1–5)</h2>
-              <p class="gallery-sub">Authentic situations analyzed by Grade 4 detectives to find fair, kind solutions.</p>
+              <h2 class="cinematic-headline">Everyday Fairness (Cases 01–05)</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Fairness in every single action.”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">Case 1: Blamed Without Proof</span>
+                <span class="cast-chip">Case 2: Rules for Everyone</span>
+                <span class="cast-chip">Case 3: Left Out</span>
+                <span class="cast-chip">Case 4: Taking Without Asking</span>
+                <span class="cast-chip">Case 5: Unfair Sharing</span>
+              </div>
             </div>
-            <div class="detectives-cards-grid">
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_02.jpg" alt="Case 1"></div>
-                <div class="case-meta"><span class="case-badge">Case 01</span><h4>Blamed Without Proof</h4></div>
-              </div>
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_03.jpg" alt="Case 2"></div>
-                <div class="case-meta"><span class="case-badge">Case 02</span><h4>Rules Are for Everyone</h4></div>
-              </div>
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_04.jpg" alt="Case 3"></div>
-                <div class="case-meta"><span class="case-badge">Case 03</span><h4>Left Out of the Game</h4></div>
-              </div>
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_05.jpg" alt="Case 4"></div>
-                <div class="case-meta"><span class="case-badge">Case 04</span><h4>Taking Without Asking</h4></div>
-              </div>
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_06.jpg" alt="Case 5"></div>
-                <div class="case-meta"><span class="case-badge">Case 05</span><h4>Unfair Sharing</h4></div>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 17: Justice Detectives – Cases 6 to 10 -->
-        <section class="slide-item" id="slide-17" data-slide="17" data-item="4" data-title="Justice Detectives: Cases 6–10" data-speaker="Justice Detectives">
-          <div class="slide-content detectives-gallery-layout">
-            <div class="gallery-header-bar">
-              <div class="speaker-pill purple-pill">
-                <span class="speaker-num">ITEM 04 • PART 2</span>
-                <span class="speaker-name">JUSTICE DETECTIVES</span>
+        <!-- SLIDE 17: Justice Detectives Cases 6–10 -->
+        <section class="slide-item" id="slide-17" data-slide="17" data-item="4" data-title="Justice Detectives: Honesty & Respect (Cases 6–10)" data-speaker="Justice Detectives">
+          <div class="cinematic-backdrop">
+            <img src="scene_detective_2.jpg" alt="Junior detectives discovering clues down library aisle" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill indigo-theme">
+                <span class="pill-item-tag">ITEM 04 • JUSTICE DETECTIVES</span>
+                <span class="pill-speaker-name">PART 02</span>
               </div>
-              <h2 class="gallery-title">School Life Case Studies (Cases 6–10)</h2>
-              <p class="gallery-sub">Learning honesty, responsibility, and respect in our daily actions.</p>
+              <h2 class="cinematic-headline">Honesty & Responsibility (Cases 06–10)</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Truth, care, and standing up for others.”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">Case 6: Line Cutting</span>
+                <span class="cast-chip">Case 7: Cleanliness</span>
+                <span class="cast-chip">Case 8: Whispering Rumors</span>
+                <span class="cast-chip">Case 9: Fairness</span>
+                <span class="cast-chip">Case 10: Respecting Belongings</span>
+              </div>
             </div>
-            <div class="detectives-cards-grid">
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_07.jpg" alt="Case 6"></div>
-                <div class="case-meta"><span class="case-badge">Case 06</span><h4>Cutting in Line</h4></div>
-              </div>
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_08.jpg" alt="Case 7"></div>
-                <div class="case-meta"><span class="case-badge">Case 07</span><h4>Making a Mess</h4></div>
-              </div>
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_09.jpg" alt="Case 8"></div>
-                <div class="case-meta"><span class="case-badge">Case 08</span><h4>Whispering Rumors</h4></div>
-              </div>
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_10.jpg" alt="Case 9"></div>
-                <div class="case-meta"><span class="case-badge">Case 09</span><h4>Picking Sides</h4></div>
-              </div>
-              <div class="detective-case-card">
-                <div class="case-img-box"><img src="detective_11.jpg" alt="Case 10"></div>
-                <div class="case-meta"><span class="case-badge">Case 10</span><h4>Damaging Belongings</h4></div>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
             </div>
           </div>
@@ -656,161 +705,204 @@
         <!-- ===================================================================
              ITEM 05: VIDEO PRESENTATION (SLIDE 18)
              =================================================================== -->
-        <section class="slide-item" id="slide-18" data-slide="18" data-item="5" data-title="Video Presentation" data-speaker="Video Feature">
-          <div class="slide-content video-theater-layout">
-            <div class="theater-header-bar">
-              <div class="speaker-pill coral-pill">
-                <span class="speaker-num">ITEM 05</span>
-                <span class="speaker-name">CINEMATIC VIDEO FEATURE</span>
+
+        <!-- SLIDE 18: Video Presentation -->
+        <section class="slide-item" id="slide-18" data-slide="18" data-item="5" data-title="Video: Kindness & Justice in Action" data-speaker="Video Presentation">
+          <div class="cinematic-backdrop">
+            <img src="scene_video_theater.jpg" alt="Grand auditorium theater with projector glow" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill purple-theme">
+                <span class="pill-item-tag">ITEM 05 • SPECIAL FEATURE</span>
+                <span class="pill-speaker-name">VIDEO PRESENTATION</span>
               </div>
-              <h2 class="theater-title">Kindness & Justice in Action</h2>
+              <h2 class="cinematic-headline">Kindness & Justice in Action</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Real-World Stories of Courage & Compassion”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">Auditorium Projector Feature</span>
+              </div>
             </div>
-            <div class="video-theater-screen">
-              <iframe 
-                src="https://www.youtube.com/embed/NIsGkTuO1vk?rel=0&modestbranding=1" 
-                title="Kindness & Justice Video" 
-                class="video-iframe" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-              </iframe>
-            </div>
-            <div class="video-control-row">
-              <a href="https://youtu.be/NIsGkTuO1vk?si=8z-cAPLTzUFqU443" target="_blank" rel="noopener noreferrer" class="external-video-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="play-svg"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                <span>Open in External Tab / Player</span>
-              </a>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
+              </div>
             </div>
           </div>
         </section>
 
         <!-- ===================================================================
-             ITEM 06: OUR KINDNESS & JUSTICE PLEDGE (SLIDES 19 & 20)
+             ITEM 06: OUR KINDNESS & JUSTICE PLEDGE (SLIDES 19 to 20)
              =================================================================== -->
 
-        <!-- SLIDE 19: The 9 Promises & 6 Core Values Constellation -->
-        <section class="slide-item" id="slide-19" data-slide="19" data-item="6" data-title="Our Kindness & Justice Pledge" data-speaker="All Students Hand on Heart">
-          <div class="slide-content split-storybook-layout pledge-constellation-layout">
-            <div class="split-art-side">
-              <div class="storybook-art-box" id="art-slide-19"></div>
+        <!-- SLIDE 19: The Nine Sacred Promises -->
+        <section class="slide-item" id="slide-19" data-slide="19" data-item="6" data-title="Our Kindness & Justice Pledge: Nine Promises" data-speaker="All Students Hand on Heart">
+          <div class="cinematic-backdrop">
+            <img src="scene_pledge_pillars.jpg" alt="Students hand on heart taking sacred pledge" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <div class="top-title-card">
+              <div class="speaker-badge-pill gold-theme">
+                <span class="pill-item-tag">ITEM 06 • SACRED ASSEMBLY PLEDGE</span>
+                <span class="pill-speaker-name">NINE PROMISES</span>
+              </div>
+              <h2 class="cinematic-headline">Our Kindness & Justice Pledge</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Hand on heart, standing for justice.”</span>
+              </div>
+              <div class="cast-chip-row">
+                <span class="cast-chip">1. Kindness</span>
+                <span class="cast-chip">2. Fairness</span>
+                <span class="cast-chip">3. Honesty</span>
+                <span class="cast-chip">4. Respect</span>
+                <span class="cast-chip">5. Listening</span>
+                <span class="cast-chip">6. Animal Care</span>
+                <span class="cast-chip">7. Courage</span>
+                <span class="cast-chip">8. Cleanliness</span>
+                <span class="cast-chip">9. School Pride</span>
+              </div>
             </div>
-            <div class="split-text-side">
-              <div class="speaker-pill gold-pill">
-                <span class="speaker-num">ITEM 06 • SACRED PROMISE</span>
-                <span class="speaker-name">ALL STUDENTS HAND ON HEART</span>
+
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
               </div>
-              <h2 class="scene-heading">Our Guiding Values</h2>
-              <div class="values-hex-grid">
-                <div class="hex-card"><span class="hex-icon">❤️</span><h4>KINDNESS</h4><p>Care & Friendship</p></div>
-                <div class="hex-card"><span class="hex-icon">✨</span><h4>HONESTY</h4><p>Truth & Integrity</p></div>
-                <div class="hex-card"><span class="hex-icon">⚖️</span><h4>FAIRNESS</h4><p>Equal for All</p></div>
-                <div class="hex-card"><span class="hex-icon">🤝</span><h4>RESPECT</h4><p>Listen with Care</p></div>
-                <div class="hex-card"><span class="hex-icon">🛡️</span><h4>COURAGE</h4><p>Stand for Right</p></div>
-                <div class="hex-card"><span class="hex-icon">🌿</span><h4>PROTECT NATURE</h4><p>Love All Creatures</p></div>
-              </div>
-              <button class="drawer-trigger-btn" onclick="Presentation.toggleNotes(true)">
-                <span>📖 View Full 9 Pledge Promises</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <!-- SLIDE 20: Grand Assembly Finale & Climax -->
-        <section class="slide-item" id="slide-20" data-slide="20" data-item="6" data-title="Grand Assembly Finale" data-speaker="All Students Together">
-          <div class="slide-content finale-master-layout">
-            <div class="finale-crest-zone">
-              <img src="original-logo-1.webp" alt="Sussex College Crest" class="finale-crest-img">
-              <h3 class="finale-school-title">SUSSEX COLLEGE • GRADE 4 ASSEMBLY</h3>
+        <!-- SLIDE 20: Grand Assembly Finale -->
+        <section class="slide-item" id="slide-20" data-slide="20" data-item="6" data-title="Grand Assembly Finale: Collective Climax" data-speaker="All Students Together">
+          <div class="cinematic-backdrop">
+            <img src="prototype_pledge.jpg" alt="Children united at sunrise overlooking Sussex College" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="pledge-overlay-center">
+            <div class="pledge-crest-halo">
+              <img src="original-logo-1.webp" alt="Sussex College Crest" class="pledge-school-logo">
             </div>
-            <div class="finale-statement-card">
-              <p class="statement-line">“I will choose kindness. I will stand for justice. I will make a difference!”</p>
-            </div>
-            <div class="grand-assembly-motto-box">
-              <h1 class="grand-motto-text">
-                <span class="row-1">KINDNESS IS CONTAGIOUS,</span>
-                <span class="row-2">AND JUSTICE STARTS WITH US!</span>
+
+            <div class="pledge-hero-glass-card">
+              <div class="pledge-sub-pill">
+                <span>OUR SACRED ASSEMBLY PROMISE</span>
+              </div>
+              
+              <div class="official-callout-quote">
+                “I will choose kindness. I will stand for justice. I will make a difference!”
+              </div>
+
+              <h1 class="grand-assembly-motto-hero">
+                <span class="motto-row-top">KINDNESS IS CONTAGIOUS,</span>
+                <span class="motto-row-bottom">AND JUSTICE STARTS WITH US!</span>
               </h1>
+
+              <div class="pledge-teacher-stamp">
+                <span>Guided with Love by Class Teacher: <strong>Darshani Gunathilaka</strong></span>
+              </div>
             </div>
-            <div class="finale-teacher-banner">
-              <span>Guided with Love by Class Teacher: <strong>Darshani Gunathilaka</strong></span>
-            </div>
-            <div class="finale-background-art" id="art-slide-20"></div>
           </div>
         </section>
 
       </main>
 
-      <!-- Bottom Floating Controls -->
+      <!-- Footer HUD Controls & Progress -->
       <footer class="presentation-footer" id="presentation-footer" role="contentinfo">
         <div class="footer-left">
-          <div class="slide-indicator">
-            <span class="current-slide" id="current-slide-num">01</span>
-            <span class="divider">/</span>
-            <span class="total-slides" id="total-slide-num">20</span>
+          <button id="btn-prev" class="hud-nav-btn" onclick="Presentation.prevSlide()" title="Previous Slide (← or Backspace)" aria-label="Previous Slide">
+            <svg class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button id="btn-next" class="hud-nav-btn" onclick="Presentation.nextSlide()" title="Next Slide (→ or Space)" aria-label="Next Slide">
+            <svg class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          <div class="slide-counter">
+            <span id="current-slide-num">1</span>
+            <span class="counter-sep">/</span>
+            <span id="total-slide-num">20</span>
           </div>
-          <div class="slide-label-badge" id="slide-label-badge">Assembly Welcome</div>
         </div>
 
         <div class="footer-center">
-          <div class="progress-track" aria-hidden="true">
+          <div class="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="20" aria-valuenow="1">
             <div class="progress-fill" id="progress-fill"></div>
           </div>
         </div>
 
         <div class="footer-right">
-          <button id="btn-prev" class="nav-control-btn" title="Previous Slide (← / PgUp)" aria-label="Previous Slide">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-          <button id="btn-autoplay" class="autoplay-pill-btn" title="Auto-Play Presentation (A)" aria-label="Auto-Play">
-            <span id="autoplay-icon">▶</span>
-            <span id="autoplay-text">Auto-Play</span>
-          </button>
-          <button id="btn-next" class="nav-control-btn pulse-accent" title="Next Slide (→ / Space / PgDn)" aria-label="Next Slide">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
+          <span class="slide-badge-title" id="slide-label-badge">Assembly Welcome</span>
+          <span class="keyboard-shortcut-hint">
+            <kbd>Space</kbd> / <kbd>→</kbd> Next • <kbd>N</kbd> Notes • <kbd>F</kbd> Fullscreen
+          </span>
         </div>
       </footer>
 
-      <!-- Bottom Rehearsal & Speaker Notes Drawer (Toggled by 'N') -->
-      <aside class="speaker-notes-drawer hidden" id="speaker-drawer" role="complementary" aria-label="Speaker Notes and Stage Cues">
-        <div class="notes-header">
-          <div class="notes-title-group">
-            <span class="notes-badge">LIVE REHEARSAL & SCRIPT PANEL</span>
-            <h3 class="notes-heading" id="notes-speaker-name">Speaker Name</h3>
+      <!-- Live Rehearsal & Speaker Notes Drawer (Key: N) -->
+      <aside class="speaker-notes-drawer" id="speaker-notes-drawer" aria-label="Speaker Notes Drawer">
+        <div class="drawer-header">
+          <div class="drawer-title-group">
+            <span class="drawer-header-icon">📖</span>
+            <div>
+              <div class="drawer-heading">Teacher Rehearsal Notes</div>
+              <div class="drawer-sub">Complete Verbatim Scripts & Stage Directions</div>
+            </div>
           </div>
-          <div class="notes-actions">
-            <button class="notes-close-btn" onclick="Presentation.toggleNotes(false)" title="Close Panel (N)">✕</button>
+          <button class="drawer-close-btn" onclick="Presentation.toggleNotes(false)" title="Close Drawer (N or Esc)">✕</button>
+        </div>
+
+        <div class="drawer-body">
+          <div class="notes-speaker-chip" id="notes-speaker-chip">Assembly Welcome</div>
+          <h3 class="notes-slide-title" id="notes-slide-title">Assembly Welcome & Opening</h3>
+
+          <div class="notes-speech-box">
+            <div class="notes-section-label">Original Spoken Script</div>
+            <div class="notes-script-text" id="notes-script-text">
+              “Good morning respected Principal Sir, Vice Principal Madam, teachers, students, and guests. Welcome to the Grade 4 Assembly: Six Voices, One Message!”
+            </div>
+          </div>
+
+          <div class="notes-tip-box">
+            <span class="tip-bulb">💡</span>
+            <div class="tip-content">
+              <span class="tip-label">Stage Direction & Projector Tip</span>
+              <p id="notes-tip-text">Stand tall, smile warmly at the audience, and speak clearly into the microphone.</p>
+            </div>
           </div>
         </div>
-        <div class="notes-body">
-          <div class="notes-tip-box" id="notes-tip-box">
-            <strong>Stage Direction:</strong> <span id="notes-tip-text">Speak clearly and warmly into the microphone.</span>
-          </div>
-          <div class="notes-script-box">
-            <strong>Verbatim Live Script:</strong>
-            <p id="notes-script-text">The full original script appears here.</p>
-          </div>
+
+        <div class="drawer-footer">
+          <span>Class Teacher: <strong>Darshani Gunathilaka</strong></span>
+          <span>Sussex College Grade 4</span>
         </div>
       </aside>
 
-      <!-- 20-Slide Overview Grid Modal (Toggled by 'O') -->
-      <div class="overview-modal hidden" id="overview-modal" role="dialog" aria-modal="true" aria-label="Slide Overview Grid">
+      <!-- Slide Overview Grid Modal (Key: O) -->
+      <div class="overview-modal" id="overview-modal" aria-label="Slide Overview Modal">
         <div class="overview-header">
-          <h2>Assembly Slide Overview (20 Master Slides)</h2>
-          <button class="overview-close-btn" onclick="Presentation.toggleOverview(false)" title="Close Overview (O)">✕</button>
+          <h2 class="overview-title">All 20 Assembly Slides</h2>
+          <button class="overview-close-btn" onclick="Presentation.toggleOverview(false)" title="Close Overview (O or Esc)">✕</button>
         </div>
         <div class="overview-grid" id="overview-grid">
-          <!-- Dynamically populated by Presentation.js -->
+          <!-- Populated dynamically by presentation.js -->
         </div>
       </div>
 
     </div>
   </div>
 
-  <script src="illustrations.js"></script>
   <script src="presentation.js"></script>
 </body>
 </html>

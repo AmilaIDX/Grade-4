@@ -2,6 +2,7 @@
  * SIX VOICES, ONE MESSAGE - Sussex College Grade 4 Assembly Presentation
  * Master Presentation Engine & Editable PPTX Export
  * 20 Master Slides Following the Exact Assembly Order
+ * Class Teacher: Darshani Gunathilaka
  */
 
 const Presentation = (() => {
@@ -118,42 +119,42 @@ const Presentation = (() => {
       title: "Role Play: Part 1 – The Playground",
       speaker: "The Playground Cast",
       item: 3,
-      line: "“Evodi (Narrator): One morning during the school interval, a group of children were playing together. Their classmate, Nethuli, wanted to join them. But the others refused to let her play.\nNethuli: Can I play with you?\nLiyansa: No, our team is already full.\nLiyara: Yes, go find someone else to play with.\nOsheera: Why are you being so mean?\nSehansa: Yes, why can't she play?\nGevin: Because we made the rules, and we say she can't!\nLisari: But that’s not fair! Everyone deserves a chance to play!\nEvodi: That day, no one stood up for Nethuli. If only someone had spoken, things might have been different.”",
+      line: "“Evodi (Narrator): One morning during the school interval, a group of children were playing together. Their classmate, Nethuli, wanted to join them. But the others refused to let her play.\n\nNethuli: Can I play with you?\nLiyansa: No, our team is already full.\nLiyara: Yes, go find someone else to play with.\nOsheera: Why are you being so mean?\nSehansa: Yes, why can't she play?\nGevin: Because we made the rules, and we say she can't!\nLisari: But that’s not fair! Everyone deserves a chance to play!\nEvodi: That day, no one stood up for Nethuli. If only someone had spoken, things might have been different.”",
       tip: "Expressive acting: show the hurt of exclusion, then the bravery of speaking up."
     },
     14: {
       title: "Role Play: Part 2 – Speaking for the Voiceless",
-      speaker: "Nature Cast (Minindee)",
+      speaker: "Speaking for the Voiceless Cast",
       item: 3,
-      line: "“Dehami: Look at that bird on the branch. It sings so sweetly, yet so many people ignore it.\nShaini: And the stray dog by the gate—it looked hungry and scared.\nNethuki: People often forget that animals have feelings too.\nYeshitha: They feel hunger, pain, and fear, just like us.\nMinindee: We have voices, but they don't. So, shouldn't we use our voices to protect them?\nSinadhi: Yes! They too deserve to live under the same sky, breathe the same air, and enjoy the freedom of this beautiful world.\nEvodi: Justice is not just for humans. It belongs to all living creatures.”",
+      line: "“Evodi (Narrator): In another part of the school garden, a little kitten had wandered onto the grass, and some birds were resting near the water fountain.\n\nSenhas: Look at that kitten! Let’s throw some stones to scare it!\nSethmika: Yes! Let’s chase the birds away too!\nSasen: Wait, don’t do that! You might hurt them!\nSenhas: Why do you care? They are just animals!\nMinindee: No! Animals feel pain just like we do. They cannot speak for themselves, so we must speak for them.\nSethmika: But they don’t go to school. Why should we care?\nMinindee: Because kindness is not just for our friends. It is for every living thing!\nEvodi: Justice is not just for humans. It belongs to all living creatures.”",
       tip: "Minindee speaks with heartfelt moral conviction for animals and nature."
     },
     15: {
       title: "Role Play: Part 3 – The Train of Justice Chorus",
       speaker: "Role Play Company",
       item: 3,
-      line: "“All: Choo, choo, chugga, chugga, whoosh! All aboard the train of justice!\nAll (Together):\n• Choose kindness!\n• Speak up!\n• Stand for what is right!\n• Be gentle with animals!\n• Never stay silent when someone needs help!\n• Justice starts with us!”",
+      line: "“All: Choo, choo, chugga, chugga, whoosh! All aboard the train of justice!\n\nAll (Together):\n• Choose kindness!\n• Speak up!\n• Stand for what is right!\n• Be gentle with animals!\n• Never stay silent when someone needs help!\n• Justice starts with us!”",
       tip: "Dynamic rhythmic train chant. Energy and enthusiasm!"
     },
     16: {
       title: "Justice Detectives: Case Studies (Cases 1–5)",
       speaker: "Justice Detectives",
       item: 4,
-      line: "“JUSTICE DETECTIVES CASE STUDIES (Part 1):\nCase 01: Blamed Without Proof\nCase 02: Rules Are for Everyone\nCase 03: Left Out of the Game\nCase 04: Taking Without Asking\nCase 05: Unfair Sharing”",
+      line: "“JUSTICE DETECTIVES CASE STUDIES (Part 1):\n• Case 01: Blamed Without Proof — Never blame others without the facts.\n• Case 02: Rules Are for Everyone — Follow classroom rules fairly.\n• Case 03: Left Out of the Game — Include every classmate.\n• Case 04: Taking Without Asking — Always ask for permission.\n• Case 05: Unfair Sharing — Share materials and turns equally.”",
       tip: "Present each case clearly, inviting students to reflect on fairness."
     },
     17: {
       title: "Justice Detectives: Case Studies (Cases 6–10)",
       speaker: "Justice Detectives",
       item: 4,
-      line: "“JUSTICE DETECTIVES CASE STUDIES (Part 2):\nCase 06: Cutting in Line\nCase 07: Making a Mess\nCase 08: Whispering Rumors\nCase 09: Picking Sides\nCase 10: Damaging Belongings”",
+      line: "“JUSTICE DETECTIVES CASE STUDIES (Part 2):\n• Case 06: Cutting in Line — Wait patiently for your turn.\n• Case 07: Making a Mess — Clean up and respect school grounds.\n• Case 08: Whispering Rumors — Speak only what is truthful and kind.\n• Case 09: Picking Sides — Stand for what is right, not just popular.\n• Case 10: Damaging Belongings — Treat school property with care.”",
       tip: "Highlight responsibility, truth, and honesty in everyday school life."
     },
     18: {
       title: "Video Presentation: Kindness & Justice in Action",
       speaker: "Video Feature",
       item: 5,
-      line: "“Grade 4 Assembly Video Feature: Inspiring real-world examples of kindness, empathy, animal rescue, and standing up for justice.”",
+      line: "“Grade 4 Assembly Video Feature: Inspiring real-world examples of kindness, empathy, animal rescue, and standing up for justice in our community.”",
       tip: "Ensure auditorium projector audio is unmuted and clear."
     },
     19: {
@@ -188,10 +189,10 @@ const Presentation = (() => {
     13: "If only someone had spoken.",
     14: "Guardians of nature and animals.",
     15: "Choo Choo! Stand up for justice!",
-    16: "Justice Detectives (Cases 1–5)",
-    17: "Justice Detectives (Cases 6–10)",
+    16: "Everyday Fairness (Cases 01–05)",
+    17: "Honesty & Responsibility (Cases 06–10)",
     18: "Kindness & Justice in Action",
-    19: "Six Pillars of Sussex College",
+    19: "Hand on Heart, Standing for Justice",
     20: "Kindness is contagious, and justice starts with us!"
   };
 
@@ -218,15 +219,13 @@ const Presentation = (() => {
       progressFill: document.getElementById('progress-fill'),
       btnPrev: document.getElementById('btn-prev'),
       btnNext: document.getElementById('btn-next'),
-      btnAutoplay: document.getElementById('btn-autoplay'),
-      autoplayIcon: document.getElementById('autoplay-icon'),
-      autoplayText: document.getElementById('autoplay-text'),
       btnSound: document.getElementById('btn-sound'),
       btnNotes: document.getElementById('btn-notes'),
       btnOverview: document.getElementById('btn-overview'),
       btnFullscreen: document.getElementById('btn-fullscreen'),
-      speakerDrawer: document.getElementById('speaker-drawer'),
-      notesSpeakerName: document.getElementById('notes-speaker-name'),
+      speakerDrawer: document.getElementById('speaker-notes-drawer'),
+      notesSpeakerChip: document.getElementById('notes-speaker-chip'),
+      notesSlideTitle: document.getElementById('notes-slide-title'),
       notesTipText: document.getElementById('notes-tip-text'),
       notesScriptText: document.getElementById('notes-script-text'),
       overviewModal: document.getElementById('overview-modal'),
@@ -238,7 +237,6 @@ const Presentation = (() => {
   function bindEvents() {
     if (dom.btnPrev) dom.btnPrev.addEventListener('click', prevSlide);
     if (dom.btnNext) dom.btnNext.addEventListener('click', nextSlide);
-    if (dom.btnAutoplay) dom.btnAutoplay.addEventListener('click', toggleAutoplay);
     if (dom.btnSound) dom.btnSound.addEventListener('click', toggleSound);
     if (dom.btnNotes) dom.btnNotes.addEventListener('click', () => toggleNotes());
     if (dom.btnOverview) dom.btnOverview.addEventListener('click', () => toggleOverview());
@@ -247,6 +245,15 @@ const Presentation = (() => {
     setupKeyboardShortcuts();
     window.addEventListener('resize', handleResize);
     handleResize();
+
+    document.addEventListener('fullscreenchange', () => {
+      if (document.fullscreenElement) {
+        if (dom.viewport) dom.viewport.classList.add('fullscreen-mode');
+      } else {
+        if (dom.viewport) dom.viewport.classList.remove('fullscreen-mode');
+      }
+      handleResize();
+    });
   }
 
   function handleResize() {
@@ -254,7 +261,7 @@ const Presentation = (() => {
     const vh = window.innerHeight;
     const targetW = 1920;
     const targetH = 1080;
-    const scale = Math.min((vw - 20) / targetW, (vh - 20) / targetH, 1);
+    const scale = Math.min(vw / targetW, vh / targetH, 1);
     if (dom.canvas) {
       dom.canvas.style.transform = `scale(${scale})`;
     }
@@ -312,11 +319,6 @@ const Presentation = (() => {
           e.preventDefault();
           toggleOverview();
           break;
-        case 'a':
-        case 'A':
-          e.preventDefault();
-          toggleAutoplay();
-          break;
         case 'm':
         case 'M':
           e.preventDefault();
@@ -330,21 +332,24 @@ const Presentation = (() => {
     });
   }
 
+  // Floating ambient dust particles in each slide's particle layer
   function setupAmbientParticles() {
-    const container = document.getElementById('ambient-particles');
-    if (!container) return;
-    for (let i = 0; i < 22; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle-dot';
-      const size = Math.random() * 6 + 3;
-      p.style.width = `${size}px`;
-      p.style.height = `${size}px`;
-      p.style.left = `${Math.random() * 100}%`;
-      p.style.top = `${Math.random() * 90 + 5}%`;
-      p.style.animationDelay = `${Math.random() * 6}s`;
-      p.style.animationDuration = `${Math.random() * 4 + 4}s`;
-      container.appendChild(p);
-    }
+    const layers = document.querySelectorAll('.particle-layer');
+    layers.forEach((layer) => {
+      layer.innerHTML = '';
+      for (let i = 0; i < 18; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'light-dust';
+        const size = Math.random() * 5 + 3;
+        dot.style.width = `${size}px`;
+        dot.style.height = `${size}px`;
+        dot.style.left = `${Math.random() * 100}%`;
+        dot.style.top = `${Math.random() * 85 + 10}%`;
+        dot.style.animationDelay = `${Math.random() * 6}s`;
+        dot.style.animationDuration = `${Math.random() * 5 + 5}s`;
+        layer.appendChild(dot);
+      }
+    });
   }
 
   // Web Audio Chimes
@@ -411,42 +416,43 @@ const Presentation = (() => {
       }
     });
 
-    if (dom.currentNum) dom.currentNum.textContent = String(state.currentSlide).padStart(2, '0');
-    if (dom.totalNum) dom.totalNum.textContent = String(state.totalSlides).padStart(2, '0');
+    if (dom.currentNum) dom.currentNum.textContent = String(state.currentSlide);
+    if (dom.totalNum) dom.totalNum.textContent = String(state.totalSlides);
 
     const progressPercent = ((state.currentSlide - 1) / (state.totalSlides - 1)) * 100;
-    if (dom.progressFill) dom.progressFill.style.width = `${Math.max(4, progressPercent)}%`;
+    if (dom.progressFill) dom.progressFill.style.width = `${Math.max(5, progressPercent)}%`;
 
     const cue = slideCues[state.currentSlide];
     if (dom.slideLabel && cue) {
       dom.slideLabel.textContent = cue.title;
     }
 
-    // Update Drawer Panel
+    // Update Drawer Panel with verbatim teacher scripts
     if (cue) {
-      if (dom.notesSpeakerName) dom.notesSpeakerName.textContent = cue.speaker;
+      if (dom.notesSpeakerChip) dom.notesSpeakerChip.textContent = cue.speaker;
+      if (dom.notesSlideTitle) dom.notesSlideTitle.textContent = cue.title;
       if (dom.notesTipText) dom.notesTipText.textContent = cue.tip;
       if (dom.notesScriptText) dom.notesScriptText.innerHTML = cue.line.replace(/\n/g, '<br>');
     }
 
-    updateItemNavHighlight(cue ? cue.item : 1);
+    // Update Header Item Nav Highlight
+    if (cue) {
+      updateItemNavHighlight(cue.item);
+    }
 
     if (playAudio) {
-      if (state.currentSlide === state.totalSlides) {
+      if (state.currentSlide === 20 || state.currentSlide === 8 || state.currentSlide === 12) {
         playSuccessSound();
-        triggerConfetti();
       } else {
         playSlideSound();
       }
     }
-
-    if (state.isAutoplay) resetAutoplayTimer();
   }
 
   function nextSlide() {
     if (state.currentSlide < state.totalSlides) {
       goToSlide(state.currentSlide + 1);
-    } else if (state.isAutoplay) {
+    } else {
       goToSlide(1);
     }
   }
@@ -463,6 +469,7 @@ const Presentation = (() => {
   }
 
   function updateItemNavHighlight(activeItem) {
+    if (!dom.itemNavBtns) return;
     dom.itemNavBtns.forEach((btn) => {
       const itemVal = parseInt(btn.dataset.item, 10);
       if (itemVal === activeItem) {
@@ -478,91 +485,80 @@ const Presentation = (() => {
     dom.overviewGrid.innerHTML = '';
     for (let i = 1; i <= state.totalSlides; i++) {
       const cue = slideCues[i];
-      const tile = document.createElement('div');
-      tile.className = `overview-tile ${i === state.currentSlide ? 'active-tile' : ''}`;
-      tile.innerHTML = `
-        <span class="tile-num">SLIDE ${String(i).padStart(2, '0')}</span>
-        <strong class="tile-title">${cue ? cue.title : 'Slide ' + i}</strong>
-        <span class="tile-speaker">${cue ? cue.speaker : ''}</span>
+      const card = document.createElement('div');
+      card.className = `overview-card ${i === state.currentSlide ? 'active' : ''}`;
+      card.innerHTML = `
+        <div class="card-top-row">
+          <span class="card-slide-num">SLIDE ${String(i).padStart(2, '0')}</span>
+          <span class="card-item-tag">ITEM 0${cue ? cue.item : '1'}</span>
+        </div>
+        <div class="card-title">${cue ? cue.title : 'Slide ' + i}</div>
+        <div class="card-speaker">${cue ? cue.speaker : ''}</div>
       `;
-      tile.onclick = () => {
+      card.onclick = () => {
         goToSlide(i);
         toggleOverview(false);
       };
-      dom.overviewGrid.appendChild(tile);
+      dom.overviewGrid.appendChild(card);
     }
   }
 
   function toggleNotes(forceState) {
     state.isNotesOpen = typeof forceState === 'boolean' ? forceState : !state.isNotesOpen;
-    if (state.isNotesOpen) {
-      dom.speakerDrawer.classList.remove('hidden');
-      dom.btnNotes.classList.add('active-btn');
-    } else {
-      dom.speakerDrawer.classList.add('hidden');
-      dom.btnNotes.classList.remove('active-btn');
+    if (dom.speakerDrawer) {
+      if (state.isNotesOpen) {
+        dom.speakerDrawer.classList.add('open');
+        if (dom.btnNotes) dom.btnNotes.classList.add('active');
+      } else {
+        dom.speakerDrawer.classList.remove('open');
+        if (dom.btnNotes) dom.btnNotes.classList.remove('active');
+      }
     }
   }
 
   function toggleOverview(forceState) {
     state.isOverviewOpen = typeof forceState === 'boolean' ? forceState : !state.isOverviewOpen;
-    if (state.isOverviewOpen) {
-      buildOverviewGrid();
-      dom.overviewModal.classList.remove('hidden');
-      dom.btnOverview.classList.add('active-btn');
-    } else {
-      dom.overviewModal.classList.add('hidden');
-      dom.btnOverview.classList.remove('active-btn');
+    if (dom.overviewModal) {
+      if (state.isOverviewOpen) {
+        buildOverviewGrid();
+        dom.overviewModal.classList.add('open');
+        if (dom.btnOverview) dom.btnOverview.classList.add('active');
+      } else {
+        dom.overviewModal.classList.remove('open');
+        if (dom.btnOverview) dom.btnOverview.classList.remove('active');
+      }
     }
   }
 
   function toggleFullscreen() {
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(() => {});
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      }
+      if (dom.viewport) dom.viewport.classList.add('fullscreen-mode');
     } else {
-      if (document.exitFullscreen) document.exitFullscreen();
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      }
+      if (dom.viewport) dom.viewport.classList.remove('fullscreen-mode');
     }
   }
 
   function toggleSound() {
     state.soundEnabled = !state.soundEnabled;
-    if (state.soundEnabled) {
-      dom.btnSound.classList.remove('active-btn');
-      playTone(659.25, 'sine', 0, 0.2, 0.1);
-    } else {
-      dom.btnSound.classList.add('active-btn');
-    }
-  }
-
-  function toggleAutoplay() {
-    state.isAutoplay = !state.isAutoplay;
-    if (state.isAutoplay) {
-      dom.btnAutoplay.classList.add('playing');
-      dom.autoplayIcon.textContent = '⏸';
-      dom.autoplayText.textContent = 'Pause';
-      resetAutoplayTimer();
-    } else {
-      dom.btnAutoplay.classList.remove('playing');
-      dom.autoplayIcon.textContent = '▶';
-      dom.autoplayText.textContent = 'Auto-Play';
-      if (state.autoplayTimer) clearTimeout(state.autoplayTimer);
-    }
-  }
-
-  function resetAutoplayTimer() {
-    if (state.autoplayTimer) clearTimeout(state.autoplayTimer);
-    state.autoplayTimer = setTimeout(() => {
-      if (state.currentSlide < state.totalSlides) {
-        nextSlide();
+    if (dom.btnSound) {
+      if (state.soundEnabled) {
+        dom.btnSound.style.opacity = '1';
+        playTone(659.25, 'sine', 0, 0.2, 0.1);
       } else {
-        goToSlide(1);
+        dom.btnSound.style.opacity = '0.4';
       }
-    }, state.autoplayDuration);
+    }
   }
 
   // =========================================================================
   // EDITABLE POWERPOINT (.PPTX) EXPORT (PptxGenJS)
-  // Generates 20 visual-first slides with embedded speaker notes
+  // Generates 20 visual-first slides with embedded verbatim teacher notes
   // =========================================================================
   function exportPPTX() {
     if (typeof PptxGenJS === 'undefined') {
@@ -573,7 +569,7 @@ const Presentation = (() => {
     const pptx = new PptxGenJS();
     pptx.layout = 'LAYOUT_16x9';
     pptx.author = 'Sussex College Grade 4';
-    pptx.title = 'SIX VOICES, ONE MESSAGE - Sussex College Assembly';
+    pptx.title = 'SIX VOICES, ONE MESSAGE - Sussex College Grade 4 Assembly';
 
     for (let i = 1; i <= state.totalSlides; i++) {
       const cue = slideCues[i];
@@ -582,17 +578,22 @@ const Presentation = (() => {
 
       // Embed full original verbatim script into PowerPoint Speaker Notes
       if (cue && cue.line) {
-        slide.addNotes(cue.speaker + ':\n\n' + cue.line.replace(/\n/g, '\n') + (cue.tip ? '\n\nStage Direction / Cue: ' + cue.tip : ''));
+        slide.addNotes(
+          cue.speaker + ':\n\n' +
+          cue.line.replace(/\n/g, '\n') +
+          (cue.tip ? '\n\nStage Direction / Cue: ' + cue.tip : '') +
+          '\n\nClass Teacher: Darshani Gunathilaka • Sussex College'
+        );
       }
 
-      // Background Card
+      // Background
       slide.addShape(pptx.shapes.RECTANGLE, {
         x: 0, y: 0, w: '100%', h: '100%',
-        fill: { color: i === 20 ? 'FEF3C7' : (i === 16 || i === 17 ? 'F8FAFC' : 'F0FDF4') },
+        fill: { color: i === 20 ? 'FEF3C7' : (i === 1 ? 'E0F2FE' : 'F8FAFC') },
         line: { color: 'E2E8F0', width: 0 }
       });
 
-      // Top Header Bar
+      // Header Bar
       slide.addShape(pptx.shapes.RECTANGLE, {
         x: 0.6, y: 0.35, w: 12.1, h: 0.7,
         fill: { color: 'FFFFFF' },
@@ -604,197 +605,90 @@ const Presentation = (() => {
         { text: 'Class Teacher: Darshani Gunathilaka', options: { bold: true, color: 'B45309', fontSize: 13 } }
       ], { x: 0.8, y: 0.4, w: 9.0, h: 0.6 });
 
-      if (i === 16) {
-        // Detective Cases 1 to 5
-        slide.addText('Justice Detectives Case Studies (Cases 1–5)', {
-          x: 0.8, y: 1.25, w: 11.5, h: 0.65,
-          fontSize: 22, bold: true, color: '0D2C54'
+      if (i === 1) {
+        // Slide 1 Welcome
+        slide.addText('SIX VOICES, ONE MESSAGE', {
+          x: 1.0, y: 2.2, w: 11.3, h: 1.2,
+          fontSize: 40, bold: true, color: '0D2C54', align: 'center'
         });
-        for (let c = 1; c <= 5; c++) {
-          const photoNum = String(c + 1).padStart(2, '0');
-          slide.addImage({
-            path: `detective_${photoNum}.jpg`,
-            x: 0.8 + (c - 1) * 2.35, y: 2.1, w: 2.2, h: 4.2
-          });
-        }
-      } else if (i === 17) {
-        // Detective Cases 6 to 10
-        slide.addText('Justice Detectives Case Studies (Cases 6–10)', {
-          x: 0.8, y: 1.25, w: 11.5, h: 0.65,
-          fontSize: 22, bold: true, color: '0D2C54'
+        slide.addText('“Kindness Is Contagious, Justice Starts with Us.”', {
+          x: 1.0, y: 3.6, w: 11.3, h: 0.8,
+          fontSize: 20, bold: true, color: '0284C7', align: 'center'
         });
-        for (let c = 6; c <= 10; c++) {
-          const photoNum = String(c + 1).padStart(2, '0');
-          slide.addImage({
-            path: `detective_${photoNum}.jpg`,
-            x: 0.8 + (c - 6) * 2.35, y: 2.1, w: 2.2, h: 4.2
-          });
-        }
-      } else if (i === 19) {
-        // Six Pillars of Sussex College
-        slide.addText('Our Six Guiding Values', {
-          x: 0.8, y: 1.25, w: 11.5, h: 0.65,
-          fontSize: 24, bold: true, color: '0D2C54', align: 'center'
-        });
-
-        const pillars = [
-          { name: 'KINDNESS', sub: 'Care & Friendship', color: '0284C7' },
-          { name: 'HONESTY', sub: 'Truth & Integrity', color: '16A34A' },
-          { name: 'FAIRNESS', sub: 'Equal for Everyone', color: 'EA580C' },
-          { name: 'RESPECT', sub: 'Listening with Care', color: '7C3AED' },
-          { name: 'COURAGE', sub: 'Stand Up for Right', color: 'E11D48' },
-          { name: 'PROTECT NATURE', sub: 'Love Living Creatures', color: '0D9488' }
-        ];
-
-        pillars.forEach((p, idx) => {
-          const col = idx % 3;
-          const row = Math.floor(idx / 3);
-          const xPos = 1.0 + col * 3.8;
-          const yPos = 2.2 + row * 2.2;
-
-          slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-            x: xPos, y: yPos, w: 3.5, h: 1.9,
-            fill: { color: 'FFFFFF' },
-            line: { color: p.color, width: 2 }
-          });
-          slide.addText(p.name, {
-            x: xPos, y: yPos + 0.35, w: 3.5, h: 0.6,
-            fontSize: 18, bold: true, color: p.color, align: 'center'
-          });
-          slide.addText(p.sub, {
-            x: xPos, y: yPos + 0.95, w: 3.5, h: 0.5,
-            fontSize: 12, color: '64748B', align: 'center'
-          });
+        slide.addText('Official Grade 4 Assembly Presentation • Sussex College', {
+          x: 1.0, y: 4.8, w: 11.3, h: 0.6,
+          fontSize: 14, color: '64748B', align: 'center'
         });
       } else if (i === 20) {
-        // Climax Slide
-        slide.addText('SUSSEX COLLEGE • GRADE 4 FINALE', {
-          x: 0.8, y: 1.4, w: 11.7, h: 0.5,
+        // Slide 20 Grand Finale
+        slide.addText('OUR SACRED ASSEMBLY PROMISE', {
+          x: 1.0, y: 1.6, w: 11.3, h: 0.5,
           fontSize: 14, bold: true, color: '0D2C54', align: 'center'
         });
-
-        slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-          x: 1.5, y: 2.2, w: 10.3, h: 1.1,
-          fill: { color: 'FFFFFF' },
-          line: { color: 'F59E0B', width: 2 }
-        });
-
         slide.addText('“I will choose kindness. I will stand for justice. I will make a difference!”', {
-          x: 1.7, y: 2.35, w: 9.9, h: 0.8,
-          fontSize: 16, bold: true, color: 'B45309', align: 'center'
+          x: 1.0, y: 2.3, w: 11.3, h: 0.8,
+          fontSize: 18, bold: true, color: 'B45309', align: 'center'
         });
-
         slide.addText('KINDNESS IS CONTAGIOUS,\nAND JUSTICE STARTS WITH US!', {
-          x: 1.0, y: 3.8, w: 11.3, h: 2.2,
+          x: 1.0, y: 3.4, w: 11.3, h: 2.0,
           fontSize: 34, bold: true, color: '0D2C54', align: 'center'
         });
+        slide.addText('Guided with Love by Class Teacher: Darshani Gunathilaka', {
+          x: 1.0, y: 5.8, w: 11.3, h: 0.5,
+          fontSize: 13, color: '64748B', align: 'center'
+        });
       } else {
-        // Visual Presentation Slides
+        // Standard Content Slide
         slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
           x: 1.2, y: 1.4, w: 10.9, h: 5.2,
           fill: { color: 'FFFFFF' },
           line: { color: 'E2E8F0', width: 2 }
         });
 
+        // Speaker Pill
         slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
           x: 4.6, y: 1.8, w: 4.1, h: 0.65,
           fill: { color: '0284C7' },
-          line: { color: '0284C7', width: 0 }
-        });
-        slide.addText(cue ? cue.speaker.toUpperCase() : 'GRADE 4', {
-          x: 4.6, y: 1.85, w: 4.1, h: 0.55,
-          fontSize: 14, bold: true, color: 'FFFFFF', align: 'center'
+          line: { color: '0369A1', width: 0 }
         });
 
-        slide.addText(cue ? cue.title : 'Scene ' + i, {
-          x: 1.5, y: 2.8, w: 10.3, h: 1.1,
+        slide.addText(cue ? cue.speaker.toUpperCase() : '', {
+          x: 4.6, y: 1.88, w: 4.1, h: 0.5,
+          fontSize: 13, bold: true, color: 'FFFFFF', align: 'center'
+        });
+
+        // Title
+        slide.addText(cue ? cue.title : '', {
+          x: 1.5, y: 2.7, w: 10.3, h: 1.0,
           fontSize: 28, bold: true, color: '0D2C54', align: 'center'
         });
 
-        slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-          x: 3.2, y: 4.2, w: 6.9, h: 0.9,
-          fill: { color: 'FEF3C7' },
-          line: { color: 'F59E0B', width: 2 }
-        });
-        slide.addText(motto ? `“${motto}”` : '', {
-          x: 3.3, y: 4.35, w: 6.7, h: 0.65,
-          fontSize: 18, bold: true, color: '92400E', align: 'center'
+        // Motto Banner
+        if (motto) {
+          slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+            x: 2.5, y: 4.0, w: 8.3, h: 0.9,
+            fill: { color: 'FEF3C7' },
+            line: { color: 'F59E0B', width: 1.5 }
+          });
+
+          slide.addText(motto, {
+            x: 2.6, y: 4.15, w: 8.1, h: 0.6,
+            fontSize: 16, bold: true, color: '92400E', align: 'center'
+          });
+        }
+
+        slide.addText('Audience Display: Visual Cinematic Scene • Verbatim script in Speaker Notes', {
+          x: 1.5, y: 5.8, w: 10.3, h: 0.5,
+          fontSize: 11, color: '94A3B8', align: 'center'
         });
       }
-
-      slide.addText(`Slide ${i} of ${state.totalSlides}  |  Sussex College Grade 4 Assembly`, {
-        x: 0.8, y: 7.05, w: 11.7, h: 0.35,
-        fontSize: 11, color: '94A3B8'
-      });
     }
 
-    pptx.writeFile({ fileName: 'Sussex_College_Grade_4_Assembly.pptx' })
-      .then(() => {
-        playTone(783.99, 'triangle', 0, 0.4, 0.15);
-      })
-      .catch((err) => {
-        console.error('PPTX export error:', err);
-      });
+    pptx.writeFile({ fileName: 'Sussex_College_Grade_4_Assembly_Master.pptx' });
   }
 
   function exportPDF() {
     window.print();
-  }
-
-  // Interactive Confetti Cannon
-  function triggerConfetti() {
-    const canvas = document.createElement('canvas');
-    canvas.id = 'confetti-canvas';
-    canvas.style.position = 'absolute';
-    canvas.style.inset = '0';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '50';
-    dom.canvas.appendChild(canvas);
-
-    const ctx = canvas.getContext('2d');
-    canvas.width = 1920;
-    canvas.height = 1080;
-
-    const particles = [];
-    const colors = ['#f59e0b', '#0284c7', '#10b981', '#ec4899', '#8b5cf6', '#ef4444', '#ffffff'];
-
-    for (let i = 0; i < 120; i++) {
-      particles.push({
-        x: Math.random() * 1920,
-        y: Math.random() * -600,
-        size: Math.random() * 10 + 6,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        vx: Math.random() * 4 - 2,
-        vy: Math.random() * 4 + 3,
-        rotation: Math.random() * 360,
-        vRot: Math.random() * 6 - 3,
-      });
-    }
-
-    let frame = 0;
-    function animate() {
-      ctx.clearRect(0, 0, 1920, 1080);
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.rotation += p.vRot;
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate((p.rotation * Math.PI) / 180);
-        ctx.fillStyle = p.color;
-        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 1.6);
-        ctx.restore();
-      });
-      frame++;
-      if (frame < 220) {
-        requestAnimationFrame(animate);
-      } else {
-        canvas.remove();
-      }
-    }
-    requestAnimationFrame(animate);
   }
 
   return {
@@ -807,7 +701,6 @@ const Presentation = (() => {
     toggleOverview,
     toggleFullscreen,
     toggleSound,
-    toggleAutoplay,
     exportPPTX,
     exportPDF
   };
