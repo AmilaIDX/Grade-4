@@ -1,42 +1,35 @@
 /* ==========================================================================
    SIX VOICES, ONE MESSAGE - GRADE 4 ASSEMBLY PRESENTATION
-   Visual Storybook Cinema Stylesheet (Projector & Auditorium Optimized)
+   Master Creative Presentation Stylesheet
    Sussex College • Class Teacher: Darshani Gunathilaka
    ========================================================================== */
 
 :root {
-  /* Brand Identity Colors */
   --sussex-navy: #0d2c54;
   --sussex-blue: #1565c0;
   --sussex-blue-light: #42a5f5;
   --sussex-gold: #f59e0b;
   --sussex-gold-light: #fef3c7;
   --sussex-amber: #d97706;
-  
-  /* Theme Value Colors */
+
   --kindness-blue: #0284c7;
   --fairness-orange: #ea580c;
   --honesty-green: #16a34a;
   --respect-purple: #7c3aed;
   --animals-teal: #0d9488;
   --courage-coral: #e11d48;
-  
-  /* Backgrounds & Glassmorphism */
-  --card-bg: rgba(255, 255, 255, 0.92);
-  --card-border: rgba(255, 255, 255, 0.85);
-  --glass-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.14), 0 0 1px 1px rgba(255, 255, 255, 0.9);
-  
-  /* Typography */
+
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --glass-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.12), 0 0 1px 1px rgba(255, 255, 255, 0.9);
+
   --font-display: 'Baloo 2', 'Nunito', 'Segoe UI', system-ui, sans-serif;
   --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  
-  /* Timing */
+
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Base Reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -55,7 +48,6 @@ html, body {
   user-select: none;
 }
 
-/* 16:9 Scaled Viewport */
 #presentation-viewport {
   width: 100vw;
   height: 100vh;
@@ -158,11 +150,10 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .header-left {
@@ -178,7 +169,7 @@ html, body {
 }
 
 .school-logo-img {
-  height: 44px;
+  height: 46px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.14));
@@ -240,21 +231,11 @@ html, body {
 }
 
 .teacher-badge-icon { font-size: 15px; }
-
-.teacher-badge-text {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-}
-
+.teacher-badge-text { display: flex; align-items: center; gap: 4px; font-size: 11px; }
 .teacher-badge-label { color: #92400e; font-weight: 600; }
 .teacher-badge-name { color: #78350f; font-weight: 800; }
 
-.header-center {
-  display: flex;
-  align-items: center;
-}
+.header-center { display: flex; align-items: center; }
 
 .item-quick-nav {
   display: flex;
@@ -322,10 +303,7 @@ html, body {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.btn-svg-icon {
-  width: 15px;
-  height: 15px;
-}
+.btn-svg-icon { width: 15px; height: 15px; }
 
 .icon-btn {
   width: 38px;
@@ -341,10 +319,7 @@ html, body {
   transition: all 0.2s ease;
 }
 
-.icon-btn .icon {
-  width: 18px;
-  height: 18px;
-}
+.icon-btn .icon { width: 18px; height: 18px; }
 
 .icon-btn:hover {
   background: #ffffff;
@@ -389,119 +364,35 @@ html, body {
 }
 
 /* ==========================================================================
-   Visual Story Layout (Cinematic Scene Mode)
+   Slide 01: Storybook Hero Welcome Layout
    ========================================================================== */
-.visual-story-layout {
-  position: relative;
+.storybook-hero-layout {
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 36px;
+  padding: 30px 60px;
+  align-items: center;
+}
+
+.hero-left-art {
+  width: 100%;
+  height: 100%;
+  max-height: 820px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 24px 60px;
-  overflow: hidden;
-}
-
-.cinematic-header-overlay {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
-  border-radius: 26px;
-  padding: 12px 40px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
-  margin-top: 10px;
-  max-width: 1100px;
-  animation: floatHeader 4s ease-in-out infinite alternate;
-}
-
-@keyframes floatHeader {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-4px); }
-}
-
-.speaker-identity-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #0284c7, #0369a1);
-  color: #ffffff;
-  padding: 4px 16px;
-  border-radius: 999px;
-  font-family: var(--font-heading);
-  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.3);
-  margin-bottom: 6px;
-}
-
-.orange-badge { background: linear-gradient(135deg, #ea580c, #c2410c); box-shadow: 0 3px 10px rgba(234, 88, 12, 0.3); }
-.green-badge { background: linear-gradient(135deg, #16a34a, #15803d); box-shadow: 0 3px 10px rgba(22, 163, 74, 0.3); }
-.purple-badge { background: linear-gradient(135deg, #7c3aed, #6d28d9); box-shadow: 0 3px 10px rgba(124, 58, 237, 0.3); }
-.teal-badge { background: linear-gradient(135deg, #0d9488, #0f766e); box-shadow: 0 3px 10px rgba(13, 148, 136, 0.3); }
-.coral-badge { background: linear-gradient(135deg, #e11d48, #be123c); box-shadow: 0 3px 10px rgba(225, 29, 72, 0.3); }
-.gold-badge { background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3); }
-
-.badge-tag {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  opacity: 0.9;
-}
-
-.badge-student {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-
-.cinematic-scene-title {
-  font-family: var(--font-display);
-  font-size: 2.7rem;
-  font-weight: 800;
-  color: var(--sussex-navy);
-  line-height: 1.15;
-  margin: 2px 0 6px 0;
-  letter-spacing: -0.01em;
-}
-
-.grand-climax-text {
-  font-size: 2.8rem;
-  color: #1e3a8a;
-  text-shadow: 0 2px 10px rgba(254, 240, 138, 0.8);
-}
-
-.cinematic-motto-ribbon {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
-  border: 1.5px solid #f59e0b;
-  padding: 6px 24px;
-  border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
 }
 
-.ribbon-text {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #92400e;
-  letter-spacing: 0.02em;
-}
-
-/* Master Illustrated Canvas */
-.cinematic-art-canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+.cinematic-art-frame {
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  border-radius: 24px;
   overflow: hidden;
+  box-shadow: 0 20px 50px rgba(13, 44, 84, 0.2);
+  border: 4px solid #ffffff;
+  background: #ffffff;
 }
 
 .cinema-svg {
@@ -511,199 +402,524 @@ html, body {
   display: block;
 }
 
-/* Title Welcome Slide */
-.title-hero-overlay {
-  padding: 24px 50px;
-  max-width: 950px;
-  margin-top: 30px;
+.hero-right-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  border-radius: 28px;
+  padding: 44px 48px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
 }
 
-.eyebrow-badge {
+.eyebrow-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #f1f5f9;
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
+  background: #e0f2fe;
   color: var(--sussex-blue);
-  margin-bottom: 8px;
-}
-
-.hero-cinematic-title {
-  font-family: var(--font-display);
-  font-size: 4.2rem;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 800;
-  line-height: 1;
-  color: var(--sussex-navy);
-  margin: 6px 0 14px 0;
+  width: fit-content;
+  margin-bottom: 14px;
 }
 
-.hero-cinematic-title .title-line-1 {
-  display: block;
+.master-title {
+  font-family: var(--font-display);
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.05;
   color: var(--sussex-navy);
+  margin-bottom: 16px;
 }
 
-.hero-cinematic-title .title-line-2 {
+.master-title .title-top { display: block; color: var(--sussex-navy); }
+.master-title .title-bottom {
   display: block;
-  background: linear-gradient(135deg, #0284c7, #1565c0, #f59e0b);
+  background: linear-gradient(135deg, #0284c7, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.teacher-honor-card {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #78350f;
-  background: #fffbeb;
-  padding: 5px 16px;
-  border-radius: 20px;
-  border: 1px solid #fde68a;
+.theme-banner {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-left: 4px solid var(--sussex-gold);
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 16px;
 }
 
-/* Cast Group Pills (Poem & Role Play) */
-.cast-group-pills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.cast-pill {
-  background: linear-gradient(135deg, #0284c7, #0369a1);
-  color: #ffffff;
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 12px;
+.theme-text {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
   font-weight: 700;
-  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.25);
+  color: #92400e;
 }
 
-/* Slide 14: All 13 Roster */
-.lead-reciter-badge {
+.teacher-credit-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13.5px;
+  color: #475569;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.welcome-blurb {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+.hero-action-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.begin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--sussex-navy), var(--sussex-blue));
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(13, 44, 84, 0.35);
+  transition: transform 0.2s var(--ease-spring), box-shadow 0.2s ease;
+}
+
+.begin-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13, 44, 84, 0.45);
+}
+
+.arrow-svg { width: 18px; height: 18px; }
+
+.key-hint {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.key-hint kbd {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+/* ==========================================================================
+   Split Storybook Layout (Slides 02 to 15, and 19)
+   ========================================================================== */
+.split-storybook-layout {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 36px;
+  padding: 28px 60px;
+  align-items: center;
+}
+
+.split-art-side {
+  width: 100%;
+  height: 100%;
+  max-height: 820px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.storybook-art-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+  border: 4px solid #ffffff;
+  background: #ffffff;
+}
+
+.split-text-side {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  border-radius: 28px;
+  padding: 40px 44px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 18px;
+  border-radius: 30px;
+  width: fit-content;
+  margin-bottom: 14px;
+  font-family: var(--font-heading);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blue-pill { background: linear-gradient(135deg, #0284c7, #0369a1); color: #ffffff; }
+.orange-pill { background: linear-gradient(135deg, #ea580c, #c2410c); color: #ffffff; }
+.green-pill { background: linear-gradient(135deg, #16a34a, #15803d); color: #ffffff; }
+.purple-pill { background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #ffffff; }
+.teal-pill { background: linear-gradient(135deg, #0d9488, #0f766e); color: #ffffff; }
+.coral-pill { background: linear-gradient(135deg, #e11d48, #be123c); color: #ffffff; }
+.gold-pill { background: linear-gradient(135deg, #f59e0b, #d97706); color: #ffffff; }
+
+.speaker-num { font-size: 11px; font-weight: 700; opacity: 0.9; }
+.speaker-name { font-size: 13.5px; font-weight: 800; letter-spacing: 0.04em; }
+
+.scene-heading {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--sussex-navy);
+  margin-bottom: 16px;
+}
+
+.quote-callout {
+  position: relative;
+  border-radius: 18px;
+  padding: 18px 24px 18px 48px;
+  margin-bottom: 20px;
+  border-left: 5px solid;
+}
+
+.quote-symbol {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.quote-phrase {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.quote-phrase-large {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.blue-quote { background: #f0f9ff; border-color: #0284c7; color: #0369a1; }
+.orange-quote { background: #fff7ed; border-color: #ea580c; color: #c2410c; }
+.green-quote { background: #f0fdf4; border-color: #16a34a; color: #15803d; }
+.purple-quote { background: #faf5ff; border-color: #7c3aed; color: #6d28d9; }
+.teal-quote { background: #f0fdfa; border-color: #0d9488; color: #0f766e; }
+.coral-quote { background: #fff1f2; border-color: #e11d48; color: #be123c; }
+.gold-quote { background: #fefce8; border-color: #f59e0b; color: #a16207; }
+
+.values-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.val-bullet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.bullet-icon { font-size: 16px; }
+
+.drawer-trigger-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #e11d48;
-  color: #ffffff;
-  padding: 4px 16px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 9px 18px;
   border-radius: 20px;
-  font-weight: 800;
-  font-size: 13px;
-  margin-bottom: 6px;
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.2s ease;
 }
 
-.all-thirteen-roster {
+.drawer-trigger-btn:hover {
+  background: var(--sussex-navy);
+  color: #ffffff;
+  border-color: var(--sussex-navy);
+}
+
+.speakers-six-tags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 8px;
-  max-width: 900px;
-  margin-top: 8px;
+  margin-bottom: 20px;
 }
 
-.roster-chip {
+.mini-tag {
   background: #ffffff;
   border: 1.5px solid #cbd5e1;
-  color: var(--sussex-navy);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 12px;
+  padding: 4px 14px;
   border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--sussex-navy);
 }
 
-.roster-chip.gold-chip {
+.cast-roster-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.cast-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--sussex-navy);
+}
+
+.badge-num {
+  background: #0284c7;
+  color: #ffffff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.thirteen-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+
+.thirteen-chips-grid span {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  padding: 4px 11px;
+  border-radius: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.thirteen-chips-grid .lead-chip {
   background: #fef3c7;
   border-color: #f59e0b;
   color: #b45309;
 }
 
-/* Slide 23: Role Play Chorus Tokens */
-.chorus-values-banner {
+.roleplay-actors-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 8px;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-.chorus-token {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: #ffffff;
-  font-family: var(--font-heading);
+.actor-tag {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  padding: 4px 12px;
+  border-radius: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.actor-tag.star-tag {
+  background: #f0fdfa;
+  border-color: #0d9488;
+  color: #0f766e;
+}
+
+.chorus-badges-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.chorus-badge {
+  background: #fefce8;
+  border: 1.5px solid #fde047;
+  padding: 8px 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 13px;
-  font-weight: 800;
-  padding: 5px 16px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  color: #854d0e;
 }
 
 /* ==========================================================================
-   ITEM 04: Justice Detectives Layout
+   Item 04: Justice Detectives Gallery Layout (Slides 16 & 17)
    ========================================================================== */
-.photo-detective-layout {
-  position: relative;
+.detectives-gallery-layout {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 16px 40px;
+  padding: 20px 60px;
 }
 
-.detective-photo-cinema-frame {
-  margin-top: 14px;
-  width: 78%;
-  height: 76%;
-  background: #000000;
-  border-radius: 18px;
-  border: 4px solid #ffffff;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
+.gallery-header-bar {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  margin-bottom: 16px;
 }
 
-.detective-large-photo {
+.gallery-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--sussex-navy);
+  margin: 4px 0;
+}
+
+.gallery-sub {
+  font-size: 14.5px;
+  color: #64748b;
+}
+
+.detectives-cards-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.detective-case-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+  border: 2px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
+}
+
+.detective-case-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+.case-img-box {
+  width: 100%;
+  height: 72%;
+  background: #000000;
+  overflow: hidden;
+}
+
+.case-img-box img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 
+.case-meta {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.case-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: #7c3aed;
+  background: #f5f3ff;
+  padding: 2px 8px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.case-meta h4 {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sussex-navy);
+  line-height: 1.25;
+}
+
 /* ==========================================================================
-   ITEM 05: Video Presentation Layout
+   Item 05: Video Theater Layout (Slide 18)
    ========================================================================== */
-.video-cinema-layout {
-  position: relative;
+.video-theater-layout {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 14px 40px;
+  padding: 20px 60px;
 }
 
-.video-header-mini {
-  padding: 8px 30px;
+.theater-header-bar {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.theater-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--sussex-navy);
   margin-top: 4px;
 }
 
 .video-theater-screen {
-  margin-top: 12px;
   width: 86%;
-  height: 74%;
+  height: 72%;
   background: #000000;
-  border-radius: 18px;
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  border: 3px solid rgba(255, 255, 255, 0.85);
 }
 
 .video-iframe {
@@ -712,99 +928,85 @@ html, body {
   border: none;
 }
 
-.video-action-bar {
-  margin-top: 10px;
+.video-control-row {
+  margin-top: 12px;
 }
 
-.video-launch-btn {
+.external-video-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: #dc2626;
   color: #ffffff;
   text-decoration: none;
-  font-size: 13px;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
   font-weight: 700;
-  padding: 6px 18px;
+  padding: 8px 20px;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
   transition: transform 0.2s ease;
 }
 
-.video-launch-btn:hover {
+.external-video-btn:hover {
   transform: scale(1.05);
 }
 
-.btn-icon { width: 14px; height: 14px; }
+.play-svg { width: 14px; height: 14px; }
 
 /* ==========================================================================
-   ITEM 06: Pledge Values Constellation (Slide 37)
+   Item 06: Pledge Values Grid (Slide 19)
    ========================================================================== */
-.values-galaxy-layout {
-  padding-top: 20px;
-}
-
-.values-constellation-grid {
-  position: relative;
-  z-index: 10;
+.values-hex-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1100px;
-  margin-top: 24px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-.value-emblem-card {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(16px);
-  border: 2px solid #ffffff;
-  border-radius: 20px;
-  padding: 22px 20px;
+.hex-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.hex-icon { font-size: 22px; }
+.hex-card h4 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--sussex-navy);
+  margin: 3px 0;
+}
+.hex-card p {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Slide 20: Finale Master Layout
+   ========================================================================== */
+.finale-master-layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
-  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
-}
-
-.value-emblem-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
-}
-
-.emblem-symbol {
-  font-size: 34px;
-  margin-bottom: 8px;
-}
-
-.emblem-title {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  margin-bottom: 4px;
-}
-
-.val-kindness .emblem-title { color: #0284c7; }
-.val-honesty .emblem-title { color: #16a34a; }
-.val-fairness .emblem-title { color: #ea580c; }
-.val-respect .emblem-title { color: #7c3aed; }
-.val-courage .emblem-title { color: #e11d48; }
-.val-nature .emblem-title { color: #0d9488; }
-
-.emblem-sub {
-  font-size: 13px;
-  font-weight: 600;
-  color: #64748b;
-}
-
-/* ==========================================================================
-   Slide 38: Grand Finale Climax
-   ========================================================================== */
-.finale-climax-layout {
   justify-content: center;
-  padding-top: 30px;
+  padding: 30px 60px;
+  overflow: hidden;
+}
+
+.finale-background-art {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .finale-crest-zone {
@@ -816,7 +1018,7 @@ html, body {
   margin-bottom: 16px;
 }
 
-.finale-school-logo {
+.finale-crest-img {
   height: 84px;
   width: auto;
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.2));
@@ -828,111 +1030,65 @@ html, body {
   100% { transform: scale(1.06); }
 }
 
-.finale-school-banner {
-  margin-top: 8px;
+.finale-school-title {
   font-family: var(--font-heading);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.1em;
   color: var(--sussex-navy);
+  margin-top: 8px;
 }
 
-.finale-callout-card {
+.finale-statement-card {
   position: relative;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   border: 2px solid #fde68a;
-  padding: 12px 36px;
+  padding: 14px 40px;
   border-radius: 40px;
   box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
-.callout-statement {
-  font-size: 1.4rem;
+.statement-line {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
   font-weight: 700;
   color: #b45309;
 }
 
-.finale-hero-message {
+.grand-assembly-motto-box {
   position: relative;
   z-index: 10;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
-.grand-assembly-motto {
+.grand-motto-text {
   font-family: var(--font-display);
-  font-size: 4rem;
+  font-size: 4.2rem;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.01em;
-  color: var(--sussex-navy);
   text-shadow: 0 4px 18px rgba(255, 255, 255, 0.9);
 }
 
-.grand-assembly-motto .motto-row-1 {
-  display: block;
-  color: #1e3a8a;
-}
-
-.grand-assembly-motto .motto-row-2 {
+.grand-motto-text .row-1 { display: block; color: #1e3a8a; }
+.grand-motto-text .row-2 {
   display: block;
   background: linear-gradient(135deg, #0284c7, #f59e0b, #e11d48);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.teacher-honor-banner {
+.finale-teacher-banner {
   position: relative;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 6px 20px;
+  background: rgba(255, 255, 255, 0.88);
+  padding: 8px 24px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: 13.5px;
   color: #475569;
-}
-
-/* ==========================================================================
-   Natural Environmental Animations
-   ========================================================================== */
-.wag-tail {
-  animation: puppyTailWag 0.8s ease-in-out infinite alternate;
-  transform-origin: 0% 50%;
-}
-
-@keyframes puppyTailWag {
-  0% { transform: rotate(-8deg); }
-  100% { transform: rotate(14deg); }
-}
-
-.flutter-butterfly {
-  animation: butterflyFloat 3.5s ease-in-out infinite alternate;
-}
-
-@keyframes butterflyFloat {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-16px) rotate(8deg); }
-  100% { transform: translateY(-6px) rotate(-6deg); }
-}
-
-.natural-bird {
-  animation: birdBob 4s ease-in-out infinite alternate;
-}
-
-@keyframes birdBob {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-3px); }
-}
-
-.sway-trees {
-  animation: treeBreeze 8s ease-in-out infinite alternate;
-  transform-origin: bottom center;
-}
-
-@keyframes treeBreeze {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(1.2deg); }
 }
 
 /* ==========================================================================
@@ -946,7 +1102,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
   border-top: 1.5px solid rgba(255, 255, 255, 0.85);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
@@ -971,16 +1127,8 @@ html, body {
   color: var(--sussex-navy);
 }
 
-.divider {
-  font-size: 14px;
-  color: #94a3b8;
-}
-
-.total-slides {
-  font-size: 14px;
-  font-weight: 700;
-  color: #64748b;
-}
+.divider { font-size: 14px; color: #94a3b8; }
+.total-slides { font-size: 14px; font-weight: 700; color: #64748b; }
 
 .slide-label-badge {
   background: rgba(13, 44, 84, 0.08);
@@ -1007,7 +1155,7 @@ html, body {
 
 .progress-fill {
   height: 100%;
-  width: 2.6%;
+  width: 5%;
   background: linear-gradient(90deg, #0284c7, #f59e0b);
   border-radius: 10px;
   transition: width 0.3s ease;
@@ -1034,10 +1182,7 @@ html, body {
   transition: transform 0.2s var(--ease-spring), box-shadow 0.2s ease;
 }
 
-.nav-control-btn .icon {
-  width: 20px;
-  height: 20px;
-}
+.nav-control-btn .icon { width: 20px; height: 20px; }
 
 .nav-control-btn:hover {
   transform: scale(1.08);
@@ -1073,7 +1218,6 @@ html, body {
 
 /* ==========================================================================
    Speaker & Rehearsal Notes Drawer
-   Preserves 100% of the verbatim teacher scripts and student lines
    ========================================================================== */
 .speaker-notes-drawer {
   position: absolute;
@@ -1081,11 +1225,11 @@ html, body {
   left: 0;
   right: 0;
   z-index: 30;
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(15, 23, 42, 0.96);
   backdrop-filter: blur(20px);
   color: #ffffff;
   border-top: 2px solid #38bdf8;
-  padding: 20px 40px;
+  padding: 22px 44px;
   max-height: 380px;
   overflow-y: auto;
   box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
@@ -1138,7 +1282,7 @@ html, body {
   border-left: 3px solid #f59e0b;
   padding: 8px 14px;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 13.5px;
   color: #fde68a;
   margin-bottom: 12px;
 }
@@ -1162,7 +1306,7 @@ html, body {
 }
 
 /* ==========================================================================
-   38-Slide Overview Grid Modal
+   20-Slide Overview Grid Modal
    ========================================================================== */
 .overview-modal {
   position: absolute;
@@ -1206,14 +1350,14 @@ html, body {
 
 .overview-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
 }
 
 .overview-tile {
   background: #ffffff;
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 14px;
+  padding: 14px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
@@ -1238,25 +1382,67 @@ html, body {
 
 .tile-title {
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--sussex-navy);
 }
 
 .tile-speaker {
-  font-size: 11px;
+  font-size: 11.5px;
   color: #0284c7;
   margin-top: 4px;
 }
 
 /* ==========================================================================
+   Animations
+   ========================================================================== */
+.wag-tail {
+  animation: puppyTailWag 0.8s ease-in-out infinite alternate;
+  transform-origin: 0% 50%;
+}
+
+@keyframes puppyTailWag {
+  0% { transform: rotate(-8deg); }
+  100% { transform: rotate(14deg); }
+}
+
+.flutter-butterfly {
+  animation: butterflyFloat 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes butterflyFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(8deg); }
+  100% { transform: translateY(-6px) rotate(-6deg); }
+}
+
+.natural-bird {
+  animation: birdBob 4s ease-in-out infinite alternate;
+}
+
+@keyframes birdBob {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+
+.sway-trees {
+  animation: treeBreeze 8s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes treeBreeze {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(1.2deg); }
+}
+
+/* ==========================================================================
    Full-Screen Presentation Projector Mode
-   Auto-hides header and footer when idle or in fullscreen
    ========================================================================== */
 :fullscreen .presentation-header,
 :-webkit-full-screen .presentation-header {
   opacity: 0;
   transform: translateY(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 :fullscreen .presentation-header:hover,
@@ -1269,6 +1455,7 @@ html, body {
 :-webkit-full-screen .presentation-footer {
   opacity: 0;
   transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 :fullscreen .presentation-footer:hover,

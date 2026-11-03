@@ -1,16 +1,17 @@
 /**
  * SIX VOICES, ONE MESSAGE - Sussex College Grade 4 Assembly Presentation
  * Master Presentation Engine & Editable PPTX Export
+ * 20 Master Slides Following the Exact Assembly Order
  */
 
 const Presentation = (() => {
   // State
   const state = {
     currentSlide: 1,
-    totalSlides: 38,
+    totalSlides: 20,
     isAutoplay: false,
     autoplayTimer: null,
-    autoplayDuration: 8500,
+    autoplayDuration: 9000,
     soundEnabled: true,
     isOverviewOpen: false,
     isNotesOpen: false,
@@ -20,383 +21,245 @@ const Presentation = (() => {
   // Item starting slide indices
   const itemMap = {
     1: 2,   // Item 01 starts at slide 2
-    2: 10,  // Item 02 starts at slide 10
-    3: 15,  // Item 03 starts at slide 15
-    4: 24,  // Item 04 starts at slide 24
-    5: 35,  // Item 05 starts at slide 35
-    6: 36,  // Item 06 starts at slide 36
+    2: 9,   // Item 02 starts at slide 9
+    3: 13,  // Item 03 starts at slide 13
+    4: 16,  // Item 04 starts at slide 16
+    5: 18,  // Item 05 starts at slide 18
+    6: 19,  // Item 06 starts at slide 19
   };
 
-  // Complete Assembly Metadata for all 38 Slides
+  // 20 Master Slide Cues & Full Verbatim Live Scripts
   const slideCues = {
     1: {
       title: "Assembly Welcome & Opening",
-      speaker: "Assembly Opening",
+      speaker: "Assembly Welcome",
       item: 1,
       line: "“Good morning respected Principal Sir, Vice Principal Madam, teachers, students, and guests. Welcome to the Grade 4 Assembly: Six Voices, One Message!”",
       tip: "Stand tall, smile warmly at the audience, and speak clearly into the microphone."
     },
     2: {
-      title: "Abhippra: Introduction & Opening Greeting",
+      title: "Abhippra: Introduction & Kindness Makes a Difference",
       speaker: "Abhippra",
       item: 1,
-      line: "“Good morning, respected Principal Sir, Vice Principal Madam, teachers, and my dear friends. With your kind permission, we, the students of Grade 4, would like to present six short speeches on the theme ‘Kindness Is Contagious, Justice Starts with Us.’”",
-      tip: "Deliver the formal opening greeting with dignity and a welcoming smile."
+      line: "“Good morning, respected Principal Sir, Vice Principal Madam, teachers, and my dear friends.\n\nWith your kind permission, we, the students of Grade 4, would like to present six short speeches on the theme ‘Kindness Is Contagious, Justice Starts with Us.’\n\nLet me begin with my speech on ‘Kindness Makes a Difference.’\n\nKindness means being helpful, caring, and friendly to others. A simple smile, a kind word, or a helping hand can make someone happy. We should never laugh at others or hurt their feelings. Even a small act of kindness can make a big difference.\n\nRemember, kindness is contagious! When we are kind to others, they may be kind to others too.\n\nThank you!”",
+      tip: "Deliver the opening greeting with poise and warmth. Pause slightly before the final 'Thank you!'."
     },
     3: {
-      title: "Abhippra: Kindness Makes a Difference",
-      speaker: "Abhippra",
-      item: 1,
-      line: "“Let me begin with my speech on ‘Kindness Makes a Difference.’ Kindness means being helpful, caring, and friendly to others. A simple smile, a kind word, or a helping hand can make someone happy... Remember, kindness is contagious! When we are kind to others, they may be kind to others too. Thank you!”",
-      tip: "Speak with warmth and heart. Pause slightly before the final 'Thank you!'."
-    },
-    4: {
       title: "Peshala: Fairness for Everyone",
       speaker: "Peshala",
       item: 1,
-      line: "“Fairness means treating everyone equally and giving everyone a fair chance. We should not leave anyone out of a game or treat someone badly because they are different from us. Every child deserves respect, friendship, and love. Let us share, take turns, and include everyone. Remember, justice begins when we treat others fairly. Thank you!”",
+      line: "“Fairness means treating everyone equally and giving everyone a fair chance. We should not leave anyone out of a game or treat someone badly because they are different from us. Every child deserves respect, friendship, and love.\n\nLet us share, take turns, and include everyone. Remember, justice begins when we treat others fairly.\n\nThank you!”",
       tip: "Speak with sportsmanlike enthusiasm and an open, welcoming hand gesture."
     },
-    5: {
+    4: {
       title: "Thiseni: Honesty Is the Best Policy",
       speaker: "Thiseni",
       item: 1,
-      line: "“Honesty means telling the truth and doing the right thing, even when nobody is watching. Sometimes, telling the truth may be difficult, but it helps others trust us. If we make a mistake, we should admit it and try to correct it. Let us always be truthful in our words and actions because honesty makes us better people. Thank you!”",
-      tip: "Project calm, gentle honesty and clear confidence."
+      line: "“Honesty means telling the truth and doing the right thing, even when nobody is watching. Sometimes, telling the truth may be difficult, but it helps others trust us. If we make a mistake, we should admit it and try to correct it.\n\nLet us always be truthful in our words and actions because honesty makes us better people.\n\nThank you!”",
+      tip: "Calm, gentle tone. Eye contact with the principal and teachers."
     },
-    6: {
+    5: {
       title: "Bhanuja: Respect Makes Us Better",
       speaker: "Bhanuja",
       item: 1,
-      line: "“Respect means treating others with kindness and care. We should respect our parents, teachers, friends, and everyone around us. We must listen when others speak, use polite words, and accept that people may have different ideas. We should also respect animals and never hurt them. When we show respect, we help make our school and our world a happier place. Thank you!”",
-      tip: "Polite, thoughtful, and steady voice. Make eye contact across the auditorium."
+      line: "“Respect means treating others with kindness and care. We should respect our parents, teachers, friends, and everyone around us. We must listen when others speak, use polite words, and accept that people may have different ideas. We should also respect animals and never hurt them.\n\nWhen we show respect, we help make our school and our world a happier place.\n\nThank you!”",
+      tip: "Thoughtful and steady voice. Project clearly to the back of the hall."
     },
-    7: {
+    6: {
       title: "Yenuth: Be Kind to Animals",
       speaker: "Yenuth",
       item: 1,
-      line: "“Animals are living beings, and they need our love and care. They cannot always tell us when they are hungry, hurt, or frightened. So, we must be gentle with them and never tease, hit, or hurt them. We can help animals by giving them food and water when appropriate and by asking an adult to help an animal in danger. Remember, animals deserve kindness too! Thank you!”",
-      tip: "Warm and compassionate tone. Imagine protecting a vulnerable pet."
+      line: "“Animals are living beings, and they need our love and care. They cannot always tell us when they are hungry, hurt, or frightened. So, we must be gentle with them and never tease, hit, or hurt them.\n\nWe can help animals by giving them food and water when appropriate and by asking an adult to help an animal in danger. Remember, animals deserve kindness too!\n\nThank you!”",
+      tip: "Compassionate, gentle tone. Radiate genuine love for all living creatures."
     },
-    8: {
+    7: {
       title: "Dewli: Stand Up for What Is Right",
       speaker: "Dewli",
       item: 1,
-      line: "“Sometimes, we may see someone being bullied, left out, or treated unfairly. We should not laugh or simply walk away. We can support that person, speak kindly, and ask a trusted adult for help. Being brave does not mean fighting. It means choosing to do the right thing, even when it is difficult. Let us be brave, be fair, and stand up for justice! Thank you!”",
-      tip: "Stand tall with quiet strength and clear moral courage."
+      line: "“Sometimes, we may see someone being bullied, left out, or treated unfairly. We should not laugh or simply walk away. We can support that person, speak kindly, and ask a trusted adult for help.\n\nBeing brave does not mean fighting. It means choosing to do the right thing, even when it is difficult. Let us be brave, be fair, and stand up for justice!\n\nThank you!”",
+      tip: "Stand tall with quiet moral courage and confidence."
     },
-    9: {
-      title: "All Six Children: Final Message",
+    8: {
+      title: "All Six Children: Final Collective Message",
       speaker: "All Six Children Together",
       item: 1,
       line: "“All together, loudly and confidently: ‘Kindness is contagious, and justice starts with us!’ Thank you!”",
-      tip: "Deliver the united motto in unison with big smiles!"
+      tip: "Deliver the united motto in perfect unison with bright smiles!"
     },
-    10: {
-      title: "Poem: Stanza 1 (Sanuthi, Dihas, Nethan, Omin)",
+    9: {
+      title: "Poem: Stanza 1 – A Little Smile & Care",
       speaker: "Sanuthi, Dihas, Nethan, Omin",
       item: 2,
-      line: "“1. Sanuthi: A little smile, a little care... / 2. Dihas: A helping hand, a word that's kind... / 3. Nethan: Be fair to all, both big and small... / 4. Omin: Tell the truth and do what's right...”",
-      tip: "Each child steps forward proudly to recite their exact two lines."
+      line: "“1. Sanuthi: A little smile, a little care, Can bring such joy for all to share.\n2. Dihas: A helping hand, a word that's kind, Leaves sorrow and sadness far behind.\n3. Nethan: Be fair to all, both big and small, And answer when a friend does call.\n4. Omin: Tell the truth and do what's right, Let honesty be your shining light.”",
+      tip: "Recite with poetic rhythm and clear pronunciation."
     },
-    11: {
-      title: "Poem: Stanza 2 (Inuli, Shenuki, Jeson, Praneeth)",
+    10: {
+      title: "Poem: Stanza 2 – Respect & Animals",
       speaker: "Inuli, Shenuki, Jeson, Praneeth",
       item: 2,
-      line: "“5. Inuli: Respect your friends in all you do... / 6. Shenuki: If someone is sad or left alone... / 7. Jeson: Don't laugh at others or cause them pain... / 8. Praneeth: Be gentle to animals everywhere...”",
-      tip: "Clear, poetic rhythm. Project clearly to the audience."
+      line: "“5. Inuli: Respect your friends in all you do, In words and actions, honest and true.\n6. Shenuki: If someone is sad or left alone, Make them feel this world's their own.\n7. Jeson: Don't laugh at others or cause them pain, Be gentle as the morning rain.\n8. Praneeth: Be gentle to animals everywhere, They need our love and thoughtful care.”",
+      tip: "Step forward slightly as each pair speaks."
     },
-    12: {
-      title: "Poem: Stanza 3 (Dasindu, Noveena, Kenula, Sara)",
+    11: {
+      title: "Poem: Stanza 3 – Courage, Justice & Forests",
       speaker: "Dasindu, Noveena, Kenula, Sara",
       item: 2,
-      line: "“9. Dasindu: They have feelings, they feel pain... / 10. Noveena: Their homes are forests, their skies are wide... / 11. Kenula: Stand up for justice, be brave and true... / 12. Sara: Together we can make kindness grow...”",
-      tip: "Keep the rhythm flowing smoothly."
+      line: "“9. Dasindu: They have feelings, they feel pain, Protect them in the sun and rain.\n10. Noveena: Their homes are forests, their skies are wide, With care and love, walk by their side.\n11. Kenula: Stand up for justice, be brave and true, Stand for what is right in all you do.\n12. Sara: Together we can make kindness grow, Like gentle seeds we proudly sow.”",
+      tip: "Strong, confident projection across the auditorium."
+    },
+    12: {
+      title: "Poem: Finale – Minugi Solo & Full 13-Child Chorus",
+      speaker: "Lead: Minugi & All 13 Children",
+      item: 2,
+      line: "“13. Minugi: A little kindness can light the way, Let's spread love and justice every day!\n\nALL 13 CHILDREN TOGETHER:\nA little kindness goes a long way!\nLet love and justice lead the way!\nBe kind to people, protect animals too,\nThe world will be better because of what we do! ❤️”",
+      tip: "Minugi opens solo at center; full chorus joins on the united refrain with open arms!"
     },
     13: {
-      title: "Poem: Stanza 4 (Minugi Solo)",
-      speaker: "Minugi",
-      item: 2,
-      line: "“13. Minugi: A little kindness can light the way, Let's spread love and justice every day!”",
-      tip: "Center stage solo with bright, joyful voice."
+      title: "Role Play: Part 1 – The Playground",
+      speaker: "The Playground Cast",
+      item: 3,
+      line: "“Evodi (Narrator): One morning during the school interval, a group of children were playing together. Their classmate, Nethuli, wanted to join them. But the others refused to let her play.\nNethuli: Can I play with you?\nLiyansa: No, our team is already full.\nLiyara: Yes, go find someone else to play with.\nOsheera: Why are you being so mean?\nSehansa: Yes, why can't she play?\nGevin: Because we made the rules, and we say she can't!\nLisari: But that’s not fair! Everyone deserves a chance to play!\nEvodi: That day, no one stood up for Nethuli. If only someone had spoken, things might have been different.”",
+      tip: "Expressive acting: show the hurt of exclusion, then the bravery of speaking up."
     },
     14: {
-      title: "Poem: Grand Chorus (All 13 Children)",
-      speaker: "All 13 Children Together",
-      item: 2,
-      line: "“ALL 13 CHILDREN TOGETHER: A little kindness goes a long way! Let love and justice lead the way! Be kind to people, protect animals too, The world will be better because of what we do! ❤️”",
-      tip: "Full chorus unison with radiant energy!"
+      title: "Role Play: Part 2 – Speaking for the Voiceless",
+      speaker: "Nature Cast (Minindee)",
+      item: 3,
+      line: "“Dehami: Look at that bird on the branch. It sings so sweetly, yet so many people ignore it.\nShaini: And the stray dog by the gate—it looked hungry and scared.\nNethuki: People often forget that animals have feelings too.\nYeshitha: They feel hunger, pain, and fear, just like us.\nMinindee: We have voices, but they don't. So, shouldn't we use our voices to protect them?\nSinadhi: Yes! They too deserve to live under the same sky, breathe the same air, and enjoy the freedom of this beautiful world.\nEvodi: Justice is not just for humans. It belongs to all living creatures.”",
+      tip: "Minindee speaks with heartfelt moral conviction for animals and nature."
     },
     15: {
-      title: "Role Play: Title & Scene Introduction",
-      speaker: "Evodi (Narrator)",
+      title: "Role Play: Part 3 – The Train of Justice Chorus",
+      speaker: "Role Play Company",
       item: 3,
-      line: "“Evodi: One morning during the school interval, a group of children were playing together. Their classmate, Nethuli, wanted to join them. But the others refused to let her play.”",
-      tip: "Narrator sets the scene with calm, clear storytelling tone."
+      line: "“All: Choo, choo, chugga, chugga, whoosh! All aboard the train of justice!\nAll (Together):\n• Choose kindness!\n• Speak up!\n• Stand for what is right!\n• Be gentle with animals!\n• Never stay silent when someone needs help!\n• Justice starts with us!”",
+      tip: "Dynamic rhythmic train chant. Energy and enthusiasm!"
     },
     16: {
-      title: "Part 1: The Playground – The Exclusion",
-      speaker: "Nethuli, Liyansa, Liyara",
-      item: 3,
-      line: "“Nethuli: Hi friends. May I join you? / Liyansa: No, no. We don't like to play with you. / Liyara: You can go somewhere else! / Liyansa: Yes, you cannot join our game. / Nethuli: Why are you treating me like this?...”",
-      tip: "Express genuine emotion in character."
+      title: "Justice Detectives: Case Studies (Cases 1–5)",
+      speaker: "Justice Detectives",
+      item: 4,
+      line: "“JUSTICE DETECTIVES CASE STUDIES (Part 1):\nCase 01: Blamed Without Proof\nCase 02: Rules Are for Everyone\nCase 03: Left Out of the Game\nCase 04: Taking Without Asking\nCase 05: Unfair Sharing”",
+      tip: "Present each case clearly, inviting students to reflect on fairness."
     },
     17: {
-      title: "Part 1: The Playground – Stepping In",
-      speaker: "Osheera, Sehansa, Nethuli",
-      item: 3,
-      line: "“Osheera: Look at Nethuli... She is really hurt... / Sehansa: Someone needs to help her. Let's stop watching and do something. Nethuli is our friend too. Come and play with us, Nethuli! / Nethuli: Thank you, my dear...”",
-      tip: "Sehansa steps forward with decisive friendship."
+      title: "Justice Detectives: Case Studies (Cases 6–10)",
+      speaker: "Justice Detectives",
+      item: 4,
+      line: "“JUSTICE DETECTIVES CASE STUDIES (Part 2):\nCase 06: Cutting in Line\nCase 07: Making a Mess\nCase 08: Whispering Rumors\nCase 09: Picking Sides\nCase 10: Damaging Belongings”",
+      tip: "Highlight responsibility, truth, and honesty in everyday school life."
     },
     18: {
-      title: "Part 1: The Playground – Reconciliation",
-      speaker: "Liyansa, Liyara, Nethuli",
-      item: 3,
-      line: "“Liyansa: Liyara, what we did wasn't right. We shouldn't treat anyone like that. / Liyara & Liyansa (Together): We are sorry for treating you that way. / Nethuli: It's okay, dear. I just wanted to be your friend.”",
-      tip: "Genuine apology and warm forgiveness."
+      title: "Video Presentation: Kindness & Justice in Action",
+      speaker: "Video Feature",
+      item: 5,
+      line: "“Grade 4 Assembly Video Feature: Inspiring real-world examples of kindness, empathy, animal rescue, and standing up for justice.”",
+      tip: "Ensure auditorium projector audio is unmuted and clear."
     },
     19: {
-      title: "Part 1: The Playground – Upstander Lessons",
-      speaker: "Gevin, Lisari",
-      item: 3,
-      line: "“Gevin: Our words can hurt others. Staying silent can hurt them too. So, speak up when something is wrong... / Lisari: We should never make someone feel unwanted. If we see bullying, we should help safely and tell a teacher when necessary.”",
-      tip: "Authoritative upstander reflections."
+      title: "Our Kindness & Justice Pledge: Nine Sacred Promises",
+      speaker: "All Students Hand on Heart",
+      item: 6,
+      line: "“OUR KINDNESS AND JUSTICE PLEDGE:\n1. I promise to be kind to everyone, every day.\n2. I promise to share and take turns fairly.\n3. I promise to tell the truth and be honest.\n4. I promise to respect my teachers, elders, and friends.\n5. I promise to listen when others speak.\n6. I promise to treat animals with love and care.\n7. I promise to stand up for those who are treated unfairly.\n8. I promise to keep my classroom and school clean.\n9. I promise to make my school a happier, fairer, and kinder place.”",
+      tip: "Hand on heart. Solemn, clear, dignified recital by all Grade 4 students."
     },
     20: {
-      title: "Part 2: Speaking for the Voiceless – Captivity",
-      speaker: "Dehami, Shaini",
-      item: 3,
-      line: "“Dehami: Dear friends, just like Nethuli felt excluded, have you ever thought about the pain animals go through because of humans?... / Shaini: Some are killed for their beautiful skins and tusks. Don't they deserve to live, just like us?”",
-      tip: "Thoughtful and caring presentation on animal welfare."
-    },
-    21: {
-      title: "Part 2: Speaking for the Voiceless – Habitat Loss",
-      speaker: "Nethuki, Yeshitha",
-      item: 3,
-      line: "“Nethuki: People cut down forests and destroy their homes. Where will these innocent animals go?... / Yeshitha: They cannot tell us, ‘Please don't hurt us!...’ But their silence does not mean they feel no pain.”",
-      tip: "Speak with emotional impact and conviction."
-    },
-    22: {
-      title: "Part 2: Speaking for the Voiceless – Protection",
-      speaker: "Minindee, Sinadhi",
-      item: 3,
-      line: "“Minindee: We have voices, but they don't. So, shouldn't we use our voices to protect them?... / Sinadhi: They too deserve to live under the same sky, breathe the same air, and enjoy the freedom of this beautiful world...”",
-      tip: "Minindee and Sinadhi champion animal rights with dignity."
-    },
-    23: {
-      title: "Role Play Ending Chorus: All Together",
-      speaker: "All Together",
-      item: 3,
-      line: "“All (Together): • Choose kindness! • Speak up! • Stand for what is right! • Be gentle with animals! • Never stay silent when someone needs help! • Justice starts with us!”",
-      tip: "Chant the 6 proclamations rhythmically together."
-    },
-    24: {
-      title: "Justice Detectives: Cover",
-      speaker: "Item 04",
-      item: 4,
-      line: "“JUSTICE DETECTIVES • Grade 4 Assembly Case Studies”",
-      tip: "Display the official title slide from Page 1 of the PDF."
-    },
-    25: {
-      title: "Case 1: Blamed Without Proof",
-      speaker: "Item 04",
-      item: 4,
-      line: "“BLAMED WITHOUT PROOF”",
-      tip: "Present the situation from Page 2 of the PDF."
-    },
-    26: {
-      title: "Case 2: Rules Are for Everyone",
-      speaker: "Item 04",
-      item: 4,
-      line: "“RULES ARE FOR EVERYONE”",
-      tip: "Present the situation from Page 3 of the PDF."
-    },
-    27: {
-      title: "Case 3: Left Out of the Game",
-      speaker: "Item 04",
-      item: 4,
-      line: "“LEFT OUT OF THE GAME”",
-      tip: "Present the situation from Page 4 of the PDF."
-    },
-    28: {
-      title: "Case 4: Taking Without Asking",
-      speaker: "Item 04",
-      item: 4,
-      line: "“TAKING WITHOUT ASKING”",
-      tip: "Present the situation from Page 5 of the PDF."
-    },
-    29: {
-      title: "Case 5: Unfair Sharing",
-      speaker: "Item 04",
-      item: 4,
-      line: "“UNFAIR SHARING”",
-      tip: "Present the situation from Page 6 of the PDF."
-    },
-    30: {
-      title: "Case 6: Cutting in Line",
-      speaker: "Item 04",
-      item: 4,
-      line: "“CUTTING IN LINE”",
-      tip: "Present the situation from Page 7 of the PDF."
-    },
-    31: {
-      title: "Case 7: Making a Mess",
-      speaker: "Item 04",
-      item: 4,
-      line: "“MAKING A MESS”",
-      tip: "Present the situation from Page 8 of the PDF."
-    },
-    32: {
-      title: "Case 8: Whispering Rumors",
-      speaker: "Item 04",
-      item: 4,
-      line: "“WHISPERING RUMORS”",
-      tip: "Present the situation from Page 9 of the PDF."
-    },
-    33: {
-      title: "Case 9: Picking Sides",
-      speaker: "Item 04",
-      item: 4,
-      line: "“PICKING SIDES”",
-      tip: "Present the situation from Page 10 of the PDF."
-    },
-    34: {
-      title: "Case 10: Judging by Looks",
-      speaker: "Item 04",
-      item: 4,
-      line: "“JUDGING BY LOOKS”",
-      tip: "Present the situation from Page 11 of the PDF."
-    },
-    35: {
-      title: "Video Presentation",
-      speaker: "Item 05",
-      item: 5,
-      line: "“Teacher Video Presentation • https://youtu.be/NIsGkTuO1vk”",
-      tip: "Ensure sound is enabled on the auditorium speakers before playing."
-    },
-    36: {
-      title: "Our Kindness & Justice Pledge: Intro",
-      speaker: "Item 06",
+      title: "Grand Assembly Finale: Collective Climax",
+      speaker: "All Students Together",
       item: 6,
-      line: "“OUR KINDNESS & JUSTICE PLEDGE • All Grade 4 students raise right hands.”",
-      tip: "Prepare the whole class to raise hands in unison."
-    },
-    37: {
-      title: "The Pledge: Promises 1 to 5",
-      speaker: "Full Grade 4 Assembly",
-      item: 6,
-      line: "“1. I promise to be kind to everyone. / 2. I will speak the truth and treat others fairly. / 3. I will respect my friends and help those in need. / 4. I will never bully, hurt, or make fun of others. / 5. I will be kind and gentle to animals.”",
-      tip: "Recite clearly and solemnly with right hands raised."
-    },
-    38: {
-      title: "The Pledge: Finale & Final Message",
-      speaker: "Full Grade 4 Assembly",
-      item: 6,
-      line: "“6. I will protect nature and respect all living things. / 7. I will speak up when I see someone being treated unfairly. / 8. I will use my words and actions to spread love, kindness, and peace. / 9. I understand that even a small act of kindness can make a big difference. • ‘I will choose kindness. I will stand for justice. I will make a difference!’ • KINDNESS IS CONTAGIOUS, AND JUSTICE STARTS WITH US!”",
-      tip: "Grand celebratory climax with applause and confetti!"
+      line: "“Official Callout:\n‘I will choose kindness. I will stand for justice. I will make a difference!’\n\nGrand Final Assembly Message:\n‘KINDNESS IS CONTAGIOUS, AND JUSTICE STARTS WITH US!’”",
+      tip: "Triumphant climax! Loud, joyful unison with joined hands!"
     }
   };
 
-  // DOM Cache
+  const slideMottos = {
+    1: "Kindness Is Contagious, Justice Starts with Us.",
+    2: "Kindness is contagious!",
+    3: "Justice begins when we treat others fairly.",
+    4: "Always do the right thing.",
+    5: "Respect makes us better.",
+    6: "Animals deserve kindness too.",
+    7: "Stand up for justice!",
+    8: "Kindness is contagious, and justice starts with us!",
+    9: "A gentle smile, a helping hand.",
+    10: "Speak with care, protect animals.",
+    11: "Stand for justice, brave and true.",
+    12: "A little kindness goes a long way!",
+    13: "If only someone had spoken.",
+    14: "Guardians of nature and animals.",
+    15: "Choo Choo! Stand up for justice!",
+    16: "Justice Detectives (Cases 1–5)",
+    17: "Justice Detectives (Cases 6–10)",
+    18: "Kindness & Justice in Action",
+    19: "Six Pillars of Sussex College",
+    20: "Kindness is contagious, and justice starts with us!"
+  };
+
+  // DOM Elements Cache
   let dom = {};
 
-  // Initialize
   function init() {
-    cacheElements();
-    setupViewportScaling();
-    setupOverviewGrid();
-    setupKeyboardShortcuts();
+    cacheDom();
+    bindEvents();
+    buildOverviewGrid();
     setupAmbientParticles();
-    initAudio();
-    initConfetti();
     goToSlide(1, false);
-
-    window.addEventListener('resize', handleResize);
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    initAudio();
   }
 
-  function cacheElements() {
+  function cacheDom() {
     dom = {
       viewport: document.getElementById('presentation-viewport'),
       canvas: document.getElementById('presentation-canvas'),
-      slides: document.querySelectorAll('.slide-item'),
-      currentNum: document.getElementById('slide-current-num'),
-      totalNum: document.getElementById('slide-total-num'),
-      progressFill: document.getElementById('dock-progress-fill'),
-      progressTrack: document.getElementById('dock-progress-track'),
-      slideLabel: document.getElementById('current-slide-label'),
+      slides: Array.from(document.querySelectorAll('.slide-item')),
+      currentNum: document.getElementById('current-slide-num'),
+      totalNum: document.getElementById('total-slide-num'),
+      slideLabel: document.getElementById('slide-label-badge'),
+      progressFill: document.getElementById('progress-fill'),
       btnPrev: document.getElementById('btn-prev'),
       btnNext: document.getElementById('btn-next'),
-      btnFullscreen: document.getElementById('btn-fullscreen'),
-      btnOverview: document.getElementById('btn-overview'),
-      btnSound: document.getElementById('btn-sound'),
-      btnNotes: document.getElementById('btn-notes'),
       btnAutoplay: document.getElementById('btn-autoplay'),
       autoplayIcon: document.getElementById('autoplay-icon'),
       autoplayText: document.getElementById('autoplay-text'),
+      btnSound: document.getElementById('btn-sound'),
+      btnNotes: document.getElementById('btn-notes'),
+      btnOverview: document.getElementById('btn-overview'),
+      btnFullscreen: document.getElementById('btn-fullscreen'),
       speakerDrawer: document.getElementById('speaker-drawer'),
-      drawerSpeakerName: document.getElementById('drawer-speaker-name'),
-      drawerSlideTopic: document.getElementById('drawer-slide-topic'),
-      drawerSpeakingLine: document.getElementById('drawer-speaking-line'),
-      drawerSpeakingTip: document.getElementById('drawer-speaking-tip'),
+      notesSpeakerName: document.getElementById('notes-speaker-name'),
+      notesTipText: document.getElementById('notes-tip-text'),
+      notesScriptText: document.getElementById('notes-script-text'),
       overviewModal: document.getElementById('overview-modal'),
-      overviewGrid: document.getElementById('overview-grid-container'),
-      confettiCanvas: document.getElementById('confetti-canvas'),
-      itemNavBtns: document.querySelectorAll('.item-nav-btn'),
+      overviewGrid: document.getElementById('overview-grid'),
+      itemNavBtns: Array.from(document.querySelectorAll('.item-nav-btn')),
     };
   }
 
-  // 16:9 Aspect Ratio Engine
-  function setupViewportScaling() {
+  function bindEvents() {
+    if (dom.btnPrev) dom.btnPrev.addEventListener('click', prevSlide);
+    if (dom.btnNext) dom.btnNext.addEventListener('click', nextSlide);
+    if (dom.btnAutoplay) dom.btnAutoplay.addEventListener('click', toggleAutoplay);
+    if (dom.btnSound) dom.btnSound.addEventListener('click', toggleSound);
+    if (dom.btnNotes) dom.btnNotes.addEventListener('click', () => toggleNotes());
+    if (dom.btnOverview) dom.btnOverview.addEventListener('click', () => toggleOverview());
+    if (dom.btnFullscreen) dom.btnFullscreen.addEventListener('click', toggleFullscreen);
+
+    setupKeyboardShortcuts();
+    window.addEventListener('resize', handleResize);
     handleResize();
   }
 
   function handleResize() {
-    if (!dom.canvas) return;
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const targetWidth = 1920;
-    const targetHeight = 1080;
-
-    const scaleX = (windowWidth - 20) / targetWidth;
-    const scaleY = (windowHeight - 20) / targetHeight;
-    const scale = Math.min(scaleX, scaleY, 1);
-
-    dom.canvas.style.transform = `scale(${scale})`;
-  }
-
-  function handleFullscreenChange() {
-    if (!document.fullscreenElement) {
-      if (dom.btnFullscreen) dom.btnFullscreen.classList.remove('active-btn');
-    } else {
-      if (dom.btnFullscreen) dom.btnFullscreen.classList.add('active-btn');
-    }
-    handleResize();
-  }
-
-  // Overview Grid Generator
-  function setupOverviewGrid() {
-    if (!dom.overviewGrid) return;
-    dom.overviewGrid.innerHTML = '';
-
-    for (let i = 1; i <= state.totalSlides; i++) {
-      const cue = slideCues[i];
-      const card = document.createElement('div');
-      card.className = `overview-card ${i === 1 ? 'active-card' : ''}`;
-      card.innerHTML = `
-        <span class="card-num-badge">SLIDE ${String(i).padStart(2, '0')}</span>
-        <h4 class="card-label">${cue ? cue.title : 'Slide ' + i}</h4>
-        <span class="card-subtext">${cue ? cue.speaker : ''}</span>
-      `;
-      card.addEventListener('click', () => {
-        goToSlide(i);
-        toggleOverview(false);
-      });
-      dom.overviewGrid.appendChild(card);
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const targetW = 1920;
+    const targetH = 1080;
+    const scale = Math.min((vw - 20) / targetW, (vh - 20) / targetH, 1);
+    if (dom.canvas) {
+      dom.canvas.style.transform = `scale(${scale})`;
     }
   }
 
-  // Keyboard Shortcuts
   function setupKeyboardShortcuts() {
     window.addEventListener('keydown', (e) => {
       if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
@@ -424,30 +287,12 @@ const Presentation = (() => {
           e.preventDefault();
           goToSlide(state.totalSlides);
           break;
-        case '1':
-          e.preventDefault();
-          goToItem(1);
-          break;
-        case '2':
-          e.preventDefault();
-          goToItem(2);
-          break;
-        case '3':
-          e.preventDefault();
-          goToItem(3);
-          break;
-        case '4':
-          e.preventDefault();
-          goToItem(4);
-          break;
-        case '5':
-          e.preventDefault();
-          goToItem(5);
-          break;
-        case '6':
-          e.preventDefault();
-          goToItem(6);
-          break;
+        case '1': e.preventDefault(); goToItem(1); break;
+        case '2': e.preventDefault(); goToItem(2); break;
+        case '3': e.preventDefault(); goToItem(3); break;
+        case '4': e.preventDefault(); goToItem(4); break;
+        case '5': e.preventDefault(); goToItem(5); break;
+        case '6': e.preventDefault(); goToItem(6); break;
         case 'f':
         case 'F':
           e.preventDefault();
@@ -467,8 +312,8 @@ const Presentation = (() => {
           e.preventDefault();
           toggleOverview();
           break;
-        case 'p':
-        case 'P':
+        case 'a':
+        case 'A':
           e.preventDefault();
           toggleAutoplay();
           break;
@@ -483,29 +328,12 @@ const Presentation = (() => {
           break;
       }
     });
-
-    if (dom.progressTrack) {
-      dom.progressTrack.addEventListener('click', (e) => {
-        const rect = dom.progressTrack.getBoundingClientRect();
-        const ratio = (e.clientX - rect.left) / rect.width;
-        const target = Math.min(state.totalSlides, Math.max(1, Math.ceil(ratio * state.totalSlides)));
-        goToSlide(target);
-      });
-    }
-
-    if (dom.btnFullscreen) dom.btnFullscreen.addEventListener('click', toggleFullscreen);
-    if (dom.btnOverview) dom.btnOverview.addEventListener('click', () => toggleOverview());
-    if (dom.btnNotes) dom.btnNotes.addEventListener('click', () => toggleNotes());
-    if (dom.btnSound) dom.btnSound.addEventListener('click', toggleSound);
   }
 
-  // Ambient Particles
   function setupAmbientParticles() {
     const container = document.getElementById('ambient-particles');
     if (!container) return;
-    const particleCount = 20;
-
-    for (let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < 22; i++) {
       const p = document.createElement('div');
       p.className = 'particle-dot';
       const size = Math.random() * 6 + 3;
@@ -521,7 +349,7 @@ const Presentation = (() => {
 
   // Web Audio Chimes
   function initAudio() {
-    const unlockAudio = () => {
+    const unlock = () => {
       if (!state.audioCtx) {
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
         if (AudioCtx) state.audioCtx = new AudioCtx();
@@ -529,30 +357,26 @@ const Presentation = (() => {
       if (state.audioCtx && state.audioCtx.state === 'suspended') {
         state.audioCtx.resume();
       }
-      window.removeEventListener('click', unlockAudio);
-      window.removeEventListener('keydown', unlockAudio);
+      window.removeEventListener('click', unlock);
+      window.removeEventListener('keydown', unlock);
     };
-    window.addEventListener('click', unlockAudio);
-    window.addEventListener('keydown', unlockAudio);
+    window.addEventListener('click', unlock);
+    window.addEventListener('keydown', unlock);
   }
 
-  function playTone(freq, type = 'sine', startTime = 0, duration = 0.4, gainValue = 0.12) {
+  function playTone(freq, type = 'sine', startTime = 0, duration = 0.35, gainValue = 0.12) {
     if (!state.soundEnabled || !state.audioCtx) return;
     try {
       const now = state.audioCtx.currentTime + startTime;
       const osc = state.audioCtx.createOscillator();
       const gain = state.audioCtx.createGain();
-
       osc.type = type;
       osc.frequency.setValueAtTime(freq, now);
-
       gain.gain.setValueAtTime(0.001, now);
       gain.gain.exponentialRampToValueAtTime(gainValue, now + 0.04);
       gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
-
       osc.connect(gain);
       gain.connect(state.audioCtx.destination);
-
       osc.start(now);
       osc.stop(now + duration + 0.05);
     } catch (e) {}
@@ -560,9 +384,9 @@ const Presentation = (() => {
 
   function playSlideSound() {
     if (!state.soundEnabled) return;
-    playTone(523.25, 'triangle', 0.0, 0.3, 0.1);
-    playTone(659.25, 'sine', 0.06, 0.3, 0.08);
-    playTone(783.99, 'sine', 0.12, 0.38, 0.09);
+    playTone(523.25, 'triangle', 0.0, 0.28, 0.1);
+    playTone(659.25, 'sine', 0.06, 0.28, 0.08);
+    playTone(783.99, 'sine', 0.12, 0.35, 0.09);
   }
 
   function playSuccessSound() {
@@ -573,7 +397,7 @@ const Presentation = (() => {
     playTone(1046.50, 'sine', 0.24, 0.65, 0.16);
   }
 
-  // Slide Navigation
+  // Navigation Core
   function goToSlide(targetIndex, playAudio = true) {
     if (targetIndex < 1 || targetIndex > state.totalSlides) return;
     state.currentSlide = targetIndex;
@@ -582,7 +406,6 @@ const Presentation = (() => {
       const slideNum = parseInt(slide.dataset.slide, 10);
       if (slideNum === state.currentSlide) {
         slide.classList.add('active');
-        triggerEntranceAnimation(slide);
       } else {
         slide.classList.remove('active');
       }
@@ -592,78 +415,39 @@ const Presentation = (() => {
     if (dom.totalNum) dom.totalNum.textContent = String(state.totalSlides).padStart(2, '0');
 
     const progressPercent = ((state.currentSlide - 1) / (state.totalSlides - 1)) * 100;
-    if (dom.progressFill) dom.progressFill.style.width = `${Math.max(2.6, progressPercent)}%`;
+    if (dom.progressFill) dom.progressFill.style.width = `${Math.max(4, progressPercent)}%`;
 
     const cue = slideCues[state.currentSlide];
     if (dom.slideLabel && cue) {
-      dom.slideLabel.textContent = `${cue.title}`;
+      dom.slideLabel.textContent = cue.title;
     }
 
-    // Update Item Quick-Jump Bar Active state
-    const currentItem = cue ? cue.item : 1;
-    if (dom.itemNavBtns) {
-      dom.itemNavBtns.forEach((btn) => {
-        const itemNum = parseInt(btn.dataset.item, 10);
-        if (itemNum === currentItem) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
+    // Update Drawer Panel
+    if (cue) {
+      if (dom.notesSpeakerName) dom.notesSpeakerName.textContent = cue.speaker;
+      if (dom.notesTipText) dom.notesTipText.textContent = cue.tip;
+      if (dom.notesScriptText) dom.notesScriptText.innerHTML = cue.line.replace(/\n/g, '<br>');
     }
 
-    // Update Overview Grid Active State
-    const cards = dom.overviewGrid ? dom.overviewGrid.querySelectorAll('.overview-card') : [];
-    cards.forEach((card, idx) => {
-      if (idx + 1 === state.currentSlide) {
-        card.classList.add('active-card');
-      } else {
-        card.classList.remove('active-card');
-      }
-    });
-
-    updateSpeakerNotes(cue);
-
-    if (dom.btnPrev) dom.btnPrev.disabled = state.currentSlide === 1;
-    if (dom.btnNext) {
-      if (state.currentSlide === state.totalSlides) {
-        dom.btnNext.innerHTML = `<span class="btn-text">Celebrate</span>`;
-      } else {
-        dom.btnNext.innerHTML = `
-          <span class="btn-text">Next</span>
-          <svg class="dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        `;
-      }
-    }
+    updateItemNavHighlight(cue ? cue.item : 1);
 
     if (playAudio) {
       if (state.currentSlide === state.totalSlides) {
         playSuccessSound();
-        launchCelebration();
+        triggerConfetti();
       } else {
         playSlideSound();
       }
     }
 
-    if (state.isAutoplay) {
-      resetAutoplayTimer();
-    }
-  }
-
-  function goToItem(itemNumber) {
-    const target = itemMap[itemNumber];
-    if (target) {
-      goToSlide(target);
-    }
+    if (state.isAutoplay) resetAutoplayTimer();
   }
 
   function nextSlide() {
     if (state.currentSlide < state.totalSlides) {
       goToSlide(state.currentSlide + 1);
-    } else {
-      launchCelebration();
+    } else if (state.isAutoplay) {
+      goToSlide(1);
     }
   }
 
@@ -673,24 +457,40 @@ const Presentation = (() => {
     }
   }
 
-  function triggerEntranceAnimation(slideEl) {
-    if (window.gsap) {
-      const cards = slideEl.querySelectorAll('.speech-card-main, .poem-card, .dialogue-card, .detective-photo-frame, .video-player-container, .pledge-items-list, .official-callout-box');
-      if (cards.length > 0) {
-        gsap.fromTo(cards, 
-          { opacity: 0, y: 20 }, 
-          { opacity: 1, y: 0, stagger: 0.08, duration: 0.5, ease: 'power2.out' }
-        );
-      }
-    }
+  function goToItem(itemNum) {
+    const target = itemMap[itemNum];
+    if (target) goToSlide(target);
   }
 
-  function updateSpeakerNotes(cue) {
-    if (!cue) return;
-    if (dom.drawerSpeakerName) dom.drawerSpeakerName.textContent = cue.speaker;
-    if (dom.drawerSlideTopic) dom.drawerSlideTopic.textContent = `Slide ${state.currentSlide}: ${cue.title}`;
-    if (dom.drawerSpeakingLine) dom.drawerSpeakingLine.textContent = cue.line;
-    if (dom.drawerSpeakingTip) dom.drawerSpeakingTip.textContent = cue.tip;
+  function updateItemNavHighlight(activeItem) {
+    dom.itemNavBtns.forEach((btn) => {
+      const itemVal = parseInt(btn.dataset.item, 10);
+      if (itemVal === activeItem) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
+
+  function buildOverviewGrid() {
+    if (!dom.overviewGrid) return;
+    dom.overviewGrid.innerHTML = '';
+    for (let i = 1; i <= state.totalSlides; i++) {
+      const cue = slideCues[i];
+      const tile = document.createElement('div');
+      tile.className = `overview-tile ${i === state.currentSlide ? 'active-tile' : ''}`;
+      tile.innerHTML = `
+        <span class="tile-num">SLIDE ${String(i).padStart(2, '0')}</span>
+        <strong class="tile-title">${cue ? cue.title : 'Slide ' + i}</strong>
+        <span class="tile-speaker">${cue ? cue.speaker : ''}</span>
+      `;
+      tile.onclick = () => {
+        goToSlide(i);
+        toggleOverview(false);
+      };
+      dom.overviewGrid.appendChild(tile);
+    }
   }
 
   function toggleNotes(forceState) {
@@ -707,6 +507,7 @@ const Presentation = (() => {
   function toggleOverview(forceState) {
     state.isOverviewOpen = typeof forceState === 'boolean' ? forceState : !state.isOverviewOpen;
     if (state.isOverviewOpen) {
+      buildOverviewGrid();
       dom.overviewModal.classList.remove('hidden');
       dom.btnOverview.classList.add('active-btn');
     } else {
@@ -761,79 +562,37 @@ const Presentation = (() => {
 
   // =========================================================================
   // EDITABLE POWERPOINT (.PPTX) EXPORT (PptxGenJS)
-  // Generates true Microsoft PowerPoint native text boxes, shapes, and images
+  // Generates 20 visual-first slides with embedded speaker notes
   // =========================================================================
-  
-  const slideMottos = {
-    1: "Kindness Is Contagious, Justice Starts with Us.",
-    2: "Six Voices, One Message",
-    3: "Kindness is contagious!",
-    4: "Justice begins with fairness.",
-    5: "Always do the right thing.",
-    6: "Respect makes us better.",
-    7: "Animals deserve kindness too.",
-    8: "Stand up for justice!",
-    9: "Kindness is contagious, and justice starts with us!",
-    10: "A gentle smile, a helping hand.",
-    11: "Tell the truth and do what’s right.",
-    12: "Speak with love, protect animals.",
-    13: "Stand up proud, do what is right.",
-    14: "A little kindness goes a long way!",
-    15: "Laughter and games begin.",
-    16: "No one should stand alone.",
-    17: "Courage speaks up!",
-    18: "Included and united!",
-    19: "Listen to the ancient trees.",
-    20: "Guardians of the forest.",
-    21: "Speak for those without a voice.",
-    22: "Living in harmony together.",
-    23: "Choo Choo! Stand up for justice!",
-    24: "Justice Detectives Case Studies",
-    25: "1. Blamed Without Proof",
-    26: "2. Rules Are for Everyone",
-    27: "3. Left Out of the Game",
-    28: "4. Taking Without Asking",
-    29: "5. Unfair Sharing",
-    30: "6. Cutting in Line",
-    31: "7. Making a Mess",
-    32: "8. Whispering Rumors",
-    33: "9. Picking Sides",
-    34: "10. Damaging Belongings",
-    35: "Kindness & Justice in Action",
-    36: "United in promise and action.",
-    37: "Six Pillars of Sussex College",
-    38: "Kindness is contagious, and justice starts with us!"
-  };
-function exportPPTX() {
+  function exportPPTX() {
     if (typeof PptxGenJS === 'undefined') {
       alert('PowerPoint generator library is loading. Please try again in a moment.');
       return;
     }
 
     const pptx = new PptxGenJS();
-    pptx.layout = 'LAYOUT_16x9'; // 1920x1080 proportional
+    pptx.layout = 'LAYOUT_16x9';
     pptx.author = 'Sussex College Grade 4';
     pptx.title = 'SIX VOICES, ONE MESSAGE - Sussex College Assembly';
 
-    // Loop through all 38 slides
     for (let i = 1; i <= state.totalSlides; i++) {
       const cue = slideCues[i];
       const motto = slideMottos[i] || '';
       const slide = pptx.addSlide();
 
-      // Full original verbatim script preserved in PowerPoint Speaker Notes
+      // Embed full original verbatim script into PowerPoint Speaker Notes
       if (cue && cue.line) {
-        slide.addNotes(cue.speaker + ':\n\n' + cue.line + (cue.tip ? '\n\nStage Direction / Cue: ' + cue.tip : ''));
+        slide.addNotes(cue.speaker + ':\n\n' + cue.line.replace(/\n/g, '\n') + (cue.tip ? '\n\nStage Direction / Cue: ' + cue.tip : ''));
       }
 
-      // Background Gradient Card
+      // Background Card
       slide.addShape(pptx.shapes.RECTANGLE, {
         x: 0, y: 0, w: '100%', h: '100%',
-        fill: { color: i === 38 ? 'FEF3C7' : (i >= 24 && i <= 34 ? 'F8FAFC' : 'F0FDF4') },
+        fill: { color: i === 20 ? 'FEF3C7' : (i === 16 || i === 17 ? 'F8FAFC' : 'F0FDF4') },
         line: { color: 'E2E8F0', width: 0 }
       });
 
-      // Top Header Bar (School & Teacher Credit)
+      // Top Header Bar
       slide.addShape(pptx.shapes.RECTANGLE, {
         x: 0.6, y: 0.35, w: 12.1, h: 0.7,
         fill: { color: 'FFFFFF' },
@@ -845,20 +604,34 @@ function exportPPTX() {
         { text: 'Class Teacher: Darshani Gunathilaka', options: { bold: true, color: 'B45309', fontSize: 13 } }
       ], { x: 0.8, y: 0.4, w: 9.0, h: 0.6 });
 
-      if (i >= 24 && i <= 34) {
-        // Detective Slides: Case Heading + Large Photo (No text clutter)
-        slide.addText(cue ? cue.title : 'Detective Case', {
+      if (i === 16) {
+        // Detective Cases 1 to 5
+        slide.addText('Justice Detectives Case Studies (Cases 1–5)', {
           x: 0.8, y: 1.25, w: 11.5, h: 0.65,
           fontSize: 22, bold: true, color: '0D2C54'
         });
-
-        const photoNum = String(i - 23).padStart(2, '0');
-        slide.addImage({
-          path: `detective_${photoNum}.jpg`,
-          x: 2.2, y: 2.05, w: 8.9, h: 4.8
+        for (let c = 1; c <= 5; c++) {
+          const photoNum = String(c + 1).padStart(2, '0');
+          slide.addImage({
+            path: `detective_${photoNum}.jpg`,
+            x: 0.8 + (c - 1) * 2.35, y: 2.1, w: 2.2, h: 4.2
+          });
+        }
+      } else if (i === 17) {
+        // Detective Cases 6 to 10
+        slide.addText('Justice Detectives Case Studies (Cases 6–10)', {
+          x: 0.8, y: 1.25, w: 11.5, h: 0.65,
+          fontSize: 22, bold: true, color: '0D2C54'
         });
-      } else if (i === 37) {
-        // Pledge Values Constellation (6 Pillars)
+        for (let c = 6; c <= 10; c++) {
+          const photoNum = String(c + 1).padStart(2, '0');
+          slide.addImage({
+            path: `detective_${photoNum}.jpg`,
+            x: 0.8 + (c - 6) * 2.35, y: 2.1, w: 2.2, h: 4.2
+          });
+        }
+      } else if (i === 19) {
+        // Six Pillars of Sussex College
         slide.addText('Our Six Guiding Values', {
           x: 0.8, y: 1.25, w: 11.5, h: 0.65,
           fontSize: 24, bold: true, color: '0D2C54', align: 'center'
@@ -884,19 +657,17 @@ function exportPPTX() {
             fill: { color: 'FFFFFF' },
             line: { color: p.color, width: 2 }
           });
-
           slide.addText(p.name, {
             x: xPos, y: yPos + 0.35, w: 3.5, h: 0.6,
             fontSize: 18, bold: true, color: p.color, align: 'center'
           });
-
           slide.addText(p.sub, {
             x: xPos, y: yPos + 0.95, w: 3.5, h: 0.5,
             fontSize: 12, color: '64748B', align: 'center'
           });
         });
-      } else if (i === 38) {
-        // Climax Slide: Logo + Callout + Grand Final Message
+      } else if (i === 20) {
+        // Climax Slide
         slide.addText('SUSSEX COLLEGE • GRADE 4 FINALE', {
           x: 0.8, y: 1.4, w: 11.7, h: 0.5,
           fontSize: 14, bold: true, color: '0D2C54', align: 'center'
@@ -918,14 +689,13 @@ function exportPPTX() {
           fontSize: 34, bold: true, color: '0D2C54', align: 'center'
         });
       } else {
-        // Visual Presentation Slides: Speaker Pill, Hero Scene Title, and Motto Ribbon
+        // Visual Presentation Slides
         slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
           x: 1.2, y: 1.4, w: 10.9, h: 5.2,
           fill: { color: 'FFFFFF' },
           line: { color: 'E2E8F0', width: 2 }
         });
 
-        // Speaker Pill
         slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
           x: 4.6, y: 1.8, w: 4.1, h: 0.65,
           fill: { color: '0284C7' },
@@ -936,13 +706,11 @@ function exportPPTX() {
           fontSize: 14, bold: true, color: 'FFFFFF', align: 'center'
         });
 
-        // Scene Title
         slide.addText(cue ? cue.title : 'Scene ' + i, {
           x: 1.5, y: 2.8, w: 10.3, h: 1.1,
           fontSize: 28, bold: true, color: '0D2C54', align: 'center'
         });
 
-        // Motto Ribbon (3-7 words)
         slide.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
           x: 3.2, y: 4.2, w: 6.9, h: 0.9,
           fill: { color: 'FEF3C7' },
@@ -954,14 +722,12 @@ function exportPPTX() {
         });
       }
 
-      // Slide Footer
       slide.addText(`Slide ${i} of ${state.totalSlides}  |  Sussex College Grade 4 Assembly`, {
         x: 0.8, y: 7.05, w: 11.7, h: 0.35,
         fontSize: 11, color: '94A3B8'
       });
     }
 
-    // Save File
     pptx.writeFile({ fileName: 'Sussex_College_Grade_4_Assembly.pptx' })
       .then(() => {
         playTone(783.99, 'triangle', 0, 0.4, 0.15);
@@ -975,108 +741,78 @@ function exportPPTX() {
     window.print();
   }
 
-  // =========================================================================
-  // CONFETTI CELEBRATION ENGINE
-  // =========================================================================
-  let confettiCtx = null;
-  let confettiParticles = [];
-  let confettiAnimId = null;
+  // Interactive Confetti Cannon
+  function triggerConfetti() {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'confetti-canvas';
+    canvas.style.position = 'absolute';
+    canvas.style.inset = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '50';
+    dom.canvas.appendChild(canvas);
 
-  function initConfetti() {
-    const canvas = dom.confettiCanvas;
-    if (!canvas) return;
-    confettiCtx = canvas.getContext('2d');
-    resizeConfettiCanvas();
-    window.addEventListener('resize', resizeConfettiCanvas);
-  }
+    const ctx = canvas.getContext('2d');
+    canvas.width = 1920;
+    canvas.height = 1080;
 
-  function resizeConfettiCanvas() {
-    if (!dom.confettiCanvas || !dom.canvas) return;
-    dom.confettiCanvas.width = dom.canvas.clientWidth;
-    dom.confettiCanvas.height = dom.canvas.clientHeight;
-  }
+    const particles = [];
+    const colors = ['#f59e0b', '#0284c7', '#10b981', '#ec4899', '#8b5cf6', '#ef4444', '#ffffff'];
 
-  function launchCelebration() {
-    resizeConfettiCanvas();
-    confettiParticles = [];
-    const colors = ['#f43f5e', '#3b82f6', '#facc15', '#10b981', '#a855f7', '#fb923c', '#ffffff'];
-
-    for (let i = 0; i < 200; i++) {
-      confettiParticles.push({
-        x: dom.confettiCanvas.width * (0.2 + Math.random() * 0.6),
-        y: dom.confettiCanvas.height * 0.85,
-        vx: (Math.random() - 0.5) * 20,
-        vy: -Math.random() * 18 - 8,
+    for (let i = 0; i < 120; i++) {
+      particles.push({
+        x: Math.random() * 1920,
+        y: Math.random() * -600,
+        size: Math.random() * 10 + 6,
         color: colors[Math.floor(Math.random() * colors.length)],
-        size: Math.random() * 11 + 6,
+        vx: Math.random() * 4 - 2,
+        vy: Math.random() * 4 + 3,
         rotation: Math.random() * 360,
-        rotationSpeed: (Math.random() - 0.5) * 12,
-        gravity: 0.38,
-        drag: 0.98,
-        alpha: 1,
+        vRot: Math.random() * 6 - 3,
       });
     }
 
-    if (!confettiAnimId) {
-      animateConfetti();
-    }
-  }
-
-  function animateConfetti() {
-    if (!confettiCtx) return;
-    confettiCtx.clearRect(0, 0, dom.confettiCanvas.width, dom.confettiCanvas.height);
-
-    for (let i = confettiParticles.length - 1; i >= 0; i--) {
-      const p = confettiParticles[i];
-      p.vx *= p.drag;
-      p.vy *= p.drag;
-      p.vy += p.gravity;
-      p.x += p.vx;
-      p.y += p.vy;
-      p.rotation += p.rotationSpeed;
-      p.alpha -= 0.005;
-
-      if (p.alpha <= 0 || p.y > dom.confettiCanvas.height + 50) {
-        confettiParticles.splice(i, 1);
-        continue;
+    let frame = 0;
+    function animate() {
+      ctx.clearRect(0, 0, 1920, 1080);
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rotation += p.vRot;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 1.6);
+        ctx.restore();
+      });
+      frame++;
+      if (frame < 220) {
+        requestAnimationFrame(animate);
+      } else {
+        canvas.remove();
       }
-
-      confettiCtx.save();
-      confettiCtx.translate(p.x, p.y);
-      confettiCtx.rotate((p.rotation * Math.PI) / 180);
-      confettiCtx.globalAlpha = Math.max(0, p.alpha);
-      confettiCtx.fillStyle = p.color;
-      confettiCtx.fillRect(-p.size / 2, -p.size / 3, p.size, p.size * 0.6);
-      confettiCtx.restore();
     }
-
-    if (confettiParticles.length > 0) {
-      confettiAnimId = requestAnimationFrame(animateConfetti);
-    } else {
-      confettiAnimId = null;
-      confettiCtx.clearRect(0, 0, dom.confettiCanvas.width, dom.confettiCanvas.height);
-    }
+    requestAnimationFrame(animate);
   }
 
-  // Public API
   return {
     init,
     goToSlide,
-    goToItem,
     nextSlide,
     prevSlide,
-    toggleFullscreen,
+    goToItem,
     toggleNotes,
     toggleOverview,
-    toggleAutoplay,
+    toggleFullscreen,
     toggleSound,
+    toggleAutoplay,
     exportPPTX,
-    exportPDF,
-    launchCelebration,
+    exportPDF
   };
 })();
 
-// Auto Initialize
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => Presentation.init());
 } else {
