@@ -1,0 +1,527 @@
+/* ==========================================================================
+   PROTOTYPE CINEMATIC PRESENTATION STYLESHEET
+   Sussex College Grade 4 Assembly • 3 Prototype Slides
+   ========================================================================== */
+
+:root {
+  --sussex-navy: #0d2c54;
+  --sussex-blue: #1565c0;
+  --sussex-gold: #f59e0b;
+  --sussex-amber: #d97706;
+
+  --font-display: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --ease-cinematic: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #030712;
+  font-family: var(--font-body);
+  color: #0f172a;
+  user-select: none;
+}
+
+#presentation-viewport {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #0b1528 0%, #020617 100%);
+  padding: 8px;
+}
+
+.canvas-16-9 {
+  width: 1920px;
+  height: 1080px;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform-origin: center center;
+}
+
+/* ==========================================================================
+   Slides Container & Full-Bleed Scenes
+   ========================================================================== */
+.slides-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.prototype-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s var(--ease-cinematic), transform 0.8s var(--ease-cinematic);
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+.prototype-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Full-Bleed Cinematic Backdrop with Ken Burns Drift */
+.cinematic-backdrop {
+  position: absolute;
+  inset: -5%;
+  width: 110%;
+  height: 110%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: kenBurns 24s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.04) translate(-1%, -1%); }
+  100% { transform: scale(1.02) translate(1%, 0.5%); }
+}
+
+/* Atmospheric Lighting & Gradient Vignette */
+.cinematic-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at 50% 40%, rgba(0,0,0,0) 45%, rgba(13, 23, 42, 0.4) 100%),
+              linear-gradient(180deg, rgba(13, 44, 84, 0.4) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(6, 11, 20, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* Floating Light Dust Particles */
+.particle-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.light-dust {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffbeb 20%, rgba(254, 240, 138, 0.7) 100%);
+  filter: blur(1.5px);
+  animation: floatDust 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatDust {
+  0% { transform: translateY(0) scale(0.8); opacity: 0.2; }
+  50% { transform: translateY(-40px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(-80px) scale(0.6); opacity: 0; }
+}
+
+/* ==========================================================================
+   Slide Content Overlays
+   ========================================================================== */
+.slide-overlay-content {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 64px;
+  pointer-events: none;
+}
+
+/* Top Floating Title Glass Card */
+.top-title-card {
+  pointer-events: auto;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(18px);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  padding: 24px 38px;
+  max-width: 680px;
+  box-shadow: 0 20px 50px rgba(13, 44, 84, 0.25), 0 0 1px rgba(255, 255, 255, 0.8);
+  animation: slideInDown 0.9s var(--ease-cinematic) both;
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.speaker-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px;
+  border-radius: 30px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+}
+
+.speaker-badge-pill.blue-theme { background: linear-gradient(135deg, #0284c7, #0369a1); }
+.speaker-badge-pill.teal-theme { background: linear-gradient(135deg, #0d9488, #0f766e); }
+.speaker-badge-pill.gold-theme { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+.pill-item-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; opacity: 0.95; }
+.pill-speaker-name { font-size: 14px; font-weight: 800; letter-spacing: 0.05em; }
+
+.cinematic-headline {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--sussex-navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.motto-banner-chip {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1.5px solid #f59e0b;
+  padding: 8px 22px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+}
+
+.motto-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #92400e;
+}
+
+/* Bottom Right School & Teacher Stamp */
+.bottom-stamp-card {
+  pointer-events: auto;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 40px;
+  padding: 10px 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  animation: slideInUp 0.9s var(--ease-cinematic) both;
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stamp-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.stamp-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stamp-school {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--sussex-navy);
+}
+
+.stamp-teacher {
+  font-size: 11.5px;
+  color: #78350f;
+  font-weight: 600;
+}
+
+.stamp-teacher strong { color: #b45309; }
+
+/* ==========================================================================
+   Slide 03: Final Pledge Layout (Hero Climax)
+   ========================================================================== */
+.pledge-overlay-center {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 80px;
+  pointer-events: none;
+}
+
+.pledge-crest-halo {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  animation: pulseCrest 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulseCrest {
+  0% { transform: scale(1); filter: drop-shadow(0 8px 20px rgba(245, 158, 11, 0.4)); }
+  100% { transform: scale(1.05); filter: drop-shadow(0 12px 32px rgba(245, 158, 11, 0.7)); }
+}
+
+.pledge-school-logo {
+  height: 96px;
+  width: auto;
+  object-fit: contain;
+}
+
+.pledge-hero-glass-card {
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.98);
+  border-radius: 36px;
+  padding: 36px 64px;
+  max-width: 1100px;
+  box-shadow: 0 25px 60px rgba(13, 44, 84, 0.35);
+  animation: scaleInCard 0.9s var(--ease-cinematic) both;
+}
+
+@keyframes scaleInCard {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.pledge-sub-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  color: #b45309;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 5px 18px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+}
+
+.official-callout-quote {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #b45309;
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.grand-assembly-motto-hero {
+  font-family: var(--font-display);
+  font-size: 4.4rem;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.motto-row-top { display: block; color: var(--sussex-navy); }
+.motto-row-bottom {
+  display: block;
+  background: linear-gradient(135deg, #0284c7, #f59e0b, #e11d48);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pledge-teacher-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(241, 245, 249, 0.9);
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.pledge-teacher-credit strong { color: var(--sussex-navy); }
+
+/* ==========================================================================
+   Prototype Control HUD (Minimal Floating Bar)
+   ========================================================================== */
+.prototype-hud {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(14px);
+  padding: 8px 20px;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hud-btn {
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hud-btn:hover { background: rgba(255, 255, 255, 0.15); color: #ffffff; }
+.hud-btn.active {
+  background: linear-gradient(135deg, var(--sussex-gold), var(--sussex-amber));
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.hud-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.2); }
+
+.hud-action-icon {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hud-action-icon:hover { transform: scale(1.08); background: rgba(255, 255, 255, 0.25); }
+
+/* Speaker Drawer */
+.speaker-drawer-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(20px);
+  color: #ffffff;
+  border-top: 2px solid #38bdf8;
+  padding: 24px 48px;
+  max-height: 340px;
+  overflow-y: auto;
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s var(--ease-cinematic), opacity 0.3s ease;
+}
+
+.speaker-drawer-panel.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.drawer-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.drawer-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-top: 4px;
+}
+
+.drawer-close {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.drawer-close:hover { color: #ffffff; }
+
+.drawer-tip {
+  background: rgba(245, 158, 11, 0.15);
+  border-left: 3px solid #f59e0b;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  color: #fde68a;
+  margin-bottom: 12px;
+}
+
+.drawer-script {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.drawer-script strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}

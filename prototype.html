@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROTOTYPE SHOWCASE | Sussex College Grade 4 Assembly</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="prototype.css">
+</head>
+<body>
+
+  <div id="presentation-viewport">
+    <div class="canvas-16-9">
+      
+      <main class="slides-viewport">
+
+        <!-- ===================================================================
+             PROTOTYPE SLIDE 1: Abhippra – Kindness Makes a Difference
+             =================================================================== -->
+        <section class="prototype-slide active" data-slide="1" id="slide-proto-1">
+          <div class="cinematic-backdrop">
+            <img src="prototype_kindness.jpg" alt="Children showing kindness" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <!-- Top Left Title Card -->
+            <div class="top-title-card">
+              <div class="speaker-badge-pill blue-theme">
+                <span class="pill-item-tag">ITEM 01 • SPEAKER 01</span>
+                <span class="pill-speaker-name">ABHIPPRA</span>
+              </div>
+              <h2 class="cinematic-headline">Kindness Makes a Difference</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Kindness is contagious!”</span>
+              </div>
+            </div>
+
+            <!-- Bottom Right School Stamp -->
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             PROTOTYPE SLIDE 2: Yenuth – Be Kind to Animals
+             =================================================================== -->
+        <section class="prototype-slide" data-slide="2" id="slide-proto-2">
+          <div class="cinematic-backdrop">
+            <img src="prototype_animals.jpg" alt="Garden animal sanctuary" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="slide-overlay-content">
+            <!-- Top Left Title Card -->
+            <div class="top-title-card">
+              <div class="speaker-badge-pill teal-theme">
+                <span class="pill-item-tag">ITEM 01 • SPEAKER 05</span>
+                <span class="pill-speaker-name">YENUTH</span>
+              </div>
+              <h2 class="cinematic-headline">Be Kind to Animals</h2>
+              <div class="motto-banner-chip">
+                <span class="motto-text">“Animals deserve kindness too.”</span>
+              </div>
+            </div>
+
+            <!-- Bottom Right School Stamp -->
+            <div class="bottom-stamp-card">
+              <img src="original-logo-1.webp" alt="Sussex College" class="stamp-logo">
+              <div class="stamp-text">
+                <span class="stamp-school">SUSSEX COLLEGE • GRADE 4</span>
+                <span class="stamp-teacher">Class Teacher: <strong>Darshani Gunathilaka</strong></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             PROTOTYPE SLIDE 3: Item 06 – Our Kindness & Justice Pledge
+             =================================================================== -->
+        <section class="prototype-slide" data-slide="3" id="slide-proto-3">
+          <div class="cinematic-backdrop">
+            <img src="prototype_pledge.jpg" alt="Children united in pledge" class="backdrop-img">
+          </div>
+          <div class="cinematic-vignette"></div>
+          <div class="particle-layer"></div>
+
+          <div class="pledge-overlay-center">
+            <!-- Center Glowing Crest -->
+            <div class="pledge-crest-halo">
+              <img src="original-logo-1.webp" alt="Sussex College Crest" class="pledge-school-logo">
+            </div>
+
+            <!-- Grand Climax Card -->
+            <div class="pledge-hero-glass-card">
+              <div class="pledge-sub-pill">
+                <span>OUR SACRED ASSEMBLY PROMISE</span>
+              </div>
+              
+              <div class="official-callout-quote">
+                “I will choose kindness. I will stand for justice. I will make a difference!”
+              </div>
+
+              <h1 class="grand-assembly-motto-hero">
+                <span class="motto-row-top">KINDNESS IS CONTAGIOUS,</span>
+                <span class="motto-row-bottom">AND JUSTICE STARTS WITH US!</span>
+              </h1>
+
+              <div class="pledge-teacher-credit">
+                <span>Guided with Love by Class Teacher: <strong>Darshani Gunathilaka</strong></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Minimal Floating HUD Controls -->
+      <nav class="prototype-hud" aria-label="Prototype Switcher">
+        <button class="hud-btn hud-slide-btn active" data-target="1" onclick="Prototype.goTo(1)">1. Abhippra (Kindness)</button>
+        <button class="hud-btn hud-slide-btn" data-target="2" onclick="Prototype.goTo(2)">2. Yenuth (Animals)</button>
+        <button class="hud-btn hud-slide-btn" data-target="3" onclick="Prototype.goTo(3)">3. Item 06 (Final Pledge)</button>
+        <div class="hud-divider"></div>
+        <button class="hud-action-icon" onclick="Prototype.toggleDrawer()" title="Toggle Rehearsal Notes (N)">📖</button>
+        <button class="hud-action-icon" onclick="Prototype.toggleFullscreen()" title="Toggle Projector Fullscreen (F)">⛶</button>
+      </nav>
+
+      <!-- Rehearsal Drawer (Preserves Complete Verbatim Teacher Scripts) -->
+      <aside class="speaker-drawer-panel" id="speaker-drawer" role="complementary">
+        <div class="drawer-header">
+          <div>
+            <span class="drawer-badge">LIVE REHEARSAL SCRIPT & STAGE CUES</span>
+            <h3 class="drawer-title" id="drawer-speaker">Speaker Name</h3>
+          </div>
+          <button class="drawer-close" onclick="Prototype.toggleDrawer(false)">✕</button>
+        </div>
+        <div class="drawer-tip" id="drawer-tip">Stage Cue</div>
+        <div class="drawer-script">
+          <strong>Full Verbatim Script:</strong>
+          <p id="drawer-script">Spoken script text</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <script src="prototype.js"></script>
+</body>
+</html>
