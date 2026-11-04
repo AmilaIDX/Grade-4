@@ -1848,6 +1848,10 @@ html, body {
    Slide 21 Ending Chorus Grand Layout
    ========================================================================== */
 .chorus-grand-glass-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   pointer-events: auto;
   align-self: center;
   margin: auto;
@@ -1864,13 +1868,20 @@ html, body {
   animation: zoomFadeIn 0.6s var(--ease-cinematic) both;
 }
 
+.chorus-grand-glass-card .speaker-badge-pill {
+  align-self: center;
+  margin: 0 auto 10px auto;
+}
+
 .chorus-headline {
+  width: 100%;
   font-family: var(--font-display);
   font-size: 2.8rem;
   font-weight: 800;
   color: #ffffff;
   text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
-  margin: 10px 0 4px;
+  margin: 4px auto 6px auto;
+  text-align: center;
 }
 
 .chorus-sub-prompt {
