@@ -112,12 +112,13 @@ html, body {
   top: 0;
   left: 0;
   right: 0;
-  height: 64px;
+  height: 66px;
   z-index: 100;
-  background: rgba(13, 44, 84, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(9, 23, 45, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 30px -4px rgba(2, 6, 23, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -231,35 +232,39 @@ html, body {
 .item-quick-nav {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(0, 0, 0, 0.25);
+  gap: 5px;
+  background: rgba(2, 6, 23, 0.55);
   padding: 4px 6px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 .item-nav-btn {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-family: var(--font-heading);
   font-size: 12px;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 999px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .item-nav-btn:hover {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
 }
 
 .item-nav-btn.active {
-  color: var(--sussex-navy);
-  background: var(--sussex-gold);
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+  color: #081B33;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  transform: translateY(-1px);
 }
 
 /* Header Right: Action Buttons */
@@ -296,27 +301,34 @@ html, body {
 }
 
 .icon-btn {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .icon-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.icon-btn.active {
+  background: var(--sussex-gold);
+  color: var(--sussex-navy);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
 }
 
 .icon-btn .icon {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
 }
 
 /* ==========================================================================
@@ -404,6 +416,146 @@ html, body {
   100% { transform: translateY(-80px) scale(0.6); opacity: 0; }
 }
 
+
+/* ==========================================================================
+   Animate UI Inspired Gradient Typography
+   https://animate-ui.com/docs/primitives/animate-ui/gradient-text
+   ========================================================================== */
+
+/* Dark backgrounds (Slide 01 Hero, Slide 21 Chorus, Slide 37 Finale) */
+.gradient-text-hero-silver {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 45%, #93C5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  filter: drop-shadow(0 2px 10px rgba(147, 197, 253, 0.35));
+}
+
+.gradient-text-hero-gold {
+  background: linear-gradient(135deg, #FEF08A 0%, #FBBF24 35%, #F59E0B 70%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  filter: drop-shadow(0 2px 14px rgba(245, 158, 11, 0.5));
+}
+
+/* Light Frosted Cards (Slides 02-20, 35-36) - Rich Contrast Gradients */
+.gradient-text-sussex {
+  background: linear-gradient(135deg, #071D36 0%, #134074 50%, #0284C7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #78350F 0%, #B45309 45%, #D97706 80%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #7F1D1D 0%, #C2410C 50%, #EA580C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #064E3B 0%, #047857 50%, #0D9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(135deg, #4C1D95 0%, #6D28D9 50%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Animate UI - SplittingText (Word-by-Word Reveal for Slide 01)
+   https://animate-ui.com/docs/primitives/animate-ui/splitting-text
+   ========================================================================== */
+.splitting-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 0.35em;
+}
+
+.split-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(22px) scale(0.92);
+  filter: blur(4px);
+  will-change: transform, opacity, filter;
+}
+
+.slide-item.active .split-word {
+  animation: splitWordEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--w-idx, 0) * 0.16s + 0.2s);
+}
+
+@keyframes splitWordEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.92);
+    filter: blur(4px);
+  }
+  65% {
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Stagger hero card elements smoothly after title */
+.slide-item.active .hero-theme-quote {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroElementFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.95s;
+}
+
+.slide-item.active .hero-teacher-credit {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroElementFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 1.15s;
+}
+
+.slide-item.active .hero-start-btn {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroElementFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 1.35s;
+}
+
+@keyframes heroElementFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ==========================================================================
    Slide Content Overlays
    ========================================================================== */
@@ -422,15 +574,57 @@ html, body {
 .top-title-card {
   pointer-events: auto;
   align-self: flex-start;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 255, 255, 0.95);
-  border-radius: 28px;
-  padding: 24px 38px;
-  max-width: 720px;
-  box-shadow: 0 20px 50px rgba(13, 44, 84, 0.25), 0 0 1px rgba(255, 255, 255, 0.8);
-  animation: slideInDown 0.8s var(--ease-cinematic) both;
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 26px;
+  padding: 22px 34px;
+  max-width: 580px;
+  box-shadow: 0 20px 48px -10px rgba(13, 44, 84, 0.24), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+  animation: slideInDown 0.75s var(--ease-cinematic) both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Smart Text-Card Positioning Modifiers across Slides */
+.top-title-card.card-pos-top-left {
+  align-self: flex-start;
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
+}
+
+.top-title-card.card-pos-top-right {
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0;
+  text-align: left;
+  animation-name: slideInDownRight;
+}
+
+.top-title-card.card-pos-top-center {
+  align-self: center;
+  margin-inline: auto;
+  text-align: center;
+  max-width: 680px;
+}
+
+@keyframes slideInDownRight {
+  from { opacity: 0; transform: translate(30px, -20px); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
+
+/* Bottom School & Teacher Stamp Positioning Modifiers */
+.bottom-stamp-card.stamp-pos-left {
+  align-self: flex-start;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.bottom-stamp-card.stamp-pos-right {
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 @keyframes slideInDown {
@@ -994,12 +1188,13 @@ html, body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 52px;
+  height: 56px;
   z-index: 100;
-  background: rgba(13, 44, 84, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(9, 23, 45, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 -8px 30px -4px rgba(2, 6, 23, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1702,4 +1897,20 @@ html, body {
   font-weight: 800;
   color: #fef3c7;
   text-shadow: 0 0 16px rgba(245, 158, 11, 0.7);
+}
+
+/* ==========================================================================
+   Accessibility: Reduced Motion Preference
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .split-word {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }
