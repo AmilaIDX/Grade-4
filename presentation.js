@@ -256,11 +256,11 @@ const Presentation = (() => {
       tip: "A strong message on inclusivity, empathy, and acceptance."
     },
     33: {
-      title: "Video Presentation: Kindness & Justice in Action",
-      speaker: "Video Feature",
+      title: "Audio Feature: Kindness & Justice in Action",
+      speaker: "Audio Feature (1103.MP3)",
       item: 5,
-      line: "“Item 05: Video Presentation — Inspiring real-world stories of kindness, animal rescue, and standing up for justice in our community.”",
-      tip: "Ensure auditorium projector audio is unmuted and clear."
+      line: "“Item 05: Audio Presentation — Inspiring spoken audio feature and soundscapes of kindness, animal rescue, and standing up for justice in our community.”",
+      tip: "Ensure auditorium projector or hall speakers are unmuted and set to comfortable volume."
     },
     34: {
       title: "Our Kindness & Justice Pledge: Introduction",
@@ -408,15 +408,129 @@ const Presentation = (() => {
       handleResize();
     });
 
-    // Offline video fallback detection
-    const localVideo = document.getElementById('assembly-video-local');
-    const ytIframe = document.getElementById('assembly-video-iframe');
-    if (localVideo && ytIframe) {
-      localVideo.addEventListener('canplay', () => {
-        localVideo.style.display = 'block';
-        ytIframe.style.display = 'none';
+    initSlide33AudioPlayer();
+  }
+
+  // Slide 33 Audio Presentation Playback Controller (1103.MP3)
+  function initSlide33AudioPlayer() {
+    const audio = document.getElementById('assembly-audio-player');
+    const playBtn = document.getElementById('btn-audio-play');
+    const playIcon = document.getElementById('icon-audio-play');
+    const pauseIcon = document.getElementById('icon-audio-pause');
+    const seekSlider = document.getElementById('audio-seek-slider');
+    const timeCurrent = document.getElementById('audio-time-current');
+    const timeTotal = document.getElementById('audio-time-total');
+    const rewindBtn = document.getElementById('btn-audio-rewind');
+    const forwardBtn = document.getElementById('btn-audio-forward');
+    const resetBtn = document.getElementById('btn-audio-reset');
+    const muteBtn = document.getElementById('btn-audio-mute');
+    const volHigh = document.getElementById('icon-vol-high');
+    const volMuted = document.getElementById('icon-vol-muted');
+    const volSlider = document.getElementById('audio-vol-slider');
+    const eqBars = document.getElementById('audio-visual-bars');
+    const discHalo = document.getElementById('audio-disc-halo');
+
+    if (!audio) return;
+
+    function formatTime(seconds) {
+      if (isNaN(seconds) || seconds < 0) return '0:00';
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m}:${s < 10 ? '0' : ''}${s}`;
+    }
+
+    function updatePlayState(isPlaying) {
+      if (playIcon) playIcon.style.display = isPlaying ? 'none' : 'block';
+      if (pauseIcon) pauseIcon.style.display = isPlaying ? 'block' : 'none';
+      if (eqBars) eqBars.classList.toggle('is-playing', isPlaying);
+      if (discHalo) discHalo.classList.toggle('is-playing', isPlaying);
+    }
+
+    if (playBtn) {
+      playBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (audio.paused) {
+          audio.play().then(() => updatePlayState(true)).catch(() => {});
+        } else {
+          audio.pause();
+          updatePlayState(false);
+        }
       });
     }
+
+    audio.addEventListener('play', () => updatePlayState(true));
+    audio.addEventListener('pause', () => updatePlayState(false));
+    audio.addEventListener('ended', () => {
+      updatePlayState(false);
+      if (seekSlider) seekSlider.value = 0;
+      if (timeCurrent) timeCurrent.textContent = '0:00';
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+      if (timeTotal) timeTotal.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration && seekSlider && !seekSlider.dataset.dragging) {
+        seekSlider.value = (audio.currentTime / audio.duration) * 100;
+        if (timeCurrent) timeCurrent.textContent = formatTime(audio.currentTime);
+      }
+    });
+
+    if (seekSlider) {
+      seekSlider.addEventListener('input', () => {
+        seekSlider.dataset.dragging = 'true';
+        if (audio.duration) {
+          const seekTo = (seekSlider.value / 100) * audio.duration;
+          if (timeCurrent) timeCurrent.textContent = formatTime(seekTo);
+        }
+      });
+      seekSlider.addEventListener('change', () => {
+        delete seekSlider.dataset.dragging;
+        if (audio.duration) {
+          audio.currentTime = (seekSlider.value / 100) * audio.duration;
+        }
+      });
+    }
+
+    if (rewindBtn) {
+      rewindBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        audio.currentTime = Math.max(0, audio.currentTime - 10);
+      });
+    }
+
+    if (forwardBtn) {
+      forwardBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10);
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        audio.currentTime = 0;
+        audio.play().then(() => updatePlayState(true)).catch(() => {});
+      });
+    }
+
+    if (muteBtn && volSlider) {
+      muteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        audio.muted = !audio.muted;
+        if (volHigh) volHigh.style.display = audio.muted ? 'none' : 'block';
+        if (volMuted) volMuted.style.display = audio.muted ? 'block' : 'none';
+      });
+      volSlider.addEventListener('input', (e) => {
+        e.stopPropagation();
+        audio.volume = parseFloat(volSlider.value);
+        audio.muted = audio.volume === 0;
+        if (volHigh) volHigh.style.display = audio.muted ? 'none' : 'block';
+        if (volMuted) volMuted.style.display = audio.muted ? 'block' : 'none';
+      });
+    }
+  }
   }
 
   function handleResize() {
@@ -631,6 +745,12 @@ const Presentation = (() => {
     // Check if on Final Slide 37: Launch Celebration Animation!
     if (state.currentSlide === state.totalSlides) {
       launchCelebration();
+    }
+
+    // Pause Slide 33 audio when navigating away
+    const slide33Audio = document.getElementById('assembly-audio-player');
+    if (slide33Audio && targetIndex !== 33 && !slide33Audio.paused) {
+      slide33Audio.pause();
     }
 
     if (playAudio) {

@@ -46,13 +46,14 @@ HOW TO COPY AND USE THIS FOLDER ON A USB DRIVE (OFFLINE BACKUP GUIDE)
    - Slides 09 - 13 : Item 02: A Little Smile & Care (Group Poem & Recitations)
    - Slides 14 - 21 : Item 03: If Only Someone Had Spoken (Playground Role-Play)
    - Slides 22 - 32 : Item 04: Justice Detectives (10 Everyday Case Exhibits)
-   - Slide 33       : Item 05: Video Presentation (Kindness & Justice in Action)
+   - Slide 33       : Item 05: Audio Presentation (Kindness & Justice in Action • 1103.MP3)
    - Slides 34 - 37 : Item 06: Our Kindness & Justice Pledge & Grand Celebration Finale
 
-6. VIDEO PRESENTATION (SLIDE 33) OFFLINE TIP:
-   - If connected to the internet, the embedded YouTube player works automatically.
-   - If completely offline without internet, you can optionally place an MP4 file
-     named "assembly_video.mp4" into this folder, and it will play locally!
+6. AUDIO PRESENTATION (SLIDE 33):
+   - Features the official spoken audio track (1103.MP3) with full interactive
+     playback controllers: Play/Pause, -10s rewind, +10s skip, progress slider,
+     and volume control.
+   - Runs 100% offline without needing YouTube or internet!
 
 7. POWERPOINT (.PPTX) BACKUP:
    - Click the "PowerPoint" button in the bottom HUD bar at any time to export
