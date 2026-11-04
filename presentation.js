@@ -531,7 +531,6 @@ const Presentation = (() => {
       });
     }
   }
-  }
 
   function handleResize() {
     const vw = window.innerWidth;
