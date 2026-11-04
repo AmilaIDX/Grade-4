@@ -373,6 +373,7 @@ const Presentation = (() => {
       overviewGrid: document.getElementById('overview-grid'),
       itemNavBtns: Array.from(document.querySelectorAll('.item-nav-btn')),
       confettiCanvas: document.getElementById('confetti-canvas'),
+      transitionCanvas: document.getElementById('transition-canvas'),
     };
   }
 
@@ -552,10 +553,30 @@ const Presentation = (() => {
     playTone(1046.50, 'sine', 0.24, 0.65, 0.16);
   }
 
+  // Helper to determine item for a slide
+  function getItemForSlide(slideNum) {
+    if (slideNum >= 34) return 6;
+    if (slideNum === 33) return 5;
+    if (slideNum >= 22) return 4;
+    if (slideNum >= 14) return 3;
+    if (slideNum >= 9) return 2;
+    return 1;
+  }
+
   // Navigation Core
   function goToSlide(targetIndex, playAudio = true) {
     if (targetIndex < 1 || targetIndex > state.totalSlides) return;
+    const prevSlide = state.currentSlide;
+    const prevItem = getItemForSlide(prevSlide);
+    const nextItem = getItemForSlide(targetIndex);
     state.currentSlide = targetIndex;
+
+    // Trigger magical transitions if item changes
+    if (prevItem !== nextItem && prevSlide !== targetIndex) {
+      triggerItemTransition(prevItem, nextItem);
+    } else if (prevSlide !== targetIndex) {
+      triggerSlideTransition(prevSlide, targetIndex);
+    }
 
     dom.slides.forEach((slide) => {
       const slideNum = parseInt(slide.dataset.slide, 10);
@@ -724,6 +745,215 @@ const Presentation = (() => {
     if (!dom.confettiCanvas || !dom.canvas) return;
     dom.confettiCanvas.width = dom.canvas.clientWidth || 1920;
     dom.confettiCanvas.height = dom.canvas.clientHeight || 1080;
+  }
+
+  
+  // =========================================================================
+  // ANIMATED SLIDE TRANSITIONS & MAGICAL ITEM CHANGES ENGINE (60 FPS)
+  // =========================================================================
+  let transitionAnimId = null;
+  let transitionParticles = [];
+
+  function triggerSlideTransition(fromSlide, toSlide) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    
+    // Choose transition variation based on slide index
+    const variations = [
+      'transition-zoom-in',
+      'transition-zoom-out',
+      'transition-slide-left',
+      'transition-slide-right',
+      'transition-soft-glow'
+    ];
+    const chosenClass = variations[toSlide % variations.length];
+    
+    const targetEl = document.getElementById(`slide-${toSlide}`);
+    if (targetEl) {
+      targetEl.classList.add(chosenClass);
+      setTimeout(() => {
+        targetEl.classList.remove(chosenClass);
+      }, 850);
+    }
+  }
+
+  function triggerItemTransition(fromItem, toItem) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!dom.transitionCanvas || !dom.canvas) return;
+
+    dom.transitionCanvas.width = dom.canvas.clientWidth || 1920;
+    dom.transitionCanvas.height = dom.canvas.clientHeight || 1080;
+    const ctx = dom.transitionCanvas.getContext('2d');
+    const w = dom.transitionCanvas.width;
+    const h = dom.transitionCanvas.height;
+
+    if (transitionAnimId) {
+      cancelAnimationFrame(transitionAnimId);
+      transitionAnimId = null;
+    }
+    transitionParticles = [];
+
+    // 1 -> 2: Golden particles and colourful kindness sparkles
+    if (fromItem === 1 && toItem === 2) {
+      for (let i = 0; i < 90; i++) {
+        transitionParticles.push({
+          type: 'sparkle',
+          x: Math.random() * w * 0.4,
+          y: Math.random() * h,
+          vx: 3 + Math.random() * 8,
+          vy: (Math.random() - 0.5) * 4,
+          size: 3 + Math.random() * 6,
+          color: ['#fbbf24', '#f59e0b', '#ec4899', '#38bdf8', '#a855f7'][Math.floor(Math.random() * 5)],
+          alpha: 1,
+          decay: 0.012 + Math.random() * 0.015,
+          spin: Math.random() * Math.PI * 2
+        });
+      }
+    }
+    // 2 -> 3: Flowing colourful light and gentle magical stars
+    else if (fromItem === 2 && toItem === 3) {
+      for (let i = 0; i < 80; i++) {
+        transitionParticles.push({
+          type: 'star',
+          x: Math.random() * w,
+          y: Math.random() * h * 0.3,
+          vx: (Math.random() - 0.5) * 5,
+          vy: 2 + Math.random() * 6,
+          size: 4 + Math.random() * 7,
+          color: ['#38bdf8', '#818cf8', '#c084fc', '#34d399', '#fef08a'][Math.floor(Math.random() * 5)],
+          alpha: 1,
+          decay: 0.014 + Math.random() * 0.012,
+          spin: Math.random() * Math.PI * 2
+        });
+      }
+    }
+    // 3 -> 4: Cinematic detective-style transition with glowing clues
+    else if (fromItem === 3 && toItem === 4) {
+      for (let i = 0; i < 70; i++) {
+        transitionParticles.push({
+          type: 'lens-beam',
+          x: w * 0.5 + (Math.random() - 0.5) * 300,
+          y: h * 0.5 + (Math.random() - 0.5) * 300,
+          vx: (Math.random() - 0.5) * 12,
+          vy: (Math.random() - 0.5) * 12,
+          size: 5 + Math.random() * 9,
+          color: ['#fbbf24', '#60a5fa', '#e2e8f0', '#3b82f6'][Math.floor(Math.random() * 4)],
+          alpha: 1,
+          decay: 0.018 + Math.random() * 0.015,
+          spin: 0
+        });
+      }
+    }
+    // 4 -> 5: Soft cinematic screen reveal, like entering a cinema
+    else if (fromItem === 4 && toItem === 5) {
+      for (let i = 0; i < 60; i++) {
+        transitionParticles.push({
+          type: 'cinema-ray',
+          x: (i / 60) * w,
+          y: 0,
+          vx: (Math.random() - 0.5) * 2,
+          vy: 5 + Math.random() * 7,
+          size: 3 + Math.random() * 5,
+          color: '#fbbf24',
+          alpha: 0.85,
+          decay: 0.016 + Math.random() * 0.01,
+          spin: 0
+        });
+      }
+    }
+    // 5 -> 6: Warm golden light, floating stars and peaceful reveal
+    else if (fromItem === 5 && toItem === 6) {
+      for (let i = 0; i < 85; i++) {
+        transitionParticles.push({
+          type: 'dawn-star',
+          x: Math.random() * w,
+          y: h * (0.6 + Math.random() * 0.4),
+          vx: (Math.random() - 0.5) * 3,
+          vy: -(2 + Math.random() * 5),
+          size: 4 + Math.random() * 6,
+          color: ['#fef08a', '#fde047', '#fbbf24', '#f59e0b'][Math.floor(Math.random() * 4)],
+          alpha: 1,
+          decay: 0.013 + Math.random() * 0.012,
+          spin: Math.random() * Math.PI * 2
+        });
+      }
+    }
+    // Generic fallback item transition
+    else {
+      for (let i = 0; i < 60; i++) {
+        transitionParticles.push({
+          type: 'sparkle',
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 6,
+          vy: (Math.random() - 0.5) * 6,
+          size: 3 + Math.random() * 5,
+          color: '#fbbf24',
+          alpha: 1,
+          decay: 0.02,
+          spin: 0
+        });
+      }
+    }
+
+    let startTime = performance.now();
+    function animateTransition(now) {
+      if (!dom.transitionCanvas) return;
+      ctx.clearRect(0, 0, w, h);
+
+      for (let i = transitionParticles.length - 1; i >= 0; i--) {
+        const p = transitionParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.alpha -= p.decay;
+        p.spin += 0.05;
+
+        if (p.alpha <= 0) {
+          transitionParticles.splice(i, 1);
+          continue;
+        }
+
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.alpha);
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.spin);
+
+        if (p.type === 'star' || p.type === 'dawn-star') {
+          // 4-pointed star
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.moveTo(0, -p.size * 1.5);
+          ctx.lineTo(p.size * 0.4, -p.size * 0.4);
+          ctx.lineTo(p.size * 1.5, 0);
+          ctx.lineTo(p.size * 0.4, p.size * 0.4);
+          ctx.lineTo(0, p.size * 1.5);
+          ctx.lineTo(-p.size * 0.4, p.size * 0.4);
+          ctx.lineTo(-p.size * 1.5, 0);
+          ctx.lineTo(-p.size * 0.4, -p.size * 0.4);
+          ctx.closePath();
+          ctx.fill();
+        } else {
+          // Soft circular glowing sparkle
+          const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, p.size * 2);
+          grad.addColorStop(0, p.color);
+          grad.addColorStop(1, 'transparent');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size * 2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+
+      if (transitionParticles.length > 0 && now - startTime < 2500) {
+        transitionAnimId = requestAnimationFrame(animateTransition);
+      } else {
+        ctx.clearRect(0, 0, w, h);
+        transitionAnimId = null;
+      }
+    }
+
+    transitionAnimId = requestAnimationFrame(animateTransition);
   }
 
   function launchCelebration() {
