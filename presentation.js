@@ -761,8 +761,6 @@ const Presentation = (() => {
     const variations = [
       'transition-zoom-in',
       'transition-zoom-out',
-      'transition-slide-left',
-      'transition-slide-right',
       'transition-soft-glow'
     ];
     const chosenClass = variations[toSlide % variations.length];

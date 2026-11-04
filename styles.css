@@ -1496,12 +1496,8 @@ html, body {
 .slide-item.transition-zoom-out {
   transform: scale(0.96);
 }
-.slide-item.transition-slide-left {
-  transform: translate3d(-30px, 0, 0);
-}
-.slide-item.transition-slide-right {
-  transform: translate3d(30px, 0, 0);
-}
+
+
 .slide-item.transition-soft-glow {
   filter: brightness(1.2);
 }
@@ -1578,13 +1574,13 @@ html, body {
 }
 
 .detective-case-illustration {
-  max-width: 100%;
+  max-width: 96%;
   max-height: 100%;
   width: auto;
-  height: 840px;
+  height: 780px;
   object-fit: contain;
   border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 0 2px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.75), 0 0 0 2px rgba(255, 255, 255, 0.35);
   display: block;
 }
 
