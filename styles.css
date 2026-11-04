@@ -348,15 +348,12 @@ html, body {
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.8s var(--ease-cinematic), transform 0.8s var(--ease-cinematic);
-  transform: scale(1.02);
   pointer-events: none;
 }
 
 .slide-item.active {
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
   pointer-events: auto;
 }
 
@@ -421,6 +418,78 @@ html, body {
    Animate UI Inspired Gradient Typography
    https://animate-ui.com/docs/primitives/animate-ui/gradient-text
    ========================================================================== */
+
+
+/* ==========================================================================
+   Continuous Animated Gradient Typography
+   ========================================================================== */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient-sussex-silver {
+  background: linear-gradient(90deg, #FFFFFF 0%, #BAE6FD 25%, #60A5FA 50%, #E0F2FE 75%, #FFFFFF 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: gradientFlow 5s ease-in-out infinite;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+.animated-gradient-sussex-gold {
+  background: linear-gradient(90deg, #FEF08A 0%, #F59E0B 25%, #FDE047 50%, #D97706 75%, #FEF08A 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: gradientFlow 4.5s ease-in-out infinite;
+  filter: drop-shadow(0 2px 12px rgba(245, 158, 11, 0.45));
+}
+
+.animated-gradient-gold {
+  background: linear-gradient(90deg, #B45309 0%, #F59E0B 30%, #FBBF24 50%, #D97706 75%, #B45309 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: gradientFlow 5s ease-in-out infinite;
+}
+
+.animated-gradient-sussex-blue {
+  background: linear-gradient(90deg, #0A2540 0%, #1E40AF 30%, #0284C7 50%, #1D4ED8 75%, #0A2540 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: gradientFlow 6s ease-in-out infinite;
+}
+
+/* Card Positioning: Bottom-Left for Slide 7 */
+.top-title-card.card-pos-bottom-left {
+  align-self: flex-start;
+  margin-top: auto;
+  margin-bottom: 16px;
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
+  animation-name: slideInUpLeft;
+}
+
+@keyframes slideInUpLeft {
+  from { opacity: 0; transform: translate(-20px, 20px); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
 
 /* Dark backgrounds (Slide 01 Hero, Slide 21 Chorus, Slide 37 Finale) */
 .gradient-text-hero-silver {
@@ -924,16 +993,18 @@ html, body {
 
 .pledge-hero-glass-card {
   pointer-events: auto;
-  background: rgba(13, 44, 84, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 2px solid rgba(245, 158, 11, 0.5);
-  border-radius: 36px;
-  padding: 36px 60px;
-  max-width: 960px;
+  align-self: center;
+  margin: 0 auto;
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 2px solid rgba(245, 158, 11, 0.55);
+  border-radius: 28px;
+  padding: 20px 42px;
+  max-width: 900px;
   text-align: center;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  animation: zoomFadeIn 1s var(--ease-cinematic) both;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(245, 158, 11, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  animation: slideInDown 0.7s var(--ease-cinematic) both;
 }
 
 .pledge-sub-pill {
@@ -1661,41 +1732,9 @@ html, body {
 }
 
 
-/* ==========================================================================
-   Slide Transition Styles (GPU Accelerated, Varied, Elegant)
-   ========================================================================== */
-.slide-item {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
-              visibility 0.8s;
-  will-change: opacity, transform;
-}
+/* Slide transition rules removed per user request for immediate, smooth navigation */
 
-.slide-item.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: scale(1) translate3d(0, 0, 0);
-  z-index: 5;
-}
-
-/* Varied transition effects */
-.slide-item.transition-zoom-in {
-  transform: scale(1.04);
-}
-.slide-item.transition-zoom-out {
-  transform: scale(0.96);
-}
-
-
-.slide-item.transition-soft-glow {
-  filter: brightness(1.2);
-}
+/* Page transitions removed per user request for immediate, smooth navigation */
 
 @media (prefers-reduced-motion: reduce) {
   .slide-item, .slide-item.active {
@@ -1808,17 +1847,17 @@ html, body {
   pointer-events: auto;
   align-self: center;
   margin: auto;
-  background: rgba(10, 25, 47, 0.76);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 2px solid rgba(245, 158, 11, 0.4);
+  background: rgba(8, 22, 44, 0.90);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 2px solid #f59e0b;
   border-radius: 32px;
-  padding: 28px 48px;
-  max-width: 1080px;
+  padding: 26px 46px;
+  max-width: 1040px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  animation: zoomFadeIn 0.8s var(--ease-cinematic) both;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 32px rgba(245, 158, 11, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  animation: zoomFadeIn 0.6s var(--ease-cinematic) both;
 }
 
 .chorus-headline {
