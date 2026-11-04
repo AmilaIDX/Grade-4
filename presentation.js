@@ -345,7 +345,9 @@ const Presentation = (() => {
     buildOverviewGrid();
     setupAmbientParticles();
     initConfettiCanvas();
-    goToSlide(1, false);
+    const hashMatch = window.location.hash.match(/slide-(\d+)/);
+    const startSlide = hashMatch ? Math.min(state.totalSlides, Math.max(1, parseInt(hashMatch[1], 10))) : 1;
+    goToSlide(startSlide, false);
     initAudio();
   }
 
@@ -388,6 +390,14 @@ const Presentation = (() => {
     setupKeyboardShortcuts();
     window.addEventListener('resize', handleResize);
     handleResize();
+
+    window.addEventListener('hashchange', () => {
+      const match = window.location.hash.match(/slide-(\d+)/);
+      if (match) {
+        const target = parseInt(match[1], 10);
+        if (target !== state.currentSlide) goToSlide(target, false);
+      }
+    });
 
     document.addEventListener('fullscreenchange', () => {
       if (document.fullscreenElement) {
@@ -568,6 +578,12 @@ const Presentation = (() => {
     if (targetIndex < 1 || targetIndex > state.totalSlides) return;
     const prevSlide = state.currentSlide;
     state.currentSlide = targetIndex;
+
+    try {
+      if (window.location.hash !== `#slide-${targetIndex}`) {
+        history.replaceState(null, '', `#slide-${targetIndex}`);
+      }
+    } catch (e) {}
 
     dom.slides.forEach((slide) => {
       const slideNum = parseInt(slide.dataset.slide, 10);
