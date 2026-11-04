@@ -1167,6 +1167,15 @@ html, body {
   animation: zoomFadeIn 0.8s var(--ease-cinematic) both;
 }
 
+.audio-theater-card .top-title-card {
+  align-self: center;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .audio-player-box {
   width: 100%;
   background: linear-gradient(180deg, rgba(8, 20, 38, 0.95) 0%, rgba(13, 33, 62, 0.95) 100%);
