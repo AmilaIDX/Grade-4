@@ -1382,8 +1382,8 @@
                 <h2 class="cinematic-headline" style="font-size: 2rem; margin-bottom: 0;">Kindness & Justice in Action</h2>
               </div>
 
-              <!-- Responsive YouTube Video Player -->
-              <div class="video-player-box">
+              <!-- Responsive Video Player (YouTube Online + Local MP4 Offline Backup) -->
+              <div class="video-player-box" id="assembly-video-container">
                 <iframe 
                   id="assembly-video-iframe" 
                   src="https://www.youtube-nocookie.com/embed/NIsGkTuO1vk?enablejsapi=1&rel=0" 
@@ -1391,6 +1391,10 @@
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   allowfullscreen>
                 </iframe>
+                <video id="assembly-video-local" controls preload="metadata" style="display:none; width:100%; height:100%; border-radius:16px; object-fit:contain; background:#000;">
+                  <source src="assembly_video.mp4" type="video/mp4">
+                  <source src="video.mp4" type="video/mp4">
+                </video>
               </div>
 
               <div class="video-action-bar">

@@ -407,6 +407,16 @@ const Presentation = (() => {
       }
       handleResize();
     });
+
+    // Offline video fallback detection
+    const localVideo = document.getElementById('assembly-video-local');
+    const ytIframe = document.getElementById('assembly-video-iframe');
+    if (localVideo && ytIframe) {
+      localVideo.addEventListener('canplay', () => {
+        localVideo.style.display = 'block';
+        ytIframe.style.display = 'none';
+      });
+    }
   }
 
   function handleResize() {

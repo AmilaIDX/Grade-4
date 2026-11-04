@@ -1,0 +1,64 @@
+==============================================================================
+   SUSSEX COLLEGE - GRADE 4 ASSEMBLY PRESENTATION
+   THEME: SIX VOICES, ONE MESSAGE (Kindness Is Contagious, Justice Starts with Us)
+   Class Teacher: Mrs. Darshani Gunathilaka
+==============================================================================
+
+HOW TO COPY AND USE THIS FOLDER ON A USB DRIVE (OFFLINE BACKUP GUIDE)
+------------------------------------------------------------------------------
+
+1. HOW TO COPY TO YOUR USB DRIVE:
+   - Insert your USB Flash Drive into your computer.
+   - Right-click this entire folder ("Grade 4 Assembly") and select "Copy".
+   - Open your USB Flash Drive and select "Paste".
+   - Wait for the copy to finish. That's it!
+
+2. HOW TO LAUNCH AT SCHOOL (NO INTERNET NEEDED):
+   - Insert your USB Flash Drive into the school laptop or projector PC.
+   - Open the "Grade 4 Assembly" folder on the USB drive.
+   - DOUBLE-CLICK:
+       ▶ "start_presentation.bat"  (One-click launcher for Windows)
+       OR
+       ▶ "index.html" (or "START_HERE.html")
+   - The presentation will open immediately in your web browser (Chrome, Edge,
+     Firefox, Brave, etc.).
+   - NO WI-FI OR INTERNET CONNECTION IS REQUIRED.
+     All 37 slides, artwork, photos, animations, and sound effects are stored
+     locally inside this folder.
+
+3. KEYBOARD SHORTCUTS DURING THE ASSEMBLY:
+   - [Spacebar] or [Right Arrow ->] : Next Slide
+   - [Left Arrow <-] or [Backspace] : Previous Slide
+   - [1] to [6]                     : Jump directly to Assembly Items 1 - 6
+   - [F]                            : Toggle Fullscreen Mode (1920x1080)
+   - [N]                            : Open Teacher Rehearsal Notes & Verbatim Scripts
+   - [O]                            : Open 37-Slide Overview Grid
+   - [C]                            : Trigger Confetti Celebration (Final Slide)
+   - [Esc]                          : Close Drawer / Modal / Fullscreen
+
+4. AUDIO / SOUND SETTINGS:
+   - Sound is set to OFF by default so it will not interrupt speech unexpectedly.
+   - To turn sound ON, click the Speaker icon in the top navigation bar.
+
+5. ITEM BREAKDOWN (ALL 37 SLIDES):
+   - Slide 01       : Assembly Welcome & Title
+   - Slides 02 - 08 : Item 01: Six Voices, One Message (Speeches & Grand Chorus)
+   - Slides 09 - 13 : Item 02: A Little Smile & Care (Group Poem & Recitations)
+   - Slides 14 - 21 : Item 03: If Only Someone Had Spoken (Playground Role-Play)
+   - Slides 22 - 32 : Item 04: Justice Detectives (10 Everyday Case Exhibits)
+   - Slide 33       : Item 05: Video Presentation (Kindness & Justice in Action)
+   - Slides 34 - 37 : Item 06: Our Kindness & Justice Pledge & Grand Celebration Finale
+
+6. VIDEO PRESENTATION (SLIDE 33) OFFLINE TIP:
+   - If connected to the internet, the embedded YouTube player works automatically.
+   - If completely offline without internet, you can optionally place an MP4 file
+     named "assembly_video.mp4" into this folder, and it will play locally!
+
+7. POWERPOINT (.PPTX) BACKUP:
+   - Click the "PowerPoint" button in the bottom HUD bar at any time to export
+     the entire presentation as an editable 37-slide .pptx presentation with
+     all verbatim student scripts embedded in the Speaker Notes!
+
+==============================================================================
+   Sussex College • Grade 4 • Class Teacher: Mrs. Darshani Gunathilaka
+==============================================================================
